@@ -1,7 +1,7 @@
 {
   "name": "FACT_OutputGenerator",
   "description": "Blank Process",
-  "main": "FACT.xaml",
+  "main": "FACT_OutputGenerator.xaml",
   "dependencies": {
     "UiPath.Database.Activities": "[1.7.1]",
     "UiPath.Excel.Activities": "[2.16.2]",
@@ -53,8 +53,8 @@
       "output": []
     },
     {
-      "filePath": "FACT.xaml",
-      "uniqueId": "7c7252c6-e8da-4b5d-b70f-6a2833a2d9f6",
+      "filePath": "FACT_OutputGenerator.xaml",
+      "uniqueId": "03da1e68-2d92-403b-b4b0-74f56d92293a",
       "input": [],
       "output": []
     }
