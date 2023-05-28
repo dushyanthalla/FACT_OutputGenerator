@@ -79,7 +79,7 @@
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="Execution_Environment" Name="varExecutionEnvironment" />
       <Variable x:TypeArguments="x:String" Name="varEndpointDownloadDocumentValue" />
-      <Variable x:TypeArguments="x:String" Name="varEndpointGetparsingconfigValue" />
+      <Variable x:TypeArguments="x:String" Name="varEndpointGetogactionconfigValue" />
       <Variable x:TypeArguments="x:String" Name="varEndpointUpdateoutfilegenerationresponseValue" />
       <Variable x:TypeArguments="x:String" Name="varAPIKeyValue" />
     </Sequence.Variables>
@@ -132,7 +132,7 @@
     </ui:GetRobotAsset>
     <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="[GlobalVariablesNamespace.GlobalVariables.varEndpointGetogactionconfig+&quot;_&quot;+varExecutionEnvironment.ToUpper]" CacheStrategy="None" DisplayName="Get Asset_Endpoint_Getogactionconfig" sap:VirtualizedContainerService.HintSize="434,144.66666666666666" sap2010:WorkflowViewState.IdRef="GetRobotAsset_8">
       <ui:GetRobotAsset.Value>
-        <OutArgument x:TypeArguments="x:String">[varEndpointGetparsingconfigValue]</OutArgument>
+        <OutArgument x:TypeArguments="x:String">[varEndpointGetogactionconfigValue]</OutArgument>
       </ui:GetRobotAsset.Value>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -152,7 +152,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:GetRobotAsset>
-    <Assign sap:VirtualizedContainerService.HintSize="434,86" sap2010:WorkflowViewState.IdRef="Assign_2">
+    <Assign DisplayName="Assign - Appain Dictionary" sap:VirtualizedContainerService.HintSize="434,86" sap2010:WorkflowViewState.IdRef="Assign_2">
       <Assign.To>
         <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">[argDictApppianInfo]</OutArgument>
       </Assign.To>
@@ -160,8 +160,8 @@
         <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" xml:space="preserve">[New Dictionary(Of String, String) From 
 {
 {varEndpointDownloadDocument,varEndpointDownloadDocumentValue},
-{varEndpointGetparsingconfig,varEndpointGetparsingconfigValue},
-{varEndpointUpdatetfresponse,varEndpointUpdateoutfilegenerationresponseValue},
+{varEndpointGetogactionconfig,varEndpointGetogactionconfigValue},
+{varEndpointUpdateoutfilegenerationresponse,varEndpointUpdateoutfilegenerationresponseValue},
 {varAPIKey,varAPIKeyValue}
 }]</InArgument>
       </Assign.Value>

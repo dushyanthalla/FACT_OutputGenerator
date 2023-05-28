@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="sheetValidation" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="sheetValidation" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="argActionArguments" Type="InArgument(scg:Dictionary(x:String, x:String))" />
     <x:Property Name="argWsType" Type="InArgument(x:String)" />
@@ -12,7 +12,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>556,1070.6666666666667</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>857.3333333333334,1298</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>sheetValidation_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -113,13 +113,22 @@
       <AssemblyReference>netstandard</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="sheetValidation" sap:VirtualizedContainerService.HintSize="548,1006" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="sheetValidation" sap:VirtualizedContainerService.HintSize="548,1233.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <If Condition="[File.Exists(varFolderInput+argParserStep(varParmTransactionId).ToString+&quot;\&quot;+argFileName) = true]" DisplayName="If - File Exist?" sap:VirtualizedContainerService.HintSize="486,895.3333333333334" sap2010:WorkflowViewState.IdRef="If_1">
+    <ui:GetCurrentJobInfo DisplayName="Get Current Job Info" sap:VirtualizedContainerService.HintSize="486,25.333333333333332" sap2010:WorkflowViewState.IdRef="GetCurrentJobInfo_1" Result="[GlobalVariablesNamespace.GlobalVariables.JobData]" />
+    <ui:LogMessage DisplayName="Log Message - STARTED" sap:VirtualizedContainerService.HintSize="486,25.333333333333332" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[JobData.WorkflowName+&quot; STARTED&quot;]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:LogMessage>
+    <If Condition="[File.Exists(varFolderInput+argParserStep(varParmTransactionId).ToString+&quot;\&quot;+argFileName) = true]" DisplayName="If - File Exist?" sap:VirtualizedContainerService.HintSize="486,926.6666666666666" sap2010:WorkflowViewState.IdRef="If_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -127,13 +136,13 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <If.Then>
-        <Sequence sap:VirtualizedContainerService.HintSize="452,532" sap2010:WorkflowViewState.IdRef="Sequence_2">
+        <Sequence sap:VirtualizedContainerService.HintSize="452,563.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_2">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <If Condition="[New ClosedXML.Excel.XLWorkbook(varFolderInput+argParserStep(varParmTransactionId).ToString+&quot;\&quot;+argFileName).Worksheets.Contains(argActionArguments(argWsType))]" DisplayName="If - Source Worksheet validation" sap:VirtualizedContainerService.HintSize="410,444.6666666666667" sap2010:WorkflowViewState.IdRef="If_3">
+          <If Condition="[New ClosedXML.Excel.XLWorkbook(varFolderInput+argParserStep(varParmTransactionId).ToString+&quot;\&quot;+argFileName).Worksheets.Contains(argActionArguments(argWsType))]" DisplayName="If - Source Worksheet validation" sap:VirtualizedContainerService.HintSize="410,476" sap2010:WorkflowViewState.IdRef="If_3">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -141,12 +150,20 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <If.Then>
-              <Sequence sap:VirtualizedContainerService.HintSize="300,81.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_8">
+              <Sequence sap:VirtualizedContainerService.HintSize="300,112.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_8">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
+                <ui:LogMessage DisplayName="Log Message - WS Found" sap:VirtualizedContainerService.HintSize="258,25.333333333333332" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;'&quot;+argActionArguments(argWsType)+&quot;' worksheet found in '&quot;+argFileName+&quot;'&quot;]">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </ui:LogMessage>
               </Sequence>
             </If.Then>
             <If.Else>
@@ -156,7 +173,7 @@
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <Throw Exception="[New BusinessRuleException(&quot;File '&quot;+argFileName+&quot;' doesn't have worksheet called '&quot;+argActionArguments(argWsType)+&quot;'&quot;)]" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="Throw_3">
+                <Throw DisplayName="Throw - WS Missing" Exception="[New BusinessRuleException(&quot;File '&quot;+argFileName+&quot;' doesn't have worksheet called '&quot;+argActionArguments(argWsType)+&quot;'&quot;)]" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="Throw_3">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -176,7 +193,7 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Throw Exception="[New BusinessRuleException(&quot;File '&quot;+argFileName+&quot;' doesn't exist in '&quot;+varFolderInput+argParserStep(varParmTransactionId).ToString)]" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="Throw_2">
+          <Throw DisplayName="Throw - WB Missing" Exception="[New BusinessRuleException(&quot;File '&quot;+argFileName+&quot;' doesn't exist in '&quot;+varFolderInput+argParserStep(varParmTransactionId).ToString)]" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="Throw_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -187,5 +204,13 @@
         </Sequence>
       </If.Else>
     </If>
+    <ui:LogMessage DisplayName="Log Message - FINISHED" sap:VirtualizedContainerService.HintSize="486,25.333333333333332" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[JobData.WorkflowName+&quot; FINISHED&quot;]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:LogMessage>
   </Sequence>
 </Activity>

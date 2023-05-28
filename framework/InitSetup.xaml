@@ -7,7 +7,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>857.3333333333334,930</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>857.3333333333334,1174.6666666666667</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>InitSetup_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -98,7 +98,7 @@
       <AssemblyReference>WindowsBase</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="InitSetup" sap:VirtualizedContainerService.HintSize="496,865.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="InitSetup" sap:VirtualizedContainerService.HintSize="496,1110" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:List(x:String)" Name="varMandatoryParameters" />
     </Sequence.Variables>
@@ -107,7 +107,16 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Assign sap:VirtualizedContainerService.HintSize="434,86" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <ui:GetCurrentJobInfo DisplayName="Get Current Job Info" sap:VirtualizedContainerService.HintSize="434,25.333333333333332" sap2010:WorkflowViewState.IdRef="GetCurrentJobInfo_1" Result="[GlobalVariablesNamespace.GlobalVariables.JobData]" />
+    <ui:LogMessage DisplayName="Log Message - STARTED" sap:VirtualizedContainerService.HintSize="434,25.333333333333332" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[JobData.WorkflowName+&quot; STARTED&quot;]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:LogMessage>
+    <Assign DisplayName="Assign - Mandatory Parameters" sap:VirtualizedContainerService.HintSize="434,86" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="scg:List(x:String)">[varMandatoryParameters]</OutArgument>
       </Assign.To>
@@ -119,8 +128,15 @@ varParmRemediationVersion,
 varParmGeneratorTypes}]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:DeserializeJson x:TypeArguments="njl:JObject" DisplayName="Deserialize JSON" sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_1" JsonObject="[argOutputGeneratorJsonObject]" JsonString="[argOutputGeneratorJSON]" />
-    <If Condition="[varMandatoryParameters.Except(argOutputGeneratorJsonObject.Properties.Select(Function (x) x.Name).ToList).Count&gt;0]" DisplayName="Mandatory Parameters" sap:VirtualizedContainerService.HintSize="434,363.3333333333333" sap2010:WorkflowViewState.IdRef="If_1">
+    <ui:DeserializeJson x:TypeArguments="njl:JObject" DisplayName="Deserialize Output Generator JSON" sap:VirtualizedContainerService.HintSize="434,25.333333333333332" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_1" JsonObject="[argOutputGeneratorJsonObject]" JsonString="[argOutputGeneratorJSON]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:DeserializeJson>
+    <If Condition="[varMandatoryParameters.Except(argOutputGeneratorJsonObject.Properties.Select(Function (x) x.Name).ToList).Count&gt;0]" DisplayName="Mandatory Parameters" sap:VirtualizedContainerService.HintSize="434,546.6666666666666" sap2010:WorkflowViewState.IdRef="If_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -134,7 +150,7 @@ varParmGeneratorTypes}]</InArgument>
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Throw Exception="[New BusinessRuleException(&quot;The following parameters are mandatory to initiate parsing. &quot;+String.Join(vbNewLine,varMandatoryParameters.Except(argOutputGeneratorJsonObject.Properties.Select(Function (x) x.Name).ToList)))]" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="Throw_1">
+          <Throw DisplayName="Throw - Missing Mandatory Parameters in Output Generator JSON" Exception="[New BusinessRuleException(&quot;The following parameters are mandatory to initiate parsing. &quot;+String.Join(vbNewLine,varMandatoryParameters.Except(argOutputGeneratorJsonObject.Properties.Select(Function (x) x.Name).ToList)))]" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="Throw_1">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -145,40 +161,38 @@ varParmGeneratorTypes}]</InArgument>
         </Sequence>
       </If.Then>
       <If.Else>
-        <Sequence sap:VirtualizedContainerService.HintSize="300,81.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_3">
+        <Sequence sap:VirtualizedContainerService.HintSize="376,183.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_3">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-        </Sequence>
-      </If.Else>
-    </If>
-    <ui:DeserializeJsonArray DisplayName="Deserialize JSON Array - parserSteps" sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="DeserializeJsonArray_1" JsonArray="[argOutputGeneratorStepArray]" JsonString="[argOutputGeneratorJsonObject(varParmGeneratorTypes).ToString]" />
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="434,25.333333333333332" sap2010:WorkflowViewState.IdRef="CommentOut_1">
-      <ui:CommentOut.Body>
-        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,192.66666666666666" sap2010:WorkflowViewState.IdRef="Sequence_4">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-          <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Automation Folder" sap:VirtualizedContainerService.HintSize="388,82" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="[GlobalVariablesNamespace.GlobalVariables.varFolderInput+argOutputGeneratorJsonObject(GlobalVariablesNamespace.GlobalVariables.varParmTransactionId).ToString]">
+          <ui:LogMessage DisplayName="Log Message - Mandatory Parameters - OutputGenerator" sap:VirtualizedContainerService.HintSize="334,96" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;All the OutputGenerator mandatory parameters are available.&quot;]">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-          </ui:CreateDirectory>
+          </ui:LogMessage>
         </Sequence>
-      </ui:CommentOut.Body>
+      </If.Else>
+    </If>
+    <ui:DeserializeJsonArray DisplayName="Deserialize JSON Array - outputGeneratorSteps" sap:VirtualizedContainerService.HintSize="434,25.333333333333332" sap2010:WorkflowViewState.IdRef="DeserializeJsonArray_1" JsonArray="[argOutputGeneratorStepArray]" JsonString="[argOutputGeneratorJsonObject(varParmGeneratorTypes).ToString]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-    </ui:CommentOut>
+    </ui:DeserializeJsonArray>
+    <ui:LogMessage DisplayName="Log Message - FINISHED" sap:VirtualizedContainerService.HintSize="434,25.333333333333332" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[JobData.WorkflowName+&quot; FINISHED&quot;]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:LogMessage>
   </Sequence>
 </Activity>
