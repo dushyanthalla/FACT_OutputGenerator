@@ -19,7 +19,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>555.3333333333334,888.6666666666666</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>440,898</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>writeToExcel_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -118,7 +118,7 @@
       <AssemblyReference>WindowsBase</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="writeToExcel" sap:VirtualizedContainerService.HintSize="546,824" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="writeToExcel" sap:VirtualizedContainerService.HintSize="450,833.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Default="[New DataTable]" Name="varData" />
       <Variable x:TypeArguments="x:Int32" Name="filterMappingIndex" />
@@ -128,8 +128,8 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:GetCurrentJobInfo DisplayName="Get Current Job Info" sap:VirtualizedContainerService.HintSize="484,25.333333333333332" sap2010:WorkflowViewState.IdRef="GetCurrentJobInfo_1" Result="[GlobalVariablesNamespace.GlobalVariables.JobData]" />
-    <ui:LogMessage DisplayName="Log Message - STARTED" sap:VirtualizedContainerService.HintSize="484,25.333333333333332" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[GlobalVariablesNamespace.GlobalVariables.JobData.WorkflowName+&quot; STARTED&quot;]">
+    <ui:GetCurrentJobInfo DisplayName="Get Current Job Info" sap:VirtualizedContainerService.HintSize="388,25.333333333333332" sap2010:WorkflowViewState.IdRef="GetCurrentJobInfo_1" Result="[GlobalVariablesNamespace.GlobalVariables.JobData]" />
+    <ui:LogMessage DisplayName="Log Message - STARTED" sap:VirtualizedContainerService.HintSize="388,25.333333333333332" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[GlobalVariablesNamespace.GlobalVariables.JobData.WorkflowName+&quot; STARTED&quot;]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -137,7 +137,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:LogMessage>
-    <ui:ExcelApplicationScope Password="{x:Null}" AutoSave="False" CreateNewFile="False" DisplayName="Excel Application Scope - Destination" sap:VirtualizedContainerService.HintSize="484,25.333333333333332" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_3" InstanceCachePeriod="3000" Visible="False" WorkbookPath="[varFolderInput+argOutputGeneratorStep(varParmTransactionId).ToString+&quot;\&quot;+argActionArguments(varParmDestination)]">
+    <ui:ExcelApplicationScope Password="{x:Null}" AutoSave="False" CreateNewFile="False" DisplayName="Excel Application Scope - Destination" sap:VirtualizedContainerService.HintSize="388,25.333333333333332" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_3" InstanceCachePeriod="3000" Visible="False" WorkbookPath="[varFolderInput+argOutputGeneratorStep(varParmTransactionId).ToString+&quot;\&quot;+argActionArguments(varParmDestination)]">
       <ui:ExcelApplicationScope.Body>
         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
           <ActivityAction.Argument>
@@ -153,7 +153,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ExcelApplicationScope>
-    <ui:DeserializeJsonArray DisplayName="Deserialize JSON Array - Col Mappings" sap:VirtualizedContainerService.HintSize="484,25.333333333333332" sap2010:WorkflowViewState.IdRef="DeserializeJsonArray_2" JsonArray="[varMappingsArray]" JsonString="[argJsonObject(varParmColMappings).ToString]">
+    <ui:DeserializeJsonArray DisplayName="Deserialize JSON Array - Col Mappings" sap:VirtualizedContainerService.HintSize="388,25.333333333333332" sap2010:WorkflowViewState.IdRef="DeserializeJsonArray_2" JsonArray="[varMappingsArray]" JsonString="[argJsonObject(varParmColMappings).ToString]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -161,7 +161,41 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:DeserializeJsonArray>
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[argData]" DisplayName="For Each Row in Data Table (Source Entity)" sap:VirtualizedContainerService.HintSize="484,321.3333333333333" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+    <If Condition="[argData.ColumnCount&gt;=varParmColMappings.Count]" DisplayName="If - Data Column Count &gt;= Col Mappings Count" sap:VirtualizedContainerService.HintSize="388,265.3333333333333" sap2010:WorkflowViewState.IdRef="If_1">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <If.Then>
+        <Sequence sap:VirtualizedContainerService.HintSize="300,81.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_21">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence sap:VirtualizedContainerService.HintSize="300,112.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_22">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Throw DisplayName="Throw - Col Mapping Mismatch" Exception="[New BusinessRuleException(&quot;Number of columns mappings are exceeding number of columns in entity data. So column mapping is not possible.&quot;)]" sap:VirtualizedContainerService.HintSize="258,25.333333333333332" sap2010:WorkflowViewState.IdRef="Throw_1">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </Throw>
+        </Sequence>
+      </If.Else>
+    </If>
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[argData]" DisplayName="For Each Row in Data Table (Source Entity)" sap:VirtualizedContainerService.HintSize="388,25.333333333333332" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
@@ -229,18 +263,18 @@
       </ui:ForEachRow.Body>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ForEachRow>
-    <ui:ExcelApplicationScope Password="{x:Null}" CreateNewFile="False" DisplayName="Excel Application Scope - Destination" sap:VirtualizedContainerService.HintSize="484,25.333333333333332" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_2" InstanceCachePeriod="3000" Visible="False" WorkbookPath="[varFolderInput+argOutputGeneratorStep(varParmTransactionId).ToString+&quot;\&quot;+argActionArguments(varParmDestination)]">
+    <ui:ExcelApplicationScope Password="{x:Null}" CreateNewFile="False" DisplayName="Excel Application Scope - Destination" sap:VirtualizedContainerService.HintSize="388,25.333333333333332" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_2" InstanceCachePeriod="3000" Visible="False" WorkbookPath="[varFolderInput+argOutputGeneratorStep(varParmTransactionId).ToString+&quot;\&quot;+argActionArguments(varParmDestination)]">
       <ui:ExcelApplicationScope.Body>
         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
           </ActivityAction.Argument>
-          <ui:ExcelWriteRange AddHeaders="True" DataTable="[varData]" DisplayName="Write Range - Destination" sap:VirtualizedContainerService.HintSize="200,25.333333333333332" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_4" SheetName="[argActionArguments(varParmDestinationWs)]" StartingCell="[&quot;A&quot;+argActionArguments(varParmDestinationWsRange)]">
+          <ui:ExcelWriteRange AddHeaders="True" DataTable="[varData]" DisplayName="Write Range - Destination" sap:VirtualizedContainerService.HintSize="230.66666666666666,25.333333333333332" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_4" SheetName="[argActionArguments(varParmDestinationWs)]" StartingCell="[&quot;A&quot;+argActionArguments(varParmDestinationWsRange)]">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -257,7 +291,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ExcelApplicationScope>
-    <ui:LogMessage DisplayName="Log Message - FINISHED" sap:VirtualizedContainerService.HintSize="484,25.333333333333332" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[JobData.WorkflowName+&quot; FINISHED&quot;]">
+    <ui:LogMessage DisplayName="Log Message - FINISHED" sap:VirtualizedContainerService.HintSize="388,25.333333333333332" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[JobData.WorkflowName+&quot; FINISHED&quot;]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
