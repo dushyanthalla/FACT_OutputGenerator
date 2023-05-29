@@ -12,13 +12,13 @@
   "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "23.4.0.0",
-  "projectVersion": "1.0.0",
+  "projectVersion": "1.0.1",
   "runtimeOptions": {
     "autoDispose": false,
     "netFrameworkLazyLoading": false,
     "isPausable": true,
     "isAttended": false,
-    "requiresUserInteraction": true,
+    "requiresUserInteraction": false,
     "supportsPersistence": false,
     "workflowSerialization": "DataContract",
     "excludedLoggedData": [
@@ -39,7 +39,10 @@
       "privateWorkflows": []
     },
     "processOptions": {
-      "ignoredFiles": []
+      "ignoredFiles": [
+        "TestInputs.xaml",
+        "Test.xaml"
+      ]
     },
     "fileInfoCollection": [],
     "modernBehavior": false

@@ -8,7 +8,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>820,4016.6666666666665</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>820,3496.6666666666665</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -106,7 +106,7 @@
       <AssemblyReference>UiPath.Platform</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="FACT" sap:VirtualizedContainerService.HintSize="830,3952" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="FACT" sap:VirtualizedContainerService.HintSize="830,3432" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="varResponseContent" />
       <Variable x:TypeArguments="x:Int32" Default="200" Name="varResponseStatus" />
@@ -129,21 +129,17 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:LogMessage>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="getAssetValues.xaml" sap:VirtualizedContainerService.HintSize="768,25.333333333333332" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="framework\getAssetValues.xaml">
-      <ui:InvokeWorkflowFile.Arguments>
-        <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="argDictApppianInfo">[varDictApppianInfo]</OutArgument>
-      </ui:InvokeWorkflowFile.Arguments>
+    <ui:LogMessage DisplayName="Log Message - Input Argument" sap:VirtualizedContainerService.HintSize="768,96" sap2010:WorkflowViewState.IdRef="LogMessage_15" Level="Info" Message="[&quot;Output Generator Wrapper&quot;+vbNewLine+argOutputGeneratorJSON]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-    </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="TestInputs.xaml" sap:VirtualizedContainerService.HintSize="768,25.333333333333332" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="TestInputs.xaml">
+    </ui:LogMessage>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="getAssetValues.xaml" sap:VirtualizedContainerService.HintSize="768,25.333333333333332" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="framework\getAssetValues.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InOutArgument x:TypeArguments="x:String" x:Key="argResponseContent" />
-        <InOutArgument x:TypeArguments="x:String" x:Key="argParsingJSON">[argOutputGeneratorJSON]</InOutArgument>
+        <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="argDictApppianInfo">[varDictApppianInfo]</OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -174,7 +170,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:InvokeWorkflowFile>
-    <TryCatch DisplayName="Try Catch - OutputGenerator" sap:VirtualizedContainerService.HintSize="768,3449.3333333333335" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+    <TryCatch DisplayName="Try Catch - OutputGenerator" sap:VirtualizedContainerService.HintSize="768,2858.6666666666665" sap2010:WorkflowViewState.IdRef="TryCatch_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -182,7 +178,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <Sequence DisplayName="OutputGenerator" sap:VirtualizedContainerService.HintSize="729.3333333333334,3186.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_33">
+        <Sequence DisplayName="OutputGenerator" sap:VirtualizedContainerService.HintSize="729.3333333333334,2596" sap2010:WorkflowViewState.IdRef="Sequence_33">
           <Sequence.Variables>
             <Variable x:TypeArguments="njl:JArray" Name="varOutputGeneratorStepArray" />
             <Variable x:TypeArguments="njl:JObject" Name="varOutputGeneratorJsonObject" />
@@ -207,13 +203,13 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:InvokeWorkflowFile>
-          <ui:ForEach x:TypeArguments="njl:JToken" CurrentIndex="{x:Null}" DisplayName="For Each - Output Generator Step" sap:VirtualizedContainerService.HintSize="667.3333333333334,3010.6666666666665" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[varOutputGeneratorStepArray]">
+          <ui:ForEach x:TypeArguments="njl:JToken" CurrentIndex="{x:Null}" DisplayName="For Each - Output Generator Step" sap:VirtualizedContainerService.HintSize="667.3333333333334,2420" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[varOutputGeneratorStepArray]">
             <ui:ForEach.Body>
               <ActivityAction x:TypeArguments="njl:JToken">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="njl:JToken" Name="outputGeneratorStep" />
                 </ActivityAction.Argument>
-                <TryCatch DisplayName="Try Catch - Output Generator Step" sap:VirtualizedContainerService.HintSize="630.6666666666666,2554" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                <TryCatch DisplayName="Try Catch - Output Generator Step" sap:VirtualizedContainerService.HintSize="630.6666666666666,2290.6666666666665" sap2010:WorkflowViewState.IdRef="TryCatch_1">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -221,7 +217,7 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <TryCatch.Try>
-                    <Sequence DisplayName="Output Generator Step" sap:VirtualizedContainerService.HintSize="592,2291.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                    <Sequence DisplayName="Output Generator Step" sap:VirtualizedContainerService.HintSize="592,2028" sap2010:WorkflowViewState.IdRef="Sequence_3">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="njl:JArray" Name="varJsonArray" />
                         <Variable x:TypeArguments="njl:JObject" Name="varJsonObject" />
@@ -233,7 +229,7 @@
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Switch x:TypeArguments="x:String" DisplayName="Switch - GeneratorType" Expression="[outputGeneratorStep(varParmGeneratorType).ToString.ToUpper]" sap:VirtualizedContainerService.HintSize="530,288.6666666666667" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+                      <Switch x:TypeArguments="x:String" DisplayName="Switch - GeneratorType" Expression="[outputGeneratorStep(varParmGeneratorType).ToString.ToUpper]" sap:VirtualizedContainerService.HintSize="530,25.333333333333332" sap2010:WorkflowViewState.IdRef="Switch`1_1">
                         <Switch.Default>
                           <Sequence DisplayName="Default" sap:VirtualizedContainerService.HintSize="450,272" sap2010:WorkflowViewState.IdRef="Sequence_40">
                             <sap:WorkflowViewStateService.ViewState>
@@ -253,10 +249,16 @@
                             <ui:Continue DisplayName="Continue - Out Of Scope - GeneratorType" sap:VirtualizedContainerService.HintSize="388,25.333333333333332" sap2010:WorkflowViewState.IdRef="Continue_1" />
                           </Sequence>
                         </Switch.Default>
-                        <ui:LogMessage x:Key="EXPORT_AS_EXCEL" DisplayName="Log Message - GeneratorType" sap:VirtualizedContainerService.HintSize="334,96" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="Info" Message="[&quot;Processing the generator type '&quot;+outputGeneratorStep(varParmGeneratorType).ToString+&quot;'.&quot;]">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage x:Key="EXPORT_AS_EXCEL" DisplayName="Log Message - GeneratorType" sap:VirtualizedContainerService.HintSize="252.66666666666666,25.333333333333332" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="Info" Message="[&quot;Processing the generator type '&quot;+outputGeneratorStep(varParmGeneratorType).ToString+&quot;'.&quot;]">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
