@@ -112,6 +112,7 @@
       <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
       <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="updateOutfileGenerationResponse" sap:VirtualizedContainerService.HintSize="572,1976" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -218,7 +219,7 @@ argOutputGeneratorStep(varParmTransactionId).ToString+"\"+argActionArguments(var
 	}"]</InArgument>
             </Assign.Value>
           </Assign>
-          <ui:LogMessage DisplayName="Log Message - Endpoint &amp; Request Body" sap:VirtualizedContainerService.HintSize="434,96" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Endpoint URL&quot;+vbNewLine+varEndpoint+vbNewLine+&quot;Request Body&quot;+vbNewLine+varRequestBody]">
+          <ui:LogMessage DisplayName="Log Message - Endpoint &amp; Request Body" sap:VirtualizedContainerService.HintSize="434,96" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Warn" Message="[&quot;Endpoint URL&quot;+vbNewLine+varEndpoint+vbNewLine+&quot;Request Body&quot;+vbNewLine+varRequestBody]">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>

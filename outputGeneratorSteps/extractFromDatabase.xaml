@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="extractFromDatabase" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="extractFromDatabase" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="argData" Type="OutArgument(sd:DataTable)" />
     <x:Property Name="argActionArguments" Type="InArgument(scg:Dictionary(x:String, x:String))">
@@ -10,7 +10,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>555.3333333333334,783.3333333333334</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>552,1133.3333333333333</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>extractFromDatabase_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -45,6 +45,7 @@
       <x:String>System.Runtime.Serialization</x:String>
       <x:String>System.Xml.Serialization</x:String>
       <x:String>System.Reflection</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -95,7 +96,7 @@
       <AssemblyReference>WindowsBase</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="extractFromDatabase" sap:VirtualizedContainerService.HintSize="496,718.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="extractFromDatabase" sap:VirtualizedContainerService.HintSize="550.6666666666666,1068.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="ui:DatabaseConnection" Name="varDataBaseConnection" />
       <Variable x:TypeArguments="x:String" Name="varQuery" />
@@ -105,8 +106,8 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:GetCurrentJobInfo DisplayName="Get Current Job Info" sap:VirtualizedContainerService.HintSize="434,25.333333333333332" sap2010:WorkflowViewState.IdRef="GetCurrentJobInfo_1" Result="[GlobalVariablesNamespace.GlobalVariables.JobData]" />
-    <ui:LogMessage DisplayName="Log Message - STARTED" sap:VirtualizedContainerService.HintSize="434,25.333333333333332" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[GlobalVariablesNamespace.GlobalVariables.JobData.WorkflowName+&quot; STARTED&quot;]">
+    <ui:GetCurrentJobInfo DisplayName="Get Current Job Info" sap:VirtualizedContainerService.HintSize="488.6666666666667,25.333333333333332" sap2010:WorkflowViewState.IdRef="GetCurrentJobInfo_1" Result="[GlobalVariablesNamespace.GlobalVariables.JobData]" />
+    <ui:LogMessage DisplayName="Log Message - STARTED" sap:VirtualizedContainerService.HintSize="488.6666666666667,25.333333333333332" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[GlobalVariablesNamespace.GlobalVariables.JobData.WorkflowName+&quot; STARTED&quot;]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -114,7 +115,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:LogMessage>
-    <Assign DisplayName="Assign - Query" sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <Assign DisplayName="Assign - Query" sap:VirtualizedContainerService.HintSize="488.6666666666667,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[varQuery]</OutArgument>
       </Assign.To>
@@ -122,7 +123,7 @@
         <InArgument x:TypeArguments="x:String">["select * from "+argActionArguments(varParmEntityName)]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:LogMessage DisplayName="Log Message - Query" sap:VirtualizedContainerService.HintSize="434,25.333333333333332" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[varQuery]">
+    <ui:LogMessage DisplayName="Log Message - Query" sap:VirtualizedContainerService.HintSize="488.6666666666667,25.333333333333332" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[varQuery]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -130,7 +131,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:LogMessage>
-    <ui:DatabaseConnect DisplayName="Connect to database" sap:VirtualizedContainerService.HintSize="434,25.333333333333332" sap2010:WorkflowViewState.IdRef="DatabaseConnect_2" ProviderName="Microsoft.Data.SqlClient" ConnectionString="Data Source=IN3088496W2\FACT;Initial Catalog=FACT;Integrated Security=True;Encrypt=False" DatabaseConnection="[varDataBaseConnection]">
+    <ui:DatabaseConnect DisplayName="Connect to database" sap:VirtualizedContainerService.HintSize="488.6666666666667,25.333333333333332" sap2010:WorkflowViewState.IdRef="DatabaseConnect_2" ProviderName="Microsoft.Data.SqlClient" ConnectionString="Data Source=IN3088496W2\FACT;Initial Catalog=FACT;Integrated Security=True;Encrypt=False" DatabaseConnection="[varDataBaseConnection]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -138,18 +139,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:DatabaseConnect>
-    <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[argData]" DisplayName="Run query - Select" ExistingDbConnection="[varDataBaseConnection]" sap:VirtualizedContainerService.HintSize="434,25.333333333333332" sap2010:WorkflowViewState.IdRef="ExecuteQuery_1" Sql="[varQuery]">
-      <ui:ExecuteQuery.Parameters>
-        <scg:Dictionary x:TypeArguments="x:String, Argument" />
-      </ui:ExecuteQuery.Parameters>
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-    </ui:ExecuteQuery>
-    <ui:LogMessage DisplayName="Log Message - Data extracted from Entity" sap:VirtualizedContainerService.HintSize="434,25.333333333333332" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Extracted data from entity &quot;+argActionArguments(varParmEntityName)]">
+    <ui:LogMessage DisplayName="Log Message - Database Connection" sap:VirtualizedContainerService.HintSize="488.6666666666667,25.333333333333332" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Database connection established.&quot;]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -157,8 +147,71 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:LogMessage>
-    <ui:DatabaseDisconnect DatabaseConnection="[varDataBaseConnection]" DisplayName="Disconnect from database" sap:VirtualizedContainerService.HintSize="434,25.333333333333332" sap2010:WorkflowViewState.IdRef="DatabaseDisconnect_1" />
-    <ui:LogMessage DisplayName="Log Message - FINISHED" sap:VirtualizedContainerService.HintSize="434,25.333333333333332" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[JobData.WorkflowName+&quot; FINISHED&quot;]">
+    <TryCatch DisplayName="Try Catch - Select Query" sap:VirtualizedContainerService.HintSize="488.6666666666667,440.6666666666667" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch.Try>
+        <Sequence DisplayName="Select Query" sap:VirtualizedContainerService.HintSize="450,201.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[argData]" DisplayName="Run query - Select" ExistingDbConnection="[varDataBaseConnection]" sap:VirtualizedContainerService.HintSize="388,25.333333333333332" sap2010:WorkflowViewState.IdRef="ExecuteQuery_1" Sql="[varQuery]">
+            <ui:ExecuteQuery.Parameters>
+              <scg:Dictionary x:TypeArguments="x:String, Argument" />
+            </ui:ExecuteQuery.Parameters>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:ExecuteQuery>
+          <ui:LogMessage DisplayName="Log Message - Data extracted from Entity" sap:VirtualizedContainerService.HintSize="388,25.333333333333332" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Extracted data from entity &quot;+argActionArguments(varParmEntityName)]">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:LogMessage>
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="454.6666666666667,22" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <Rethrow DisplayName="Rethrow - Run Query - Select" sap:VirtualizedContainerService.HintSize="334,25.333333333333332" sap2010:WorkflowViewState.IdRef="Rethrow_1" />
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+      <TryCatch.Finally>
+        <Sequence DisplayName="Select Query" sap:VirtualizedContainerService.HintSize="450,201.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:DatabaseDisconnect DatabaseConnection="[varDataBaseConnection]" DisplayName="Disconnect from database" sap:VirtualizedContainerService.HintSize="388,25.333333333333332" sap2010:WorkflowViewState.IdRef="DatabaseDisconnect_1" />
+          <ui:LogMessage DisplayName="Log Message - Database Disconnection" sap:VirtualizedContainerService.HintSize="388,25.333333333333332" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;We are no longer connected to database.&quot;]">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:LogMessage>
+        </Sequence>
+      </TryCatch.Finally>
+    </TryCatch>
+    <ui:LogMessage DisplayName="Log Message - FINISHED" sap:VirtualizedContainerService.HintSize="488.6666666666667,25.333333333333332" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[JobData.WorkflowName+&quot; FINISHED&quot;]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
