@@ -5,7 +5,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>486,1022.6666666666665</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>558,968.6666666666666</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>getAssetValues_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -75,13 +75,14 @@
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="getAssetValues" sap:VirtualizedContainerService.HintSize="496,958" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="getAssetValues" sap:VirtualizedContainerService.HintSize="496,904" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="Execution_Environment" Name="varExecutionEnvironment" />
       <Variable x:TypeArguments="x:String" Name="varEPDownloadDocVal" />
       <Variable x:TypeArguments="x:String" Name="varEPGetogactionconfigVal" />
       <Variable x:TypeArguments="x:String" Name="varEPUpdateoutfilegenerationresVal" />
       <Variable x:TypeArguments="x:String" Name="varAPIKeyValue" />
+      <Variable x:TypeArguments="x:String" Name="varConnectionStringVal" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -130,27 +131,32 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:GetRobotAsset>
-    <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="[GlobalVariablesNamespace.GlobalVariables.varEndpointGetogactionconfig+&quot;_&quot;+varExecutionEnvironment.ToUpper]" CacheStrategy="None" DisplayName="Get Asset_Endpoint_Getogactionconfig" sap:VirtualizedContainerService.HintSize="434,144.66666666666666" sap2010:WorkflowViewState.IdRef="GetRobotAsset_8">
+    <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="[GlobalVariablesNamespace.GlobalVariables.varEndpointGetogactionconfig+&quot;_&quot;+varExecutionEnvironment.ToUpper]" CacheStrategy="None" DisplayName="Get Asset_Endpoint_Getogactionconfig" sap:VirtualizedContainerService.HintSize="434,25.333333333333332" sap2010:WorkflowViewState.IdRef="GetRobotAsset_8">
       <ui:GetRobotAsset.Value>
         <OutArgument x:TypeArguments="x:String">[varEPGetogactionconfigVal]</OutArgument>
       </ui:GetRobotAsset.Value>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:GetRobotAsset>
-    <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="[GlobalVariablesNamespace.GlobalVariables.varEndpointUpdateoutfilegenerationresponse+&quot;_&quot;+varExecutionEnvironment.ToUpper]" CacheStrategy="None" DisplayName="Get Asset_Endpoint_Updateoutfilegenerationresponse" sap:VirtualizedContainerService.HintSize="434,144.66666666666666" sap2010:WorkflowViewState.IdRef="GetRobotAsset_9">
+    <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="[GlobalVariablesNamespace.GlobalVariables.varEndpointUpdateoutfilegenerationresponse+&quot;_&quot;+varExecutionEnvironment.ToUpper]" CacheStrategy="None" DisplayName="Get Asset_Endpoint_Updateoutfilegenerationresponse" sap:VirtualizedContainerService.HintSize="434,25.333333333333332" sap2010:WorkflowViewState.IdRef="GetRobotAsset_9">
       <ui:GetRobotAsset.Value>
         <OutArgument x:TypeArguments="x:String">[varEPUpdateoutfilegenerationresVal]</OutArgument>
       </ui:GetRobotAsset.Value>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
+    </ui:GetRobotAsset>
+    <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="GlobalVariablesNamespace.GlobalVariables.varConnectionString+&quot;_&quot;+varExecutionEnvironment.ToUpper" CacheStrategy="None" DisplayName="Get Asset_ConnectionString" sap:VirtualizedContainerService.HintSize="434,144.66666666666666" sap2010:WorkflowViewState.IdRef="GetRobotAsset_13">
+      <ui:GetRobotAsset.Value>
+        <OutArgument x:TypeArguments="x:String">[varConnectionStringVal]</OutArgument>
+      </ui:GetRobotAsset.Value>
     </ui:GetRobotAsset>
     <Assign DisplayName="Assign - Appain Dictionary" sap:VirtualizedContainerService.HintSize="434,86" sap2010:WorkflowViewState.IdRef="Assign_2">
       <Assign.To>
@@ -162,7 +168,8 @@
 {varEndpointDownloadDocument,varEPDownloadDocVal},
 {varEndpointGetogactionconfig,varEPGetogactionconfigVal},
 {varEndpointUpdateoutfilegenerationresponse,varEPUpdateoutfilegenerationresVal},
-{varAPIKey,varAPIKeyValue}
+{varAPIKey,varAPIKeyValue},
+{varConnectionString,varConnectionStringVal}
 }]</InArgument>
       </Assign.Value>
     </Assign>

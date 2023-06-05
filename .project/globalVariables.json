@@ -294,5 +294,13 @@
     "UnresolvedTypeFullyQualifiedName": null,
     "Expression": "\"startRow\"",
     "IsLiteral": false
+  },
+  {
+    "Constant": false,
+    "Name": "varConnectionString",
+    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+    "UnresolvedTypeFullyQualifiedName": null,
+    "Expression": "\"ConnectionString\"",
+    "IsLiteral": false
   }
 ]
