@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Test" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="482.66666666666674,970" sap2010:WorkflowViewState.IdRef="Test_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Test" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="552,709.3333333333334" sap2010:WorkflowViewState.IdRef="Test_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -38,6 +38,11 @@
       <x:String>System.Runtime.Serialization</x:String>
       <x:String>System.Xml.Serialization</x:String>
       <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>UiPath.Database</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.Database.Activities</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -100,33 +105,37 @@
       <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
       <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>UiPath.Database</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>UiPath.Database.Activities</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Test" sap:VirtualizedContainerService.HintSize="492.6666666666667,905.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Test" sap:VirtualizedContainerService.HintSize="496,644.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="data" />
+      <Variable x:TypeArguments="ui:DatabaseConnection" Name="varDataBaseConnection" />
+      <Variable x:TypeArguments="sd:DataTable" Name="argData" />
+      <Variable x:TypeArguments="njl:JObject" Name="jo" />
+      <Variable x:TypeArguments="njl:JArray" Name="ja" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dt" />
+      <Variable x:TypeArguments="x:String" Name="res" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="430.6666666666667,100.66666666666667" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
-      <ui:MultipleAssign.AssignOperations>
-        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
-          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
-            <ui:AssignOperation.To>
-              <OutArgument x:TypeArguments="sd:DataTable">[data]</OutArgument>
-            </ui:AssignOperation.To>
-            <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="sd:DataTable">[new DataTable]</InArgument>
-            </ui:AssignOperation.Value>
-          </ui:AssignOperation>
-        </scg:List>
-      </ui:MultipleAssign.AssignOperations>
-    </ui:MultipleAssign>
-    <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="A" DataTable="[data]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="430.6666666666667,191.33333333333334" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_1" />
-    <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="B" DataTable="[data]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="430.6666666666667,191.33333333333334" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_2" />
-    <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="A" DataTable="[data]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="430.6666666666667,191.33333333333334" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_3" />
+    <ui:DeserializeJson x:TypeArguments="njl:JObject" DisplayName="Deserialize JSON" sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_1" JsonObject="[jo]" JsonString="[&quot;{&#xD;&#xA;&#x9;&quot;&quot;colMappings&quot;&quot;: [&#xD;&#xA;&#x9;&#x9;{&#xD;&#xA;&#x9;&#x9;&#x9;&quot;&quot;mapRef&quot;&quot;: 1,&#xD;&#xA;&#x9;&#x9;&#x9;&quot;&quot;entityColName&quot;&quot;: &quot;&quot;inventory_id&quot;&quot;,&#xD;&#xA;&#x9;&#x9;&#x9;&quot;&quot;excelColIndex&quot;&quot;: &quot;&quot;A&quot;&quot;,&#xD;&#xA;&#x9;&#x9;&#x9;&quot;&quot;dataType&quot;&quot;: &quot;&quot;int&quot;&quot;,&#xD;&#xA;&#x9;&#x9;&#x9;&quot;&quot;dataFormat&quot;&quot;: &quot;&quot;int&quot;&quot;&#xD;&#xA;&#x9;&#x9;},&#xD;&#xA;&#x9;&#x9;{&#xD;&#xA;&#x9;&#x9;&#x9;&quot;&quot;mapRef&quot;&quot;: 2,&#xD;&#xA;&#x9;&#x9;&#x9;&quot;&quot;entityColName&quot;&quot;: &quot;&quot;contact_uuid&quot;&quot;,&#xD;&#xA;&#x9;&#x9;&#x9;&quot;&quot;excelColIndex&quot;&quot;: &quot;&quot;C&quot;&quot;,&#xD;&#xA;&#x9;&#x9;&#x9;&quot;&quot;dataType&quot;&quot;: &quot;&quot;varchar&quot;&quot;,&#xD;&#xA;&#x9;&#x9;&#x9;&quot;&quot;dataFormat&quot;&quot;: &quot;&quot;varchar&quot;&quot;&#xD;&#xA;&#x9;&#x9;},&#xD;&#xA;&#x9;&#x9;{&#xD;&#xA;&#x9;&#x9;&#x9;&quot;&quot;mapRef&quot;&quot;: 3,&#xD;&#xA;&#x9;&#x9;&#x9;&quot;&quot;entityColName&quot;&quot;: &quot;&quot;inventory_uuid&quot;&quot;,&#xD;&#xA;&#x9;&#x9;&#x9;&quot;&quot;excelColIndex&quot;&quot;: &quot;&quot;E&quot;&quot;,&#xD;&#xA;&#x9;&#x9;&#x9;&quot;&quot;dataType&quot;&quot;: &quot;&quot;varchar&quot;&quot;,&#xD;&#xA;&#x9;&#x9;&#x9;&quot;&quot;dataFormat&quot;&quot;: &quot;&quot;varchar&quot;&quot;&#xD;&#xA;&#x9;&#x9;},&#xD;&#xA;&#x9;&#x9;{&#xD;&#xA;&#x9;&#x9;&#x9;&quot;&quot;mapRef&quot;&quot;: 4,&#xD;&#xA;&#x9;&#x9;&#x9;&quot;&quot;entityColName&quot;&quot;: &quot;&quot;inventory_version&quot;&quot;,&#xD;&#xA;&#x9;&#x9;&#x9;&quot;&quot;excelColIndex&quot;&quot;: &quot;&quot;B&quot;&quot;,&#xD;&#xA;&#x9;&#x9;&#x9;&quot;&quot;dataType&quot;&quot;: &quot;&quot;int&quot;&quot;,&#xD;&#xA;&#x9;&#x9;&#x9;&quot;&quot;dataFormat&quot;&quot;: &quot;&quot;int&quot;&quot;&#xD;&#xA;&#x9;&#x9;},&#xD;&#xA;&#x9;&#x9;{&#xD;&#xA;&#x9;&#x9;&#x9;&quot;&quot;mapRef&quot;&quot;: 5,&#xD;&#xA;&#x9;&#x9;&#x9;&quot;&quot;entityColName&quot;&quot;: &quot;&quot;name&quot;&quot;,&#xD;&#xA;&#x9;&#x9;&#x9;&quot;&quot;excelColIndex&quot;&quot;: &quot;&quot;D&quot;&quot;,&#xD;&#xA;&#x9;&#x9;&#x9;&quot;&quot;dataType&quot;&quot;: &quot;&quot;varchar&quot;&quot;,&#xD;&#xA;&#x9;&#x9;&#x9;&quot;&quot;dataFormat&quot;&quot;: &quot;&quot;varchar&quot;&quot;&#xD;&#xA;&#x9;&#x9;},&#xD;&#xA;&#x9;&#x9;{&#xD;&#xA;&#x9;&#x9;&#x9;&quot;&quot;mapRef&quot;&quot;: 6,&#xD;&#xA;&#x9;&#x9;&#x9;&quot;&quot;entityColName&quot;&quot;: &quot;&quot;user_role&quot;&quot;,&#xD;&#xA;&#x9;&#x9;&#x9;&quot;&quot;excelColIndex&quot;&quot;: &quot;&quot;F&quot;&quot;,&#xD;&#xA;&#x9;&#x9;&#x9;&quot;&quot;dataType&quot;&quot;: &quot;&quot;varchar&quot;&quot;,&#xD;&#xA;&#x9;&#x9;&#x9;&quot;&quot;dataFormat&quot;&quot;: &quot;&quot;varchar&quot;&quot;&#xD;&#xA;&#x9;&#x9;},&#xD;&#xA;&#x9;&#x9;{&#xD;&#xA;&#x9;&#x9;&#x9;&quot;&quot;mapRef&quot;&quot;: 7,&#xD;&#xA;&#x9;&#x9;&#x9;&quot;&quot;entityColName&quot;&quot;: &quot;&quot;employee_id&quot;&quot;,&#xD;&#xA;&#x9;&#x9;&#x9;&quot;&quot;excelColIndex&quot;&quot;: &quot;&quot;H&quot;&quot;,&#xD;&#xA;&#x9;&#x9;&#x9;&quot;&quot;dataType&quot;&quot;: &quot;&quot;varchar&quot;&quot;,&#xD;&#xA;&#x9;&#x9;&#x9;&quot;&quot;dataFormat&quot;&quot;: &quot;&quot;varchar&quot;&quot;&#xD;&#xA;&#x9;&#x9;},&#xD;&#xA;&#x9;&#x9;{&#xD;&#xA;&#x9;&#x9;&#x9;&quot;&quot;mapRef&quot;&quot;: 8,&#xD;&#xA;&#x9;&#x9;&#x9;&quot;&quot;entityColName&quot;&quot;: &quot;&quot;email_address&quot;&quot;,&#xD;&#xA;&#x9;&#x9;&#x9;&quot;&quot;excelColIndex&quot;&quot;: &quot;&quot;I&quot;&quot;,&#xD;&#xA;&#x9;&#x9;&#x9;&quot;&quot;dataType&quot;&quot;: &quot;&quot;varchar&quot;&quot;,&#xD;&#xA;&#x9;&#x9;&#x9;&quot;&quot;dataFormat&quot;&quot;: &quot;&quot;varchar&quot;&quot;&#xD;&#xA;&#x9;&#x9;},&#xD;&#xA;&#x9;&#x9;{&#xD;&#xA;&#x9;&#x9;&#x9;&quot;&quot;mapRef&quot;&quot;: 9,&#xD;&#xA;&#x9;&#x9;&#x9;&quot;&quot;entityColName&quot;&quot;: &quot;&quot;mobile&quot;&quot;,&#xD;&#xA;&#x9;&#x9;&#x9;&quot;&quot;excelColIndex&quot;&quot;: &quot;&quot;G&quot;&quot;,&#xD;&#xA;&#x9;&#x9;&#x9;&quot;&quot;dataType&quot;&quot;: &quot;&quot;varchar&quot;&quot;,&#xD;&#xA;&#x9;&#x9;&#x9;&quot;&quot;dataFormat&quot;&quot;: &quot;&quot;varchar&quot;&quot;&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#x9;]&#xD;&#xA;}&quot;]" />
+    <ui:DeserializeJsonArray DisplayName="Deserialize JSON Array" sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="DeserializeJsonArray_1" JsonArray="[ja]" JsonString="[jo(&quot;colMappings&quot;).ToString]" />
+    <Assign sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign.To>
+        <OutArgument x:TypeArguments="sd:DataTable">[dt]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="sd:DataTable">[JsonConvert.DeserializeObject(of DataTable)(ja.ToString)]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:OutputDataTable DataTable="[dt]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" Text="[res]" />
+    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="434,86.66666666666667" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[res]" />
   </Sequence>
 </Activity>
