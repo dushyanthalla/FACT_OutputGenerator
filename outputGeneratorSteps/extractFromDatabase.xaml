@@ -15,7 +15,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>540.6666666666666,1365.3333333333333</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>540.6666666666666,1407.3333333333333</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>extractFromDatabase_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -107,7 +107,7 @@
       <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="extractFromDatabase" sap:VirtualizedContainerService.HintSize="550.6666666666666,1300.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="extractFromDatabase" sap:VirtualizedContainerService.HintSize="550.6666666666666,1342.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="ui:DatabaseConnection" Name="varDataBaseConnection" />
       <Variable x:TypeArguments="x:String" Name="varQuery" />
@@ -126,18 +126,13 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:LogMessage>
-    <Assign sap2010:Annotation.AnnotationText="&quot;select * from &quot;+argActionArguments(varParmEntityName)+&quot; where &quot;+varParmRequestId+&quot; = &quot;+argOutputGeneratorJsonObject(varParmRequestId).ToString" DisplayName="Assign - Query" sap:VirtualizedContainerService.HintSize="488.6666666666667,147.33333333333334" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <Assign DisplayName="Assign - Query" sap:VirtualizedContainerService.HintSize="488.6666666666667,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[varQuery]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="x:String">["select * from "+argActionArguments(varParmEntityName)]</InArgument>
+        <InArgument x:TypeArguments="x:String">["select * from "+argActionArguments(varParmEntityName)+" where "+varParmRequestId+" = "+argOutputGeneratorJsonObject(varParmRequestId).ToString]</InArgument>
       </Assign.Value>
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
     </Assign>
     <ui:LogMessage DisplayName="Log Message - Query" sap:VirtualizedContainerService.HintSize="488.6666666666667,25.333333333333332" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[varQuery]">
       <sap:WorkflowViewStateService.ViewState>
@@ -147,7 +142,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:LogMessage>
-    <TryCatch DisplayName="Try Catch - Database connection" sap:VirtualizedContainerService.HintSize="488.6666666666667,195.33333333333334" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+    <TryCatch DisplayName="Try Catch - Database connection" sap:VirtualizedContainerService.HintSize="488.6666666666667,299.3333333333333" sap2010:WorkflowViewState.IdRef="TryCatch_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
