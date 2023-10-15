@@ -16,7 +16,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>555.3333333333334,1184.6666666666667</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>554,1184.6666666666667</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>getOGactionConfig_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -114,7 +114,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:GetCurrentJobInfo DisplayName="Get Current Job Info" sap:VirtualizedContainerService.HintSize="434,25.333333333333332" sap2010:WorkflowViewState.IdRef="GetCurrentJobInfo_1" Result="[GlobalVariablesNamespace.GlobalVariables.JobData]" />
+    <ui:GetCurrentJobInfo DisplayName="Get Current Job Info - Get OG Action Config" sap:VirtualizedContainerService.HintSize="434,25.333333333333332" sap2010:WorkflowViewState.IdRef="GetCurrentJobInfo_1" Result="[GlobalVariablesNamespace.GlobalVariables.JobData]" />
     <ui:LogMessage DisplayName="Log Message - STARTED" sap:VirtualizedContainerService.HintSize="434,25.333333333333332" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[JobData.WorkflowName+&quot; STARTED&quot;]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -128,13 +128,13 @@
         <OutArgument x:TypeArguments="x:String">[varEndpoint]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="x:String" xml:space="preserve">[argDictApppianInfo(varEndpointGetogactionconfig)+
-"&amp;"+GlobalVariables.varParmOutFileGenerationUuid +"="+argOutputGeneratorStep(GlobalVariables.varParmOutFileGenerationUuid).ToString+
-"&amp;"+GlobalVariables.varParmRemediationUuid+"="+argOutputGeneratorJsonObject(GlobalVariables.varParmRemediationUuid).ToString+
-"&amp;"+GlobalVariables.varParmRemediationVersion+"="+argOutputGeneratorJsonObject(GlobalVariables.varParmRemediationVersion).ToString+
-"&amp;"+GlobalVariables.varParmRequestId+"="+argOutputGeneratorJsonObject(GlobalVariables.varParmRequestId).ToString+
-"&amp;"+GlobalVariables.varParmTransactionId+"="+argOutputGeneratorStep(GlobalVariables.varParmTransactionId).ToString+
-"&amp;"+GlobalVariables.varParmGeneratorType+"="+argOutputGeneratorStep(GlobalVariables.varParmGeneratorType).ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" xml:space="preserve">[argDictApppianInfo(constEndpointGetogactionconfig)+
+"&amp;"+constOutFileGenerationUuid +"="+argOutputGeneratorStep(constOutFileGenerationUuid).ToString+
+"&amp;"+constRemediationUuid+"="+argOutputGeneratorJsonObject(constRemediationUuid).ToString+
+"&amp;"+constRemediationVersion+"="+argOutputGeneratorJsonObject(constRemediationVersion).ToString+
+"&amp;"+constRequestId+"="+argOutputGeneratorJsonObject(constRequestId).ToString+
+"&amp;"+constTransactionId+"="+argOutputGeneratorStep(constTransactionId).ToString+
+"&amp;"+constGeneratorType+"="+argOutputGeneratorStep(constGeneratorType).ToString]</InArgument>
       </Assign.Value>
     </Assign>
     <ui:LogMessage DisplayName="Log Message - Endpoint" sap:VirtualizedContainerService.HintSize="434,25.333333333333332" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Endpoint URL&quot;+vbNewLine+varEndpoint]">
@@ -153,7 +153,9 @@
         <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
       </ui:HttpClient.Cookies>
       <ui:HttpClient.Headers>
-        <InArgument x:TypeArguments="x:String" x:Key="Appian-API-Key">[argDictApppianInfo(varAPIKey)]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="Appian-API-Key">
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="argDictApppianInfo(constAPIKey)" />
+        </InArgument>
       </ui:HttpClient.Headers>
       <ui:HttpClient.Parameters>
         <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />

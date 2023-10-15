@@ -7,7 +7,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>552,1104</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>554,1138.6666666666667</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>InitSetup_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -99,7 +99,7 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="InitSetup" sap:VirtualizedContainerService.HintSize="496,1039.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="InitSetup" sap:VirtualizedContainerService.HintSize="496,1074" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:List(x:String)" Name="varMandatoryParameters" />
     </Sequence.Variables>
@@ -123,10 +123,10 @@
       </Assign.To>
       <Assign.Value>
         <InArgument x:TypeArguments="scg:List(x:String)" xml:space="preserve">[New List(Of String) From {
-varParmRequestId,
-varParmRemediationUuid,
-varParmRemediationVersion,
-varParmGeneratorTypes}]</InArgument>
+constRequestId,
+constRemediationUuid,
+constRemediationVersion,
+constGeneratorTypes}]</InArgument>
       </Assign.Value>
     </Assign>
     <ui:DeserializeJson x:TypeArguments="njl:JObject" DisplayName="Deserialize Output Generator JSON" sap:VirtualizedContainerService.HintSize="434,25.333333333333332" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_1" JsonObject="[argOutputGeneratorJsonObject]" JsonString="[argOutputGeneratorJSON]">
@@ -179,10 +179,10 @@ varParmGeneratorTypes}]</InArgument>
         </Sequence>
       </If.Else>
     </If>
-    <ui:DeserializeJsonArray DisplayName="Deserialize JSON Array - outputGeneratorSteps" sap:VirtualizedContainerService.HintSize="434,25.333333333333332" sap2010:WorkflowViewState.IdRef="DeserializeJsonArray_1" JsonArray="[argOutputGeneratorStepArray]" JsonString="[argOutputGeneratorJsonObject(varParmGeneratorTypes).ToString]">
+    <ui:DeserializeJsonArray DisplayName="Deserialize JSON Array - outputGeneratorSteps" sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="DeserializeJsonArray_1" JsonArray="[argOutputGeneratorStepArray]" JsonString="[argOutputGeneratorJsonObject(constGeneratorTypes).ToString]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>

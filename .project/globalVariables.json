@@ -9,178 +9,10 @@
   },
   {
     "Constant": false,
-    "Name": "varParmDocumentIdentifier",
-    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
-    "UnresolvedTypeFullyQualifiedName": null,
-    "Expression": "\"documentIdentifier\"",
-    "IsLiteral": false
-  },
-  {
-    "Constant": false,
-    "Name": "varParmGeneratorType",
-    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
-    "UnresolvedTypeFullyQualifiedName": null,
-    "Expression": "\"generatorType\"",
-    "IsLiteral": false
-  },
-  {
-    "Constant": false,
-    "Name": "varParmOutFileGenerationUuid",
-    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
-    "UnresolvedTypeFullyQualifiedName": null,
-    "Expression": "\"outFileGenerationUuid\"",
-    "IsLiteral": false
-  },
-  {
-    "Constant": false,
-    "Name": "varParmGeneratorTypes",
-    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
-    "UnresolvedTypeFullyQualifiedName": null,
-    "Expression": "\"generatorTypes\"",
-    "IsLiteral": false
-  },
-  {
-    "Constant": false,
-    "Name": "varParmTransactionId",
-    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
-    "UnresolvedTypeFullyQualifiedName": null,
-    "Expression": "\"transactionId\"",
-    "IsLiteral": false
-  },
-  {
-    "Constant": false,
-    "Name": "varParmRemediationVersion",
-    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
-    "UnresolvedTypeFullyQualifiedName": null,
-    "Expression": "\"remediationVersion\"",
-    "IsLiteral": false
-  },
-  {
-    "Constant": false,
-    "Name": "varParmRemediationUuid",
-    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
-    "UnresolvedTypeFullyQualifiedName": null,
-    "Expression": "\"remediationUuid\"",
-    "IsLiteral": false
-  },
-  {
-    "Constant": false,
-    "Name": "varParmRequestId",
-    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
-    "UnresolvedTypeFullyQualifiedName": null,
-    "Expression": "\"requestId\"",
-    "IsLiteral": false
-  },
-  {
-    "Constant": false,
     "Name": "varFolderInput",
     "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
     "UnresolvedTypeFullyQualifiedName": null,
     "Expression": "\"C:\\Users\\\"+Environment.UserName+\"\\Documents\\Automation\\OutputGenerator-\"",
-    "IsLiteral": false
-  },
-  {
-    "Constant": false,
-    "Name": "varParmStepDefinition",
-    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
-    "UnresolvedTypeFullyQualifiedName": null,
-    "Expression": "\"stepDefinition\"",
-    "IsLiteral": false
-  },
-  {
-    "Constant": false,
-    "Name": "varParmStepArguments",
-    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
-    "UnresolvedTypeFullyQualifiedName": null,
-    "Expression": "\"stepArguments\"",
-    "IsLiteral": false
-  },
-  {
-    "Constant": false,
-    "Name": "varParmDestinationDocId",
-    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
-    "UnresolvedTypeFullyQualifiedName": null,
-    "Expression": "\"destinationDocId\"",
-    "IsLiteral": false
-  },
-  {
-    "Constant": false,
-    "Name": "varParmDestinationWs",
-    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
-    "UnresolvedTypeFullyQualifiedName": null,
-    "Expression": "\"destinationWs\"",
-    "IsLiteral": false
-  },
-  {
-    "Constant": false,
-    "Name": "varParmDestination",
-    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
-    "UnresolvedTypeFullyQualifiedName": null,
-    "Expression": "\"destination\"",
-    "IsLiteral": false
-  },
-  {
-    "Constant": false,
-    "Name": "varParmEntityName",
-    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
-    "UnresolvedTypeFullyQualifiedName": null,
-    "Expression": "\"entityName\"",
-    "IsLiteral": false
-  },
-  {
-    "Constant": false,
-    "Name": "varParmIsHeaderPresent",
-    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
-    "UnresolvedTypeFullyQualifiedName": null,
-    "Expression": "\"isHeaderPresent\"",
-    "IsLiteral": false
-  },
-  {
-    "Constant": false,
-    "Name": "varParmHeaderRow",
-    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
-    "UnresolvedTypeFullyQualifiedName": null,
-    "Expression": "\"headerRow\"",
-    "IsLiteral": false
-  },
-  {
-    "Constant": false,
-    "Name": "varParmColMappings",
-    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
-    "UnresolvedTypeFullyQualifiedName": null,
-    "Expression": "\"colMappings\"",
-    "IsLiteral": false
-  },
-  {
-    "Constant": false,
-    "Name": "varParmFilters",
-    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
-    "UnresolvedTypeFullyQualifiedName": null,
-    "Expression": "\"filters\"",
-    "IsLiteral": false
-  },
-  {
-    "Constant": false,
-    "Name": "varParmSort",
-    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
-    "UnresolvedTypeFullyQualifiedName": null,
-    "Expression": "\"sort\"",
-    "IsLiteral": false
-  },
-  {
-    "Constant": false,
-    "Name": "varAPIKey",
-    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
-    "UnresolvedTypeFullyQualifiedName": null,
-    "Expression": "\"APIKey\"",
-    "IsLiteral": false
-  },
-  {
-    "Constant": false,
-    "Name": "varEndpointDownloadDocument",
-    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
-    "UnresolvedTypeFullyQualifiedName": null,
-    "Expression": "\"Endpoint_DownloadDocument\"",
     "IsLiteral": false
   },
   {
@@ -209,14 +41,6 @@
   },
   {
     "Constant": false,
-    "Name": "varParmSortOrder",
-    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
-    "UnresolvedTypeFullyQualifiedName": null,
-    "Expression": "\"sortOrder\"",
-    "IsLiteral": false
-  },
-  {
-    "Constant": false,
     "Name": "varParmEntitysortColName",
     "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
     "UnresolvedTypeFullyQualifiedName": null,
@@ -233,34 +57,10 @@
   },
   {
     "Constant": false,
-    "Name": "varParmFilterOperator",
-    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
-    "UnresolvedTypeFullyQualifiedName": null,
-    "Expression": "\"filterOperator\"",
-    "IsLiteral": false
-  },
-  {
-    "Constant": false,
     "Name": "varMappingsArray",
     "TypeFullyQualifiedName": "Newtonsoft.Json.Linq.JArray, Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed",
     "UnresolvedTypeFullyQualifiedName": null,
     "Expression": null,
-    "IsLiteral": false
-  },
-  {
-    "Constant": false,
-    "Name": "varParmDestinationWsRange",
-    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
-    "UnresolvedTypeFullyQualifiedName": null,
-    "Expression": "\"destinationWsRange\"",
-    "IsLiteral": false
-  },
-  {
-    "Constant": false,
-    "Name": "varEndpointGetogactionconfig",
-    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
-    "UnresolvedTypeFullyQualifiedName": null,
-    "Expression": "\"Endpoint_Getogactionconfig\"",
     "IsLiteral": false
   },
   {
@@ -273,34 +73,322 @@
   },
   {
     "Constant": false,
-    "Name": "varParmEntityColName",
+    "Name": "varParmSheetFilterValue",
     "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
     "UnresolvedTypeFullyQualifiedName": null,
-    "Expression": "\"entityColName\"",
+    "Expression": "\"sheetFilterValue\"",
     "IsLiteral": false
   },
   {
     "Constant": false,
-    "Name": "varEndpointUpdateoutfilegenerationresponse",
+    "Name": "varParmExcelFilterCategory",
     "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
     "UnresolvedTypeFullyQualifiedName": null,
-    "Expression": "\"Endpoint_Updateoutfilegenerationresponse\"",
+    "Expression": "\"excelFilterCategory\"",
     "IsLiteral": false
   },
   {
-    "Constant": false,
-    "Name": "varParmStartRow",
+    "Constant": true,
+    "Name": "constFilterCategory",
+    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+    "UnresolvedTypeFullyQualifiedName": null,
+    "Expression": "\"filterCategory\"",
+    "IsLiteral": false
+  },
+  {
+    "Constant": true,
+    "Name": "constFilterValue",
+    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+    "UnresolvedTypeFullyQualifiedName": null,
+    "Expression": "\"filterValue\"",
+    "IsLiteral": false
+  },
+  {
+    "Constant": true,
+    "Name": "constValue",
+    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+    "UnresolvedTypeFullyQualifiedName": null,
+    "Expression": "\"value\"",
+    "IsLiteral": false
+  },
+  {
+    "Constant": true,
+    "Name": "constEndpointGetReqParm",
+    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+    "UnresolvedTypeFullyQualifiedName": null,
+    "Expression": "\"Endpoint_GetReqParm\"",
+    "IsLiteral": false
+  },
+  {
+    "Constant": true,
+    "Name": "constDataFormat",
+    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+    "UnresolvedTypeFullyQualifiedName": null,
+    "Expression": "\"dataFormat\"",
+    "IsLiteral": false
+  },
+  {
+    "Constant": true,
+    "Name": "constConnectionString",
+    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+    "UnresolvedTypeFullyQualifiedName": null,
+    "Expression": "\"ConnectionString\"",
+    "IsLiteral": false
+  },
+  {
+    "Constant": true,
+    "Name": "constStartRow",
     "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
     "UnresolvedTypeFullyQualifiedName": null,
     "Expression": "\"startRow\"",
     "IsLiteral": false
   },
   {
-    "Constant": false,
-    "Name": "varConnectionString",
+    "Constant": true,
+    "Name": "constEndpointUpdateoutfilegenerationresponse",
     "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
     "UnresolvedTypeFullyQualifiedName": null,
-    "Expression": "\"ConnectionString\"",
+    "Expression": "\"Endpoint_Updateoutfilegenerationresponse\"",
+    "IsLiteral": false
+  },
+  {
+    "Constant": true,
+    "Name": "constEntityColName",
+    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+    "UnresolvedTypeFullyQualifiedName": null,
+    "Expression": "\"entityColName\"",
+    "IsLiteral": false
+  },
+  {
+    "Constant": true,
+    "Name": "constColIndex",
+    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+    "UnresolvedTypeFullyQualifiedName": null,
+    "Expression": "\"colIndex\"",
+    "IsLiteral": false
+  },
+  {
+    "Constant": true,
+    "Name": "constEndpointGetogactionconfig",
+    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+    "UnresolvedTypeFullyQualifiedName": null,
+    "Expression": "\"Endpoint_Getogactionconfig\"",
+    "IsLiteral": false
+  },
+  {
+    "Constant": true,
+    "Name": "constDestinationWsRange",
+    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+    "UnresolvedTypeFullyQualifiedName": null,
+    "Expression": "\"destinationWsRange\"",
+    "IsLiteral": false
+  },
+  {
+    "Constant": true,
+    "Name": "constFilterOperator",
+    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+    "UnresolvedTypeFullyQualifiedName": null,
+    "Expression": "\"filterOperator\"",
+    "IsLiteral": false
+  },
+  {
+    "Constant": true,
+    "Name": "constSortOrder",
+    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+    "UnresolvedTypeFullyQualifiedName": null,
+    "Expression": "\"sortOrder\"",
+    "IsLiteral": false
+  },
+  {
+    "Constant": true,
+    "Name": "constEntityColIndex",
+    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+    "UnresolvedTypeFullyQualifiedName": null,
+    "Expression": "\"entityColIndex\"",
+    "IsLiteral": false
+  },
+  {
+    "Constant": true,
+    "Name": "constEndpointDownloadDocument",
+    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+    "UnresolvedTypeFullyQualifiedName": null,
+    "Expression": "\"Endpoint_DownloadDocument\"",
+    "IsLiteral": false
+  },
+  {
+    "Constant": true,
+    "Name": "constAPIKey",
+    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+    "UnresolvedTypeFullyQualifiedName": null,
+    "Expression": "\"APIKey\"",
+    "IsLiteral": false
+  },
+  {
+    "Constant": true,
+    "Name": "constFilters",
+    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+    "UnresolvedTypeFullyQualifiedName": null,
+    "Expression": "\"filters\"",
+    "IsLiteral": false
+  },
+  {
+    "Constant": true,
+    "Name": "constSort",
+    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+    "UnresolvedTypeFullyQualifiedName": null,
+    "Expression": "\"sort\"",
+    "IsLiteral": false
+  },
+  {
+    "Constant": true,
+    "Name": "constColMappings",
+    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+    "UnresolvedTypeFullyQualifiedName": null,
+    "Expression": "\"colMappings\"",
+    "IsLiteral": false
+  },
+  {
+    "Constant": true,
+    "Name": "constDocumentIdentifier",
+    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+    "UnresolvedTypeFullyQualifiedName": null,
+    "Expression": "\"documentIdentifier\"",
+    "IsLiteral": false
+  },
+  {
+    "Constant": true,
+    "Name": "constGeneratorTypes",
+    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+    "UnresolvedTypeFullyQualifiedName": null,
+    "Expression": "\"generatorTypes\"",
+    "IsLiteral": false
+  },
+  {
+    "Constant": true,
+    "Name": "constOutFileGenerationUuid",
+    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+    "UnresolvedTypeFullyQualifiedName": null,
+    "Expression": "\"outFileGenerationUuid\"",
+    "IsLiteral": false
+  },
+  {
+    "Constant": true,
+    "Name": "constGeneratorType",
+    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+    "UnresolvedTypeFullyQualifiedName": null,
+    "Expression": "\"generatorType\"",
+    "IsLiteral": false
+  },
+  {
+    "Constant": true,
+    "Name": "constRemediationVersion",
+    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+    "UnresolvedTypeFullyQualifiedName": null,
+    "Expression": "\"remediationVersion\"",
+    "IsLiteral": false
+  },
+  {
+    "Constant": true,
+    "Name": "constTransactionId",
+    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+    "UnresolvedTypeFullyQualifiedName": null,
+    "Expression": "\"transactionId\"",
+    "IsLiteral": false
+  },
+  {
+    "Constant": true,
+    "Name": "constStepArguments",
+    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+    "UnresolvedTypeFullyQualifiedName": null,
+    "Expression": "\"stepArguments\"",
+    "IsLiteral": false
+  },
+  {
+    "Constant": true,
+    "Name": "constStepDefinition",
+    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+    "UnresolvedTypeFullyQualifiedName": null,
+    "Expression": "\"stepDefinition\"",
+    "IsLiteral": false
+  },
+  {
+    "Constant": true,
+    "Name": "constRequestId",
+    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+    "UnresolvedTypeFullyQualifiedName": null,
+    "Expression": "\"requestId\"",
+    "IsLiteral": false
+  },
+  {
+    "Constant": true,
+    "Name": "constRemediationUuid",
+    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+    "UnresolvedTypeFullyQualifiedName": null,
+    "Expression": "\"remediationUuid\"",
+    "IsLiteral": false
+  },
+  {
+    "Constant": true,
+    "Name": "constDestination",
+    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+    "UnresolvedTypeFullyQualifiedName": null,
+    "Expression": "\"destination\"",
+    "IsLiteral": false
+  },
+  {
+    "Constant": true,
+    "Name": "constDestinationWs",
+    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+    "UnresolvedTypeFullyQualifiedName": null,
+    "Expression": "\"destinationWs\"",
+    "IsLiteral": false
+  },
+  {
+    "Constant": true,
+    "Name": "constDestinationDocId",
+    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+    "UnresolvedTypeFullyQualifiedName": null,
+    "Expression": "\"destinationDocId\"",
+    "IsLiteral": false
+  },
+  {
+    "Constant": true,
+    "Name": "constIsHeaderPresent",
+    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+    "UnresolvedTypeFullyQualifiedName": null,
+    "Expression": "\"isHeaderPresent\"",
+    "IsLiteral": false
+  },
+  {
+    "Constant": true,
+    "Name": "constEntityName",
+    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+    "UnresolvedTypeFullyQualifiedName": null,
+    "Expression": "\"entityName\"",
+    "IsLiteral": false
+  },
+  {
+    "Constant": true,
+    "Name": "constHeaderRow",
+    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+    "UnresolvedTypeFullyQualifiedName": null,
+    "Expression": "\"headerRow\"",
+    "IsLiteral": false
+  },
+  {
+    "Constant": true,
+    "Name": "constNewFileName",
+    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+    "UnresolvedTypeFullyQualifiedName": null,
+    "Expression": "\"newFileName\"",
+    "IsLiteral": false
+  },
+  {
+    "Constant": true,
+    "Name": "constProcessName",
+    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+    "UnresolvedTypeFullyQualifiedName": null,
+    "Expression": "\"processName\"",
     "IsLiteral": false
   }
 ]

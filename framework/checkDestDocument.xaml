@@ -25,7 +25,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>857.3333333333334,823.3333333333334</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>462,975.3333333333334</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>checkSourceAndDestDocuments_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -110,14 +110,14 @@
       <AssemblyReference>WindowsBase</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="checkSourceAndDestDocuments" sap:VirtualizedContainerService.HintSize="472,758.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="checkSourceAndDestDocuments" sap:VirtualizedContainerService.HintSize="472,910.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:GetCurrentJobInfo DisplayName="Get Current Job Info" sap:VirtualizedContainerService.HintSize="410,25.333333333333332" sap2010:WorkflowViewState.IdRef="GetCurrentJobInfo_1" Result="[GlobalVariablesNamespace.GlobalVariables.JobData]" />
+    <ui:GetCurrentJobInfo DisplayName="Get Current Job Info - Check Source And Dest Documents" sap:VirtualizedContainerService.HintSize="410,25.333333333333332" sap2010:WorkflowViewState.IdRef="GetCurrentJobInfo_1" Result="[GlobalVariablesNamespace.GlobalVariables.JobData]" />
     <ui:LogMessage DisplayName="Log Message - STARTED" sap:VirtualizedContainerService.HintSize="410,25.333333333333332" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[JobData.WorkflowName+&quot; STARTED&quot;]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -126,7 +126,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:LogMessage>
-    <If Condition="[argJsonObjectKeys.Contains(varParmDestinationDocId) = true]" DisplayName="Destination Document" sap:VirtualizedContainerService.HintSize="410,452" sap2010:WorkflowViewState.IdRef="If_2">
+    <If Condition="[argJsonObjectKeys.Contains(constDestinationDocId) = true]" DisplayName="Destination Document" sap:VirtualizedContainerService.HintSize="410,604" sap2010:WorkflowViewState.IdRef="If_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -134,30 +134,46 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <If.Then>
-        <Sequence sap:VirtualizedContainerService.HintSize="376,268" sap2010:WorkflowViewState.IdRef="Sequence_4">
+        <Sequence sap:VirtualizedContainerService.HintSize="376,338.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_4">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:LogMessage DisplayName="Log Message - Downloading Destination Document" sap:VirtualizedContainerService.HintSize="334,25.333333333333332" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Downloading &quot;+varParmDestination+&quot; document.&quot;]">
+          <ui:LogMessage DisplayName="Log Message - Downloading Destination Document" sap:VirtualizedContainerService.HintSize="334,96" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Downloading &quot;+constDestination+&quot; document.&quot;]">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:LogMessage>
           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="downloadDoc.xaml" sap:VirtualizedContainerService.HintSize="334,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="appianAPI\downloadDoc.xaml">
             <ui:InvokeWorkflowFile.Arguments>
-              <OutArgument x:TypeArguments="x:Int32" x:Key="argResponseStatus">[argResponseStatus]</OutArgument>
-              <OutArgument x:TypeArguments="x:String" x:Key="argResponseContent">[argResponseContent]</OutArgument>
-              <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="argActionArguments">[argActionArguments]</InArgument>
-              <InArgument x:TypeArguments="x:String" x:Key="argFileName">[argJsonObject(varParmDestination).ToString]</InArgument>
-              <InArgument x:TypeArguments="x:String" x:Key="argDocId">[argJsonObject(varParmDestinationDocId).ToString]</InArgument>
-              <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="argDictApppianInfo">[argDictApppianInfo]</InArgument>
-              <InArgument x:TypeArguments="njl:JObject" x:Key="argOutputGeneratorJsonObject">[argOutputGeneratorJsonObject]</InArgument>
-              <InArgument x:TypeArguments="njl:JToken" x:Key="argOutputGeneratorStep">[argOutputGeneratorStep]</InArgument>
+              <OutArgument x:TypeArguments="x:Int32" x:Key="argResponseStatus">
+                <VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="argResponseStatus" />
+              </OutArgument>
+              <OutArgument x:TypeArguments="x:String" x:Key="argResponseContent">
+                <VisualBasicReference x:TypeArguments="x:String" ExpressionText="argResponseContent" />
+              </OutArgument>
+              <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="argActionArguments">
+                <VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:String)" ExpressionText="argActionArguments" />
+              </InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="argFileName">
+                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="argJsonObject(constDestination).ToString" />
+              </InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="argDocId">
+                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="argJsonObject(constDestinationDocId).ToString" />
+              </InArgument>
+              <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="argDictApppianInfo">
+                <VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:String)" ExpressionText="argDictApppianInfo" />
+              </InArgument>
+              <InArgument x:TypeArguments="njl:JObject" x:Key="argOutputGeneratorJsonObject">
+                <VisualBasicValue x:TypeArguments="njl:JObject" ExpressionText="argOutputGeneratorJsonObject" />
+              </InArgument>
+              <InArgument x:TypeArguments="njl:JToken" x:Key="argOutputGeneratorStep">
+                <VisualBasicValue x:TypeArguments="njl:JToken" ExpressionText="argOutputGeneratorStep" />
+              </InArgument>
             </ui:InvokeWorkflowFile.Arguments>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">

@@ -12,7 +12,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>857.3333333333334,1298</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>554,1298</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>sheetValidation_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -128,7 +128,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:LogMessage>
-    <If Condition="[File.Exists(varFolderInput+argParserStep(varParmTransactionId).ToString+&quot;\&quot;+argFileName) = true]" DisplayName="If - File Exist?" sap:VirtualizedContainerService.HintSize="486,926.6666666666666" sap2010:WorkflowViewState.IdRef="If_1">
+    <If Condition="[File.Exists(varFolderInput+argParserStep(constTransactionId).ToString+&quot;\&quot;+argFileName) = true]" DisplayName="If - File Exist?" sap:VirtualizedContainerService.HintSize="486,926.6666666666666" sap2010:WorkflowViewState.IdRef="If_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -142,7 +142,7 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <If Condition="[New ClosedXML.Excel.XLWorkbook(varFolderInput+argParserStep(varParmTransactionId).ToString+&quot;\&quot;+argFileName).Worksheets.Contains(argActionArguments(argWsType))]" DisplayName="If - Source Worksheet validation" sap:VirtualizedContainerService.HintSize="410,476" sap2010:WorkflowViewState.IdRef="If_3">
+          <If Condition="[New ClosedXML.Excel.XLWorkbook(varFolderInput+argParserStep(constTransactionId).ToString+&quot;\&quot;+argFileName).Worksheets.Contains(argActionArguments(argWsType))]" DisplayName="If - Source Worksheet validation" sap:VirtualizedContainerService.HintSize="410,476" sap2010:WorkflowViewState.IdRef="If_3">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -193,7 +193,7 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Throw DisplayName="Throw - WB Missing" Exception="[New BusinessRuleException(&quot;File '&quot;+argFileName+&quot;' doesn't exist in '&quot;+varFolderInput+argParserStep(varParmTransactionId).ToString)]" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="Throw_2">
+          <Throw DisplayName="Throw - WB Missing" Exception="[New BusinessRuleException(&quot;File '&quot;+argFileName+&quot;' doesn't exist in '&quot;+varFolderInput+argParserStep(constTransactionId).ToString)]" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="Throw_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
