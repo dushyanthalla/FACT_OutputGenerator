@@ -2,11 +2,6 @@
   <x:Members>
     <x:Property Name="argResponseStatus" Type="OutArgument(x:Int32)" />
     <x:Property Name="argResponseContent" Type="OutArgument(x:String)" />
-    <x:Property Name="argActionArguments" Type="InArgument(scg:Dictionary(x:String, x:String))">
-      <x:Property.Attributes>
-        <RequiredArgumentAttribute />
-      </x:Property.Attributes>
-    </x:Property>
     <x:Property Name="argFileName" Type="InArgument(x:String)" />
     <x:Property Name="argDocId" Type="InArgument(x:String)" />
     <x:Property Name="argDictApppianInfo" Type="InArgument(scg:Dictionary(x:String, x:String))" />
@@ -19,7 +14,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>538,1741.3333333333333</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>561.3333333333334,1670.6666666666667</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>downloadDoc_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -116,7 +111,7 @@
       <AssemblyReference>System.Linq.Expressions</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="downloadDoc" sap:VirtualizedContainerService.HintSize="548,1676.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="downloadDoc" sap:VirtualizedContainerService.HintSize="548,1606" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="varEndpoint" />
     </Sequence.Variables>
@@ -153,9 +148,7 @@
         <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
       </ui:HttpClient.Cookies>
       <ui:HttpClient.Headers>
-        <InArgument x:TypeArguments="x:String" x:Key="Appian-API-Key">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="argDictApppianInfo(constAPIKey)" />
-        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="Appian-API-Key">[argDictApppianInfo(constAPIKey)]</InArgument>
       </ui:HttpClient.Headers>
       <ui:HttpClient.Parameters>
         <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
@@ -247,10 +240,10 @@
         </Sequence>
       </If.Else>
     </If>
-    <ui:LogMessage DisplayName="Log Message - FINISHED" sap:VirtualizedContainerService.HintSize="486,96" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[JobData.WorkflowName+&quot; FINISHED&quot;]">
+    <ui:LogMessage DisplayName="Log Message - FINISHED" sap:VirtualizedContainerService.HintSize="486,25.333333333333332" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[JobData.WorkflowName+&quot; FINISHED&quot;]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>

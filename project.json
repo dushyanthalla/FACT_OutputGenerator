@@ -1,5 +1,5 @@
 {
-  "name": "FACT_OutputGenerator",
+  "name": "FACT_OutputGenerator_Test",
   "description": "Blank Process",
   "main": "FACT_OutputGenerator.xaml",
   "dependencies": {
@@ -12,7 +12,7 @@
   "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "23.4.0.0",
-  "projectVersion": "2.0.1",
+  "projectVersion": "2.0.4",
   "runtimeOptions": {
     "autoDispose": false,
     "netFrameworkLazyLoading": false,

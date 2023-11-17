@@ -3,11 +3,6 @@
     <x:Property Name="argJsonObjectKeys" Type="InArgument(scg:List(x:String))" />
     <x:Property Name="argResponseStatus" Type="OutArgument(x:Int32)" />
     <x:Property Name="argResponseContent" Type="OutArgument(x:String)" />
-    <x:Property Name="argActionArguments" Type="InArgument(scg:Dictionary(x:String, x:String))">
-      <x:Property.Attributes>
-        <RequiredArgumentAttribute />
-      </x:Property.Attributes>
-    </x:Property>
     <x:Property Name="argJsonObject" Type="InArgument(njl:JObject)" />
     <x:Property Name="argDictApppianInfo" Type="InArgument(scg:Dictionary(x:String, x:String))" />
     <x:Property Name="argOutputGeneratorStep" Type="InArgument(njl:JToken)" />
@@ -25,7 +20,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>462,975.3333333333334</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>561.3333333333334,474</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>checkSourceAndDestDocuments_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -110,15 +105,15 @@
       <AssemblyReference>WindowsBase</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="checkSourceAndDestDocuments" sap:VirtualizedContainerService.HintSize="472,910.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="checkSourceAndDestDocuments" sap:VirtualizedContainerService.HintSize="450,332" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:GetCurrentJobInfo DisplayName="Get Current Job Info - Check Source And Dest Documents" sap:VirtualizedContainerService.HintSize="410,25.333333333333332" sap2010:WorkflowViewState.IdRef="GetCurrentJobInfo_1" Result="[GlobalVariablesNamespace.GlobalVariables.JobData]" />
-    <ui:LogMessage DisplayName="Log Message - STARTED" sap:VirtualizedContainerService.HintSize="410,25.333333333333332" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[JobData.WorkflowName+&quot; STARTED&quot;]">
+    <ui:GetCurrentJobInfo DisplayName="Get Current Job Info - Check Source And Dest Documents" sap:VirtualizedContainerService.HintSize="388,25.333333333333332" sap2010:WorkflowViewState.IdRef="GetCurrentJobInfo_1" Result="[GlobalVariablesNamespace.GlobalVariables.JobData]" />
+    <ui:LogMessage DisplayName="Log Message - STARTED" sap:VirtualizedContainerService.HintSize="388,25.333333333333332" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[JobData.WorkflowName+&quot; STARTED&quot;]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -126,10 +121,10 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:LogMessage>
-    <If Condition="[argJsonObjectKeys.Contains(constDestinationDocId) = true]" DisplayName="Destination Document" sap:VirtualizedContainerService.HintSize="410,604" sap2010:WorkflowViewState.IdRef="If_2">
+    <If Condition="[argJsonObjectKeys.Contains(constDestinationDocId)]" DisplayName="Destination Document" sap:VirtualizedContainerService.HintSize="388,25.333333333333332" sap2010:WorkflowViewState.IdRef="If_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
@@ -156,9 +151,6 @@
               <OutArgument x:TypeArguments="x:String" x:Key="argResponseContent">
                 <VisualBasicReference x:TypeArguments="x:String" ExpressionText="argResponseContent" />
               </OutArgument>
-              <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="argActionArguments">
-                <VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:String)" ExpressionText="argActionArguments" />
-              </InArgument>
               <InArgument x:TypeArguments="x:String" x:Key="argFileName">
                 <VisualBasicValue x:TypeArguments="x:String" ExpressionText="argJsonObject(constDestination).ToString" />
               </InArgument>
@@ -194,7 +186,7 @@
         </Sequence>
       </If.Else>
     </If>
-    <ui:LogMessage DisplayName="Log Message - FINISHED" sap:VirtualizedContainerService.HintSize="410,25.333333333333332" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[JobData.WorkflowName+&quot; FINISHED&quot;]">
+    <ui:LogMessage DisplayName="Log Message - FINISHED" sap:VirtualizedContainerService.HintSize="388,25.333333333333332" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[JobData.WorkflowName+&quot; FINISHED&quot;]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>

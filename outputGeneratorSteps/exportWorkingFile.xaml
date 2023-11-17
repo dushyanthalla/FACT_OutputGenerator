@@ -17,7 +17,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>486,1084</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>561.3333333333334,808</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>exportWorkingFile_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -115,7 +115,7 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="exportWorkingFile" sap:VirtualizedContainerService.HintSize="496,1019.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="exportWorkingFile" sap:VirtualizedContainerService.HintSize="496,743.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:List(x:String)" Name="varReqActionArguments" />
       <Variable x:TypeArguments="scg:List(x:String)" Name="varJsonObjectKeys" />
@@ -135,7 +135,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:LogMessage>
-    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="434,162" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="434,25.333333333333332" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -169,7 +169,7 @@ constNewFileName}]</InArgument>
       </ui:MultipleAssign.AssignOperations>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
@@ -188,16 +188,28 @@ constNewFileName}]</InArgument>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="checkSourceAndDestDocuments.xaml" sap:VirtualizedContainerService.HintSize="434,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="framework\checkDestDocument.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="checkDestDocument.xaml" sap:VirtualizedContainerService.HintSize="434,25.333333333333332" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="framework\checkDestDocument.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="scg:List(x:String)" x:Key="argJsonObjectKeys">[varJsonObjectKeys]</InArgument>
         <OutArgument x:TypeArguments="x:Int32" x:Key="argResponseStatus">[argResponseStatus]</OutArgument>
         <OutArgument x:TypeArguments="x:String" x:Key="argResponseContent">[argResponseContent]</OutArgument>
-        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="argActionArguments">[argActionArguments]</InArgument>
         <InArgument x:TypeArguments="njl:JObject" x:Key="argJsonObject">[argJsonObject]</InArgument>
         <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="argDictApppianInfo">[argDictApppianInfo]</InArgument>
         <InArgument x:TypeArguments="njl:JToken" x:Key="argOutputGeneratorStep">[argOutputGeneratorStep]</InArgument>
         <InArgument x:TypeArguments="njl:JObject" x:Key="argOutputGeneratorJsonObject">[argOutputGeneratorJsonObject]</InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="renameFile.xaml" sap:VirtualizedContainerService.HintSize="434,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="workflows\renameFile.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="argCurrentFileName">[varFolderInput+argOutputGeneratorStep(constTransactionId).ToString+"\"+argActionArguments(constDestination)]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="argNewFileName">[varFolderInput+argOutputGeneratorStep(constTransactionId).ToString+"\"+argActionArguments(constNewFileName)+Path.GetExtension(argActionArguments(constDestination))]</InArgument>
+        <InOutArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="argActionArguments">[argActionArguments]</InOutArgument>
       </ui:InvokeWorkflowFile.Arguments>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -206,15 +218,7 @@ constNewFileName}]</InArgument>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:InvokeWorkflowFile>
-    <ui:MoveFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" Destination="[varFolderInput+argOutputGeneratorStep(constTransactionId).ToString+&quot;\&quot;+argActionArguments(constNewFileName)+Path.GetExtension(argActionArguments(constDestination))]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="434,164.66666666666666" sap2010:WorkflowViewState.IdRef="MoveFile_1" Overwrite="True" Path="[varFolderInput+argOutputGeneratorStep(constTransactionId).ToString+&quot;\&quot;+argActionArguments(constDestination)]">
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-    </ui:MoveFile>
-    <Assign sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <Assign DisplayName="Assign - Destination" sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[argActionArguments(constDestination)]</OutArgument>
       </Assign.To>
