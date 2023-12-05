@@ -1,11 +1,8 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="dataFilter" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="dataFilter" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
-    <x:Property Name="argJsonObject" Type="InArgument(njl:JObject)" />
     <x:Property Name="argData" Type="InOutArgument(sd:DataTable)" />
+    <x:Property Name="argActionArguments" Type="InOutArgument(scg:Dictionary(x:String, x:String))" />
   </x:Members>
-  <this:dataFilter.argJsonObject>
-    <InArgument x:TypeArguments="njl:JObject" />
-  </this:dataFilter.argJsonObject>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
@@ -120,7 +117,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:LogMessage>
-    <ui:DeserializeJsonArray DisplayName="Deserialize JSON Array - Filters" sap:VirtualizedContainerService.HintSize="532.6666666666666,60" sap2010:WorkflowViewState.IdRef="DeserializeJsonArray_1" JsonArray="[varMappingsArray]" JsonString="[argJsonObject(constFilters).ToString]">
+    <ui:DeserializeJsonArray DisplayName="Deserialize JSON Array - Filters" sap:VirtualizedContainerService.HintSize="532.6666666666666,60" sap2010:WorkflowViewState.IdRef="DeserializeJsonArray_1" JsonArray="[varMappingsArray]" JsonString="[argActionArguments(constFilters)]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -174,21 +171,11 @@
             </ui:MultipleAssign>
             <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="customFilters.xaml" sap:VirtualizedContainerService.HintSize="434,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="framework\customFilters.xaml">
               <ui:InvokeWorkflowFile.Arguments>
-                <InArgument x:TypeArguments="scg:List(x:String)" x:Key="argFilterList">
-                  <VisualBasicValue x:TypeArguments="scg:List(x:String)" ExpressionText="varFilterList" />
-                </InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="argColName">
-                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="varExcelColName" />
-                </InArgument>
-                <InOutArgument x:TypeArguments="sd:DataTable" x:Key="argData">
-                  <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="argData" />
-                </InOutArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="argFilterCategory">
-                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="filterMappings(varParmExcelFilterCategory).ToString.ToUpper.Trim" />
-                </InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="argFilterOperator">
-                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="filterMappings(constFilterOperator).ToString.ToUpper.Trim" />
-                </InArgument>
+                <InArgument x:TypeArguments="scg:List(x:String)" x:Key="argFilterList">[varFilterList]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="argColName">[varExcelColName]</InArgument>
+                <InOutArgument x:TypeArguments="sd:DataTable" x:Key="argData">[argData]</InOutArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="argFilterCategory">[filterMappings(varParmExcelFilterCategory).ToString.ToUpper.Trim]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="argFilterOperator">[filterMappings(constFilterOperator).ToString.ToUpper.Trim]</InArgument>
               </ui:InvokeWorkflowFile.Arguments>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">

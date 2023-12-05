@@ -185,7 +185,7 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <If Condition="[New System.IO.FileInfo(varFolderInput+argOutputGeneratorStep(constTransactionId).ToString+&quot;\&quot;+argFileName).Length.ToString.Equals(&quot;0&quot;) = true]" DisplayName="If - File downloaded properly?" sap:VirtualizedContainerService.HintSize="410,476" sap2010:WorkflowViewState.IdRef="If_2">
+          <If Condition="[New System.IO.FileInfo(varFolderInput+argOutputGeneratorStep(constTransactionId).ToString+&quot;\&quot;+argFileName).Length=0]" DisplayName="If - File downloaded properly?" sap:VirtualizedContainerService.HintSize="410,476" sap2010:WorkflowViewState.IdRef="If_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>

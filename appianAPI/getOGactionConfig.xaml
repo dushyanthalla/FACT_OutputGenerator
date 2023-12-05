@@ -16,7 +16,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>554,1184.6666666666667</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>561.3333333333334,1184.6666666666667</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>getOGactionConfig_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -153,9 +153,7 @@
         <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
       </ui:HttpClient.Cookies>
       <ui:HttpClient.Headers>
-        <InArgument x:TypeArguments="x:String" x:Key="Appian-API-Key">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="argDictApppianInfo(constAPIKey)" />
-        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="Appian-API-Key">[argDictApppianInfo(constAPIKey)]</InArgument>
       </ui:HttpClient.Headers>
       <ui:HttpClient.Parameters>
         <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />

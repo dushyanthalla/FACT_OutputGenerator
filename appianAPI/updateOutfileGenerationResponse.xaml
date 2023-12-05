@@ -163,7 +163,7 @@
             </Assign.To>
             <Assign.Value>
               <InArgument x:TypeArguments="x:String" xml:space="preserve">[Convert.ToBase64String(File.ReadAllBytes(varFolderInput+
-argOutputGeneratorStep(constTransactionId).ToString+"\"+argActionArguments(constDestination)))]</InArgument>
+argOutputGeneratorStep(constTransactionId).ToString+"\"+argActionArguments(constGeneratedFileName)))]</InArgument>
             </Assign.Value>
           </Assign>
           <Assign DisplayName="Assign - RequestBody" sap:VirtualizedContainerService.HintSize="434,86" sap2010:WorkflowViewState.IdRef="Assign_3">
@@ -176,15 +176,15 @@ argOutputGeneratorStep(constTransactionId).ToString+"\"+argActionArguments(const
 	"""+constRemediationUuid+""":"""+argOutputGeneratorJsonObject(constRemediationUuid).ToString+""",
 	"""+constRemediationVersion+""": "+argOutputGeneratorJsonObject(constRemediationVersion).ToString+",
 	"""+constTransactionId+""":"+argOutputGeneratorStep(constTransactionId).ToString+",	
-	""base64String"": """+varBase64+""",
-	""responseStatusCode"":"""+argResponseStatus.ToString+""",
-	""responseMessage"":"""+argResponseMessage+"""	,
-	""documentName"":"""+Path.GetFileNameWithoutExtension(argActionArguments(constDestination))+""",
-	""documentExtension"":"""+Path.GetExtension(argActionArguments(constDestination)).Replace(".",String.Empty)+"""
+	"""+constBase64String+""": """+varBase64+""",
+	"""+constResponseStatusCode+""":"""+argResponseStatus.ToString+""",
+	"""+constResponseMessage+""":"""+argResponseMessage+"""	,
+	"""+constDocumentName+""":"""+Path.GetFileNameWithoutExtension(argActionArguments(constGeneratedFileName))+""",
+	"""+constDocumentExtension+""":"""+Path.GetExtension(argActionArguments(constGeneratedFileName)).Replace(".",String.Empty)+"""
 	}"]</InArgument>
             </Assign.Value>
           </Assign>
-          <ui:LogMessage DisplayName="Log Message - Endpoint &amp; Request Body" sap:VirtualizedContainerService.HintSize="434,96" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Endpoint URL&quot;+vbNewLine+varEndpoint+vbNewLine+&quot;Request Body&quot;+vbNewLine+&quot;{&#xA;&#x9;&quot;&quot;&quot;+constRequestId+&quot;&quot;&quot;: &quot;+argOutputGeneratorJsonObject(constRequestId).ToString+&quot;,&#xA;&#x9;&quot;&quot;&quot;+constRemediationUuid+&quot;&quot;&quot;:&quot;&quot;&quot;+argOutputGeneratorJsonObject(constRemediationUuid).ToString+&quot;&quot;&quot;,&#xA;&#x9;&quot;&quot;&quot;+constRemediationVersion+&quot;&quot;&quot;: &quot;+argOutputGeneratorJsonObject(constRemediationVersion).ToString+&quot;,&#xA;&#x9;&quot;&quot;&quot;+constTransactionId+&quot;&quot;&quot;:&quot;+argOutputGeneratorStep(constTransactionId).ToString+&quot;,&#x9;&#xA;&#x9;&quot;&quot;base64String&quot;&quot;: &quot;&quot;Base 64 String&quot;&quot;,&#xA;&#x9;&quot;&quot;responseStatusCode&quot;&quot;:&quot;&quot;&quot;+argResponseStatus.ToString+&quot;&quot;&quot;,&#xA;&#x9;&quot;&quot;responseMessage&quot;&quot;:&quot;&quot;&quot;+argResponseMessage+&quot;&quot;&quot;&#x9;,&#xA;&#x9;&quot;&quot;documentName&quot;&quot;:&quot;&quot;&quot;+Path.GetFileNameWithoutExtension(argActionArguments(constDestination))+&quot;&quot;&quot;,&#xA;&#x9;&quot;&quot;documentExtension&quot;&quot;:&quot;&quot;&quot;+Path.GetExtension(argActionArguments(constDestination)).Replace(&quot;.&quot;,String.Empty)+&quot;&quot;&quot;&#xA;&#x9;}&quot;]">
+          <ui:LogMessage DisplayName="Log Message - Endpoint &amp; Request Body" sap:VirtualizedContainerService.HintSize="434,96" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Endpoint URL&quot;+vbNewLine+varEndpoint+vbNewLine+&quot;Request Body&quot;+vbNewLine+&quot;{&#xD;&#xA;&#x9;&quot;&quot;&quot;+constRequestId+&quot;&quot;&quot;: &quot;+argOutputGeneratorJsonObject(constRequestId).ToString+&quot;,&#xD;&#xA;&#x9;&quot;&quot;&quot;+constRemediationUuid+&quot;&quot;&quot;:&quot;&quot;&quot;+argOutputGeneratorJsonObject(constRemediationUuid).ToString+&quot;&quot;&quot;,&#xD;&#xA;&#x9;&quot;&quot;&quot;+constRemediationVersion+&quot;&quot;&quot;: &quot;+argOutputGeneratorJsonObject(constRemediationVersion).ToString+&quot;,&#xD;&#xA;&#x9;&quot;&quot;&quot;+constTransactionId+&quot;&quot;&quot;:&quot;+argOutputGeneratorStep(constTransactionId).ToString+&quot;,&#x9;&#xD;&#xA;&#x9;&quot;&quot;&quot;+constBase64String+&quot;&quot;&quot;: &quot;&quot;Base 64 String&quot;&quot;,&#xD;&#xA;&#x9;&quot;&quot;&quot;+constResponseStatusCode+&quot;&quot;&quot;:&quot;&quot;&quot;+argResponseStatus.ToString+&quot;&quot;&quot;,&#xD;&#xA;&#x9;&quot;&quot;&quot;+constResponseMessage+&quot;&quot;&quot;:&quot;&quot;&quot;+argResponseMessage+&quot;&quot;&quot;&#x9;,&#xD;&#xA;&#x9;&quot;&quot;&quot;+constDocumentName+&quot;&quot;&quot;:&quot;&quot;&quot;+Path.GetFileNameWithoutExtension(argActionArguments(constGeneratedFileName))+&quot;&quot;&quot;,&#xD;&#xA;&#x9;&quot;&quot;&quot;+constDocumentExtension+&quot;&quot;&quot;:&quot;&quot;&quot;+Path.GetExtension(argActionArguments(constGeneratedFileName)).Replace(&quot;.&quot;,String.Empty)+&quot;&quot;&quot;&#xD;&#xA;}&quot;]">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -211,12 +211,12 @@ argOutputGeneratorStep(constTransactionId).ToString+"\"+argActionArguments(const
 	"""+constRemediationUuid+""":"""+argOutputGeneratorJsonObject(constRemediationUuid).ToString+""",
 	"""+constRemediationVersion+""": "+argOutputGeneratorJsonObject(constRemediationVersion).ToString+",
 	"""+constTransactionId+""":"+argOutputGeneratorStep(constTransactionId).ToString+",	
-	""base64String"": """",
-	""responseStatusCode"":""400"",
-	""responseMessage"":"""+argResponseMessage.Replace("""","").Replace("\","\\")+"""	,
-	""documentName"":"""+Path.GetFileNameWithoutExtension(argActionArguments(constDestination))+""",
-	""documentExtension"":"""+Path.GetExtension(argActionArguments(constDestination)).Replace(".",String.Empty)+"""
-	}"]</InArgument>
+	"""+constBase64String+""": """",
+	"""+constResponseStatusCode+""":""400"",
+	"""+constResponseMessage+""":"""+argResponseMessage.Replace("""","").Replace("\","\\")+"""	,
+	"""+constDocumentName+""":"""+Path.GetFileNameWithoutExtension(argActionArguments(constGeneratedFileName))+""",
+	"""+constDocumentExtension+""":"""+Path.GetExtension(argActionArguments(constGeneratedFileName)).Replace(".",String.Empty)+"""
+}"]</InArgument>
             </Assign.Value>
           </Assign>
           <ui:LogMessage DisplayName="Log Message - Endpoint &amp; Request Body" sap:VirtualizedContainerService.HintSize="434,96" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Warn" Message="[&quot;Endpoint URL&quot;+vbNewLine+varEndpoint+vbNewLine+&quot;Request Body&quot;+vbNewLine+varRequestBody]">
@@ -238,9 +238,7 @@ argOutputGeneratorStep(constTransactionId).ToString+"\"+argActionArguments(const
         <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
       </ui:HttpClient.Cookies>
       <ui:HttpClient.Headers>
-        <InArgument x:TypeArguments="x:String" x:Key="Appian-API-Key">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="argDictApppianInfo(constAPIKey)" />
-        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="Appian-API-Key">[argDictApppianInfo(constAPIKey)]</InArgument>
       </ui:HttpClient.Headers>
       <ui:HttpClient.Parameters>
         <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
