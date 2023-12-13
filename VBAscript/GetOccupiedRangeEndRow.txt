@@ -1,0 +1,18 @@
+'Function FindOccupiedDataRange(sheetName as String) lastRow As String()
+ '   Dim ws As Worksheet
+  '  Set ws = ThisWorkbook.Worksheets(sheetName)
+   ' lastRow = ws.Cells(ws.Rows.Count, "A").End(xlUp).Row.ToString()
+'End Function
+Function FindOccupiedDataRange(sheetName As String) As Long
+    Dim ws As Worksheet
+    Dim lastRow As Long
+    
+    ' Set a reference to the worksheet
+    Set ws = ThisWorkbook.Worksheets(sheetName) ' Replace "YourSheetName" with the actual sheet name
+    
+    ' Find the last row with data in column A
+    lastRow = ws.Cells(ws.Rows.Count, "A").End(xlUp).Row
+    
+    ' Return the lastRow value
+    FindOccupiedDataRange = lastRow
+End Function

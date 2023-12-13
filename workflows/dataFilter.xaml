@@ -157,7 +157,7 @@
                       <OutArgument x:TypeArguments="scg:List(x:String)">[varFilterList]</OutArgument>
                     </ui:AssignOperation.To>
                     <ui:AssignOperation.Value>
-                      <InArgument x:TypeArguments="scg:List(x:String)">[JArray.Parse(filterMappings(varParmSheetFilterValue).ToString).Select(Function(item) item(constValue).ToString).Distinct.ToList.Select(Function(value) value.Trim).ToList]</InArgument>
+                      <InArgument x:TypeArguments="scg:List(x:String)">[JArray.Parse(filterMappings(constEntityFilterColValue).ToString).Select(Function(item) item(constValue).ToString).Distinct.ToList.Select(Function(value) value.Trim).ToList]</InArgument>
                     </ui:AssignOperation.Value>
                   </ui:AssignOperation>
                 </scg:List>
@@ -171,11 +171,21 @@
             </ui:MultipleAssign>
             <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="customFilters.xaml" sap:VirtualizedContainerService.HintSize="434,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="framework\customFilters.xaml">
               <ui:InvokeWorkflowFile.Arguments>
-                <InArgument x:TypeArguments="scg:List(x:String)" x:Key="argFilterList">[varFilterList]</InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="argColName">[varExcelColName]</InArgument>
-                <InOutArgument x:TypeArguments="sd:DataTable" x:Key="argData">[argData]</InOutArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="argFilterCategory">[filterMappings(varParmExcelFilterCategory).ToString.ToUpper.Trim]</InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="argFilterOperator">[filterMappings(constFilterOperator).ToString.ToUpper.Trim]</InArgument>
+                <InArgument x:TypeArguments="scg:List(x:String)" x:Key="argFilterList">
+                  <VisualBasicValue x:TypeArguments="scg:List(x:String)" ExpressionText="varFilterList" />
+                </InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="argColName">
+                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="varExcelColName" />
+                </InArgument>
+                <InOutArgument x:TypeArguments="sd:DataTable" x:Key="argData">
+                  <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="argData" />
+                </InOutArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="argFilterCategory">
+                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="filterMappings(constFilterCategory).ToString.ToUpper.Trim" />
+                </InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="argFilterOperator">
+                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="filterMappings(constFilterOperator).ToString.ToUpper.Trim" />
+                </InArgument>
               </ui:InvokeWorkflowFile.Arguments>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">

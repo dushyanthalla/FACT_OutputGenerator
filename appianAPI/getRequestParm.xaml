@@ -3,12 +3,12 @@
     <x:Property Name="argResponseStatus" Type="OutArgument(x:Int32)" />
     <x:Property Name="argResponseContent" Type="OutArgument(x:String)" />
     <x:Property Name="argDictApppianInfo" Type="InArgument(scg:Dictionary(x:String, x:String))" />
-    <x:Property Name="argParserJsonObject" Type="InArgument(njl:JObject)" />
     <x:Property Name="argDictParameters" Type="OutArgument(scg:Dictionary(x:String, x:String))" />
+    <x:Property Name="argOutputGeneraterJsonObject" Type="InArgument(njl:JObject)" />
   </x:Members>
-  <this:getRequestParm.argParserJsonObject>
+  <this:getRequestParm.argOutputGeneraterJsonObject>
     <InArgument x:TypeArguments="njl:JObject" />
-  </this:getRequestParm.argParserJsonObject>
+  </this:getRequestParm.argOutputGeneraterJsonObject>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
@@ -130,9 +130,9 @@
       </Assign.To>
       <Assign.Value>
         <InArgument x:TypeArguments="x:String" xml:space="preserve">[argDictApppianInfo(constEndpointGetreqparm)+
-constRequestId+"="+argParserJsonObject(constRequestId).ToString+
-"&amp;"+constRemediationUuid+"="+argParserJsonObject(constRemediationUuid).ToString+
-"&amp;"+constRemediationVersion+"="+argParserJsonObject(constRemediationVersion).ToString]</InArgument>
+constRequestId+"="+argOutputGeneraterJsonObject(constRequestId).ToString+
+"&amp;"+constRemediationUuid+"="+argOutputGeneraterJsonObject(constRemediationUuid).ToString+
+"&amp;"+constRemediationVersion+"="+argOutputGeneraterJsonObject(constRemediationVersion).ToString]</InArgument>
       </Assign.Value>
     </Assign>
     <ui:LogMessage DisplayName="Log Message - Endpoint" sap:VirtualizedContainerService.HintSize="510,25.333333333333332" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Endpoint URL&quot;+vbNewLine+varEndpoint]">
@@ -151,9 +151,7 @@ constRequestId+"="+argParserJsonObject(constRequestId).ToString+
         <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
       </ui:HttpClient.Cookies>
       <ui:HttpClient.Headers>
-        <InArgument x:TypeArguments="x:String" x:Key="Appian-API-Key">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="argDictApppianInfo(constAPIKey)" />
-        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="Appian-API-Key">[argDictApppianInfo(constAPIKey)]</InArgument>
       </ui:HttpClient.Headers>
       <ui:HttpClient.Parameters>
         <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />

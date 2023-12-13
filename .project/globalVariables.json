@@ -72,22 +72,6 @@
     "IsLiteral": false
   },
   {
-    "Constant": false,
-    "Name": "varParmSheetFilterValue",
-    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
-    "UnresolvedTypeFullyQualifiedName": null,
-    "Expression": "\"sheetFilterValue\"",
-    "IsLiteral": false
-  },
-  {
-    "Constant": false,
-    "Name": "varParmExcelFilterCategory",
-    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
-    "UnresolvedTypeFullyQualifiedName": null,
-    "Expression": "\"excelFilterCategory\"",
-    "IsLiteral": false
-  },
-  {
     "Constant": true,
     "Name": "constFilterCategory",
     "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
@@ -493,6 +477,118 @@
     "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
     "UnresolvedTypeFullyQualifiedName": null,
     "Expression": "\"workingFileDocId\"",
+    "IsLiteral": false
+  },
+  {
+    "Constant": false,
+    "Name": "varAdditionalMappingsArray",
+    "TypeFullyQualifiedName": "Newtonsoft.Json.Linq.JArray, Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed",
+    "UnresolvedTypeFullyQualifiedName": null,
+    "Expression": null,
+    "IsLiteral": false
+  },
+  {
+    "Constant": true,
+    "Name": "constDataValue",
+    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+    "UnresolvedTypeFullyQualifiedName": null,
+    "Expression": "\"dataValue\"",
+    "IsLiteral": false
+  },
+  {
+    "Constant": true,
+    "Name": "constEntityFilterColValue",
+    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+    "UnresolvedTypeFullyQualifiedName": null,
+    "Expression": "\"entityFilterColValue\"",
+    "IsLiteral": false
+  },
+  {
+    "Constant": true,
+    "Name": "constCellPositionValue",
+    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+    "UnresolvedTypeFullyQualifiedName": null,
+    "Expression": "\"cellPositionValue\"",
+    "IsLiteral": false
+  },
+  {
+    "Constant": true,
+    "Name": "constCellAddressReference",
+    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+    "UnresolvedTypeFullyQualifiedName": null,
+    "Expression": "\"cellAddressReference\"",
+    "IsLiteral": false
+  },
+  {
+    "Constant": true,
+    "Name": "constCellAddressCategory",
+    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+    "UnresolvedTypeFullyQualifiedName": null,
+    "Expression": "\"cellAddressCategory\"",
+    "IsLiteral": false
+  },
+  {
+    "Constant": true,
+    "Name": "constCellPositionRowNum",
+    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+    "UnresolvedTypeFullyQualifiedName": null,
+    "Expression": "\"cellPositionRowNum\"",
+    "IsLiteral": false
+  },
+  {
+    "Constant": true,
+    "Name": "constCellPositionValueGeneration",
+    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+    "UnresolvedTypeFullyQualifiedName": null,
+    "Expression": "\"cellPositionValueGeneration\"",
+    "IsLiteral": false
+  },
+  {
+    "Constant": true,
+    "Name": "constFunctionArguments",
+    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+    "UnresolvedTypeFullyQualifiedName": null,
+    "Expression": "\"functionArguments\"",
+    "IsLiteral": false
+  },
+  {
+    "Constant": true,
+    "Name": "constCellPositionFunction",
+    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+    "UnresolvedTypeFullyQualifiedName": null,
+    "Expression": "\"cellPositionFunction\"",
+    "IsLiteral": false
+  },
+  {
+    "Constant": true,
+    "Name": "constColHeader",
+    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+    "UnresolvedTypeFullyQualifiedName": null,
+    "Expression": "\"colHeader\"",
+    "IsLiteral": false
+  },
+  {
+    "Constant": true,
+    "Name": "constIsRangeKnown",
+    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+    "UnresolvedTypeFullyQualifiedName": null,
+    "Expression": "\"isRangeKnown\"",
+    "IsLiteral": false
+  },
+  {
+    "Constant": true,
+    "Name": "constEndRow",
+    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+    "UnresolvedTypeFullyQualifiedName": null,
+    "Expression": "\"endRow\"",
+    "IsLiteral": false
+  },
+  {
+    "Constant": true,
+    "Name": "constFunctionName",
+    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+    "UnresolvedTypeFullyQualifiedName": null,
+    "Expression": "\"functionName\"",
     "IsLiteral": false
   }
 ]
