@@ -590,5 +590,29 @@
     "UnresolvedTypeFullyQualifiedName": null,
     "Expression": "\"functionName\"",
     "IsLiteral": false
+  },
+  {
+    "Constant": true,
+    "Name": "constHeaderRowMap",
+    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+    "UnresolvedTypeFullyQualifiedName": null,
+    "Expression": "\"headerRowMap\"",
+    "IsLiteral": false
+  },
+  {
+    "Constant": true,
+    "Name": "constHeaderColName",
+    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+    "UnresolvedTypeFullyQualifiedName": null,
+    "Expression": "\"headerColName\"",
+    "IsLiteral": false
+  },
+  {
+    "Constant": true,
+    "Name": "constHeaderColIndex",
+    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+    "UnresolvedTypeFullyQualifiedName": null,
+    "Expression": "\"headerColIndex\"",
+    "IsLiteral": false
   }
 ]
