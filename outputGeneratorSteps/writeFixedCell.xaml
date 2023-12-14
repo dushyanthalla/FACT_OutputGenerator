@@ -7,7 +7,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>734.6666666666666,1682</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>892.6666666666666,2535.3333333333335</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>writeFixedCell_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -108,7 +108,7 @@
       <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="writeFixedCell" sap:VirtualizedContainerService.HintSize="744.6666666666666,1617.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="writeFixedCell" sap:VirtualizedContainerService.HintSize="902.6666666666666,2470.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="njl:JArray" Name="varFixedCellCopyArray" />
       <Variable x:TypeArguments="x:String" Name="varCellAddress" />
@@ -118,8 +118,8 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:GetCurrentJobInfo DisplayName="Get Current Job Info" sap:VirtualizedContainerService.HintSize="682.6666666666666,25.333333333333332" sap2010:WorkflowViewState.IdRef="GetCurrentJobInfo_1" Result="[GlobalVariablesNamespace.GlobalVariables.JobData]" />
-    <ui:LogMessage DisplayName="Log Message - STARTED" sap:VirtualizedContainerService.HintSize="682.6666666666666,25.333333333333332" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[JobData.WorkflowName+&quot; STARTED&quot;]">
+    <ui:GetCurrentJobInfo DisplayName="Get Current Job Info" sap:VirtualizedContainerService.HintSize="840.6666666666666,25.333333333333332" sap2010:WorkflowViewState.IdRef="GetCurrentJobInfo_1" Result="[GlobalVariablesNamespace.GlobalVariables.JobData]" />
+    <ui:LogMessage DisplayName="Log Message - STARTED" sap:VirtualizedContainerService.HintSize="840.6666666666666,25.333333333333332" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[JobData.WorkflowName+&quot; STARTED&quot;]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -127,7 +127,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:LogMessage>
-    <Assign DisplayName="Assign - Write Fixed Cell Copy Array" sap:VirtualizedContainerService.HintSize="682.6666666666666,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <Assign DisplayName="Assign - Write Fixed Cell Copy Array" sap:VirtualizedContainerService.HintSize="840.6666666666666,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="njl:JArray">[varFixedCellCopyArray]</OutArgument>
       </Assign.To>
@@ -135,31 +135,31 @@
         <InArgument x:TypeArguments="njl:JArray">[JArray.Parse(argEachEntitySheetMap(constGeneratorDefinition)(constWriteFixedCell).ToString)]</InArgument>
       </Assign.Value>
     </Assign>
-    <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" DisplayName="Excel Process Scope - INSERT_FUNCTION" sap:VirtualizedContainerService.HintSize="682.6666666666666,1120" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_1" ShowExcelWindow="False">
+    <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" DisplayName="Excel Process Scope - INSERT_FUNCTION" sap:VirtualizedContainerService.HintSize="840.6666666666666,1973.3333333333333" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_1" ShowExcelWindow="False">
       <ueab:ExcelProcessScopeX.Body>
         <ActivityAction x:TypeArguments="ui:IExcelProcess">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ui:IExcelProcess" Name="ExcelProcessScopeTag" />
           </ActivityAction.Argument>
-          <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" CreateNewFile="False" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="648.6666666666666,1032.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ResizeWindow="None" WorkbookPath="[varFolderInput+argActionArguments(constTransactionId)+&quot;\&quot;+argActionArguments(constGeneratedFileName)]">
+          <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" CreateNewFile="False" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="806.6666666666666,1886" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ResizeWindow="None" WorkbookPath="[varFolderInput+argActionArguments(constTransactionId)+&quot;\&quot;+argActionArguments(constGeneratedFileName)]">
             <ueab:ExcelApplicationCard.Body>
               <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
                 </ActivityAction.Argument>
-                <ui:ForEach x:TypeArguments="njl:JToken" CurrentIndex="{x:Null}" DisplayName="For Each Fixed Cell Copy" sap:VirtualizedContainerService.HintSize="614.6666666666666,712" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[varFixedCellCopyArray]">
+                <ui:ForEach x:TypeArguments="njl:JToken" CurrentIndex="{x:Null}" DisplayName="For Each Fixed Cell Copy" sap:VirtualizedContainerService.HintSize="772.6666666666666,1605.3333333333333" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[varFixedCellCopyArray]">
                   <ui:ForEach.Body>
                     <ActivityAction x:TypeArguments="njl:JToken">
                       <ActivityAction.Argument>
                         <DelegateInArgument x:TypeArguments="njl:JToken" Name="writeFixedCell" />
                       </ActivityAction.Argument>
-                      <Sequence DisplayName="Cell Address" sap:VirtualizedContainerService.HintSize="578,586" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                      <Sequence DisplayName="Cell Address" sap:VirtualizedContainerService.HintSize="736,1479.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_10">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <Switch x:TypeArguments="x:String" DisplayName="Switch - Cell Address Category" Expression="[writeFixedCell(constCellAddressCategory).ToString.ToUpper]" sap:VirtualizedContainerService.HintSize="516,25.333333333333332" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+                        <Switch x:TypeArguments="x:String" DisplayName="Switch - Cell Address Category" Expression="[writeFixedCell(constCellAddressCategory).ToString.ToUpper]" sap:VirtualizedContainerService.HintSize="674,25.333333333333332" sap2010:WorkflowViewState.IdRef="Switch`1_1">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -183,7 +183,7 @@
                             </Assign.Value>
                           </Assign>
                         </Switch>
-                        <Switch x:TypeArguments="x:String" DisplayName="Switch - Cell Position Value Generation" Expression="[writeFixedCell(constCellPositionValueGeneration).ToString.ToUpper]" sap:VirtualizedContainerService.HintSize="516,344.6666666666667" sap2010:WorkflowViewState.IdRef="Switch`1_2">
+                        <Switch x:TypeArguments="x:String" DisplayName="Switch - Cell Position Value Generation" Expression="[writeFixedCell(constCellPositionValueGeneration).ToString.ToUpper]" sap:VirtualizedContainerService.HintSize="674,1238" sap2010:WorkflowViewState.IdRef="Switch`1_2">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -207,24 +207,24 @@
                               <InArgument x:TypeArguments="njl:JToken">[If(writeFixedCell(constCellPositionValue).ToString.StartsWith("="),String.Empty,"=")+writeFixedCell(constCellPositionValue).ToString]</InArgument>
                             </Assign.Value>
                           </Assign>
-                          <Sequence x:Key="INSERT_FUNCTION" DisplayName="INSERT_FUNCTION" sap:VirtualizedContainerService.HintSize="512,80" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                          <Sequence x:Key="INSERT_FUNCTION" DisplayName="INSERT_FUNCTION" sap:VirtualizedContainerService.HintSize="634,978.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_9">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <Sequence DisplayName="INSERT_FUNCTION Process" sap:VirtualizedContainerService.HintSize="450,201.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                            <Sequence DisplayName="INSERT_FUNCTION Process" sap:VirtualizedContainerService.HintSize="572,742" sap2010:WorkflowViewState.IdRef="Sequence_8">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <If Condition="[CBool(writeFixedCell(constCellPositionFunction)(constFunctionArguments)(constIsHeaderPresent).ToString) = true]" DisplayName="If - Is Header Present?" sap:VirtualizedContainerService.HintSize="388,25.333333333333332" sap2010:WorkflowViewState.IdRef="If_1">
+                              <If Condition="[CBool(writeFixedCell(constCellPositionFunction)(constFunctionArguments)(constIsHeaderPresent).ToString) = true]" DisplayName="If - Is Header Present?" sap:VirtualizedContainerService.HintSize="510,566" sap2010:WorkflowViewState.IdRef="If_1">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
@@ -238,7 +238,7 @@
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <ui:ExcelLookUpRange Range="{x:Null}" DisplayName="LookUp Range - Col Header" sap:VirtualizedContainerService.HintSize="434,88" sap2010:WorkflowViewState.IdRef="ExcelLookUpRange_1" Result="[varDataPosition]" SheetName="[writeFixedCell(constCellPositionFunction)(constFunctionArguments)(&quot;sourceSheetName&quot;).ToString]" Value="[writeFixedCell(constCellPositionFunction)(constFunctionArguments)(constColHeader).ToString]">
+                                    <ui:ExcelLookUpRange Range="{x:Null}" DisplayName="LookUp Range - Col Header" sap:VirtualizedContainerService.HintSize="434,88" sap2010:WorkflowViewState.IdRef="ExcelLookUpRange_1" Result="[varDataPosition]" SheetName="[writeFixedCell(constCellPositionFunction)(constFunctionArguments)(constUseSheetName).ToString]" Value="[writeFixedCell(constCellPositionFunction)(constFunctionArguments)(constColHeader).ToString]">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -266,7 +266,7 @@
                                   </Sequence>
                                 </If.Else>
                               </If>
-                              <If Condition="[CBool(writeFixedCell(constCellPositionFunction)(constFunctionArguments)(constIsRangeKnown).ToString) = false]" DisplayName="If - Is range known?" sap:VirtualizedContainerService.HintSize="388,25.333333333333332" sap2010:WorkflowViewState.IdRef="If_2">
+                              <If Condition="[CBool(writeFixedCell(constCellPositionFunction)(constFunctionArguments)(constIsRangeKnown).ToString) = false]" DisplayName="If - Is range known?" sap:VirtualizedContainerService.HintSize="510,25.333333333333332" sap2010:WorkflowViewState.IdRef="If_2">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -342,7 +342,7 @@ writeFixedCell(constCellPositionFunction)(constFunctionArguments)(constEndRow).T
                             </Assign>
                           </Sequence>
                         </Switch>
-                        <TryCatch DisplayName="Try Catch - Write in fixed cell" sap:VirtualizedContainerService.HintSize="516,25.333333333333332" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                        <TryCatch DisplayName="Try Catch - Write in fixed cell" sap:VirtualizedContainerService.HintSize="674,25.333333333333332" sap2010:WorkflowViewState.IdRef="TryCatch_1">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -397,7 +397,7 @@ writeFixedCell(constCellPositionFunction)(constFunctionArguments)(constEndRow).T
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ueab:ExcelProcessScopeX>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="KillProcess.xaml" sap:VirtualizedContainerService.HintSize="682.6666666666666,25.333333333333332" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="framework\KillProcess.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="KillProcess.xaml" sap:VirtualizedContainerService.HintSize="840.6666666666666,25.333333333333332" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="framework\KillProcess.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <scg:Dictionary x:TypeArguments="x:String, Argument" />
       </ui:InvokeWorkflowFile.Arguments>
@@ -408,7 +408,7 @@ writeFixedCell(constCellPositionFunction)(constFunctionArguments)(constEndRow).T
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:InvokeWorkflowFile>
-    <ui:LogMessage DisplayName="Log Message - FINISHED" sap:VirtualizedContainerService.HintSize="682.6666666666666,25.333333333333332" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[JobData.WorkflowName+&quot; FINISHED&quot;]">
+    <ui:LogMessage DisplayName="Log Message - FINISHED" sap:VirtualizedContainerService.HintSize="840.6666666666666,25.333333333333332" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[JobData.WorkflowName+&quot; FINISHED&quot;]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
