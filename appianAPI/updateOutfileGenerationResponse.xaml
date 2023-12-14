@@ -4,11 +4,6 @@
     <x:Property Name="argResponseStatus" Type="InOutArgument(x:Int32)" />
     <x:Property Name="argResponseMessage" Type="InArgument(x:String)" />
     <x:Property Name="argDictApppianInfo" Type="InArgument(scg:Dictionary(x:String, x:String))" />
-    <x:Property Name="argActionArguments" Type="InArgument(scg:Dictionary(x:String, x:String))">
-      <x:Property.Attributes>
-        <RequiredArgumentAttribute />
-      </x:Property.Attributes>
-    </x:Property>
     <x:Property Name="argOutputGeneratorJsonObject" Type="InArgument(njl:JObject)" />
     <x:Property Name="argOutputGeneratorStep" Type="InArgument(njl:JToken)" />
   </x:Members>
@@ -18,7 +13,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>562,2040.666666666667</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>562,1624</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>updateOutfileGenerationResponse_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -115,7 +110,7 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="updateOutfileGenerationResponse" sap:VirtualizedContainerService.HintSize="572,1976" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="updateOutfileGenerationResponse" sap:VirtualizedContainerService.HintSize="572,1559.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="varEndpoint" />
       <Variable x:TypeArguments="x:String" Name="varRequestBody" />
@@ -143,7 +138,7 @@
         <InArgument x:TypeArguments="x:String">[argDictApppianInfo(constEndpointUpdateoutfilegenerationresponse)]</InArgument>
       </Assign.Value>
     </Assign>
-    <If Condition="[argResponseMessage.Equals(&quot;Successful&quot;) = true]" DisplayName="If - Output Generator Successful?" sap:VirtualizedContainerService.HintSize="510,928.6666666666666" sap2010:WorkflowViewState.IdRef="If_1">
+    <If Condition="[argResponseMessage.Equals(&quot;Successful&quot;) = true]" DisplayName="If - Output Generator Successful?" sap:VirtualizedContainerService.HintSize="510,931.3333333333334" sap2010:WorkflowViewState.IdRef="If_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -163,7 +158,7 @@
             </Assign.To>
             <Assign.Value>
               <InArgument x:TypeArguments="x:String" xml:space="preserve">[Convert.ToBase64String(File.ReadAllBytes(varFolderInput+
-argOutputGeneratorStep(constTransactionId).ToString+"\"+argActionArguments(constGeneratedFileName)))]</InArgument>
+argOutputGeneratorStep(constTransactionId).ToString+"\"+argOutputGeneratorStep(constGeneratedFileName).ToString))]</InArgument>
             </Assign.Value>
           </Assign>
           <Assign DisplayName="Assign - RequestBody" sap:VirtualizedContainerService.HintSize="434,86" sap2010:WorkflowViewState.IdRef="Assign_3">
@@ -179,12 +174,12 @@ argOutputGeneratorStep(constTransactionId).ToString+"\"+argActionArguments(const
 	"""+constBase64String+""": """+varBase64+""",
 	"""+constResponseStatusCode+""":"""+argResponseStatus.ToString+""",
 	"""+constResponseMessage+""":"""+argResponseMessage+"""	,
-	"""+constDocumentName+""":"""+Path.GetFileNameWithoutExtension(argActionArguments(constGeneratedFileName))+""",
-	"""+constDocumentExtension+""":"""+Path.GetExtension(argActionArguments(constGeneratedFileName)).Replace(".",String.Empty)+"""
+	"""+constDocumentName+""":"""+Path.GetFileNameWithoutExtension(argOutputGeneratorStep(constGeneratedFileName).ToString)+""",
+	"""+constDocumentExtension+""":"""+Path.GetExtension(argOutputGeneratorStep(constGeneratedFileName).ToString).Replace(".",String.Empty)+"""
 	}"]</InArgument>
             </Assign.Value>
           </Assign>
-          <ui:LogMessage DisplayName="Log Message - Endpoint &amp; Request Body" sap:VirtualizedContainerService.HintSize="434,96" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Endpoint URL&quot;+vbNewLine+varEndpoint+vbNewLine+&quot;Request Body&quot;+vbNewLine+&quot;{&#xD;&#xA;&#x9;&quot;&quot;&quot;+constRequestId+&quot;&quot;&quot;: &quot;+argOutputGeneratorJsonObject(constRequestId).ToString+&quot;,&#xD;&#xA;&#x9;&quot;&quot;&quot;+constRemediationUuid+&quot;&quot;&quot;:&quot;&quot;&quot;+argOutputGeneratorJsonObject(constRemediationUuid).ToString+&quot;&quot;&quot;,&#xD;&#xA;&#x9;&quot;&quot;&quot;+constRemediationVersion+&quot;&quot;&quot;: &quot;+argOutputGeneratorJsonObject(constRemediationVersion).ToString+&quot;,&#xD;&#xA;&#x9;&quot;&quot;&quot;+constTransactionId+&quot;&quot;&quot;:&quot;+argOutputGeneratorStep(constTransactionId).ToString+&quot;,&#x9;&#xD;&#xA;&#x9;&quot;&quot;&quot;+constBase64String+&quot;&quot;&quot;: &quot;&quot;Base 64 String&quot;&quot;,&#xD;&#xA;&#x9;&quot;&quot;&quot;+constResponseStatusCode+&quot;&quot;&quot;:&quot;&quot;&quot;+argResponseStatus.ToString+&quot;&quot;&quot;,&#xD;&#xA;&#x9;&quot;&quot;&quot;+constResponseMessage+&quot;&quot;&quot;:&quot;&quot;&quot;+argResponseMessage+&quot;&quot;&quot;&#x9;,&#xD;&#xA;&#x9;&quot;&quot;&quot;+constDocumentName+&quot;&quot;&quot;:&quot;&quot;&quot;+Path.GetFileNameWithoutExtension(argActionArguments(constGeneratedFileName))+&quot;&quot;&quot;,&#xD;&#xA;&#x9;&quot;&quot;&quot;+constDocumentExtension+&quot;&quot;&quot;:&quot;&quot;&quot;+Path.GetExtension(argActionArguments(constGeneratedFileName)).Replace(&quot;.&quot;,String.Empty)+&quot;&quot;&quot;&#xD;&#xA;}&quot;]">
+          <ui:LogMessage DisplayName="Log Message - Endpoint &amp; Request Body" sap:VirtualizedContainerService.HintSize="434,96" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Endpoint URL&quot;+vbNewLine+varEndpoint+vbNewLine+&quot;Request Body&quot;+vbNewLine+&quot;{&#xD;&#xA;&#x9;&quot;&quot;&quot;+constRequestId+&quot;&quot;&quot;: &quot;+argOutputGeneratorJsonObject(constRequestId).ToString+&quot;,&#xD;&#xA;&#x9;&quot;&quot;&quot;+constRemediationUuid+&quot;&quot;&quot;:&quot;&quot;&quot;+argOutputGeneratorJsonObject(constRemediationUuid).ToString+&quot;&quot;&quot;,&#xD;&#xA;&#x9;&quot;&quot;&quot;+constRemediationVersion+&quot;&quot;&quot;: &quot;+argOutputGeneratorJsonObject(constRemediationVersion).ToString+&quot;,&#xD;&#xA;&#x9;&quot;&quot;&quot;+constTransactionId+&quot;&quot;&quot;:&quot;+argOutputGeneratorStep(constTransactionId).ToString+&quot;,&#x9;&#xD;&#xA;&#x9;&quot;&quot;&quot;+constBase64String+&quot;&quot;&quot;: &quot;&quot;Base 64 String&quot;&quot;,&#xD;&#xA;&#x9;&quot;&quot;&quot;+constResponseStatusCode+&quot;&quot;&quot;:&quot;&quot;&quot;+argResponseStatus.ToString+&quot;&quot;&quot;,&#xD;&#xA;&#x9;&quot;&quot;&quot;+constResponseMessage+&quot;&quot;&quot;:&quot;&quot;&quot;+argResponseMessage+&quot;&quot;&quot;&#x9;,&#xD;&#xA;&#x9;&quot;&quot;&quot;+constDocumentName+&quot;&quot;&quot;:&quot;&quot;&quot;+Path.GetFileNameWithoutExtension(argOutputGeneratorStep(constGeneratedFileName).ToString)+&quot;&quot;&quot;,&#xD;&#xA;&#x9;&quot;&quot;&quot;+constDocumentExtension+&quot;&quot;&quot;:&quot;&quot;&quot;+Path.GetExtension(argOutputGeneratorStep(constGeneratedFileName).ToString).Replace(&quot;.&quot;,String.Empty)+&quot;&quot;&quot;&#xD;&#xA;}&quot;]">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -195,13 +190,13 @@ argOutputGeneratorStep(constTransactionId).ToString+"\"+argActionArguments(const
         </Sequence>
       </If.Then>
       <If.Else>
-        <Sequence sap:VirtualizedContainerService.HintSize="476,309.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_3">
+        <Sequence sap:VirtualizedContainerService.HintSize="476,312" sap2010:WorkflowViewState.IdRef="Sequence_3">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Assign DisplayName="Assign - RequestBody" sap:VirtualizedContainerService.HintSize="434,86" sap2010:WorkflowViewState.IdRef="Assign_4">
+          <Assign DisplayName="Assign - RequestBody" sap:VirtualizedContainerService.HintSize="434,88.66666666666667" sap2010:WorkflowViewState.IdRef="Assign_4">
             <Assign.To>
               <OutArgument x:TypeArguments="x:String">[varRequestBody]</OutArgument>
             </Assign.To>
@@ -214,8 +209,8 @@ argOutputGeneratorStep(constTransactionId).ToString+"\"+argActionArguments(const
 	"""+constBase64String+""": """",
 	"""+constResponseStatusCode+""":""400"",
 	"""+constResponseMessage+""":"""+argResponseMessage.Replace("""","").Replace("\","\\")+"""	,
-	"""+constDocumentName+""":"""+Path.GetFileNameWithoutExtension(argActionArguments(constGeneratedFileName))+""",
-	"""+constDocumentExtension+""":"""+Path.GetExtension(argActionArguments(constGeneratedFileName)).Replace(".",String.Empty)+"""
+	"""+constDocumentName+""":"""+Path.GetFileNameWithoutExtension(argOutputGeneratorStep(constGeneratedFileName).ToString)+""",
+	"""+constDocumentExtension+""":"""+Path.GetExtension(argOutputGeneratorStep(constGeneratedFileName).ToString).Replace(".",String.Empty)+"""
 }"]</InArgument>
             </Assign.Value>
           </Assign>
@@ -261,10 +256,10 @@ argOutputGeneratorStep(constTransactionId).ToString+"\"+argActionArguments(const
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:LogMessage>
-    <If Condition="[argResponseStatus = 200]" DisplayName="If - Response Status = 200" sap:VirtualizedContainerService.HintSize="510,444.6666666666667" sap2010:WorkflowViewState.IdRef="If_2">
+    <If Condition="[argResponseStatus = 200]" DisplayName="If - Response Status = 200" sap:VirtualizedContainerService.HintSize="510,25.333333333333332" sap2010:WorkflowViewState.IdRef="If_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
