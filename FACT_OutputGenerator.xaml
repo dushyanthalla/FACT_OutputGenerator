@@ -236,13 +236,13 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <If.Then>
-              <Sequence sap:VirtualizedContainerService.HintSize="300,112.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_46">
+              <Sequence sap:VirtualizedContainerService.HintSize="323.3333333333333,112.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_46">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:LogMessage DisplayName="Log Message - No Generator Types" sap:VirtualizedContainerService.HintSize="258,25.333333333333332" sap2010:WorkflowViewState.IdRef="LogMessage_17" Level="Warn" Message="[&quot;There are no values in the generator types&quot;]">
+                <ui:LogMessage DisplayName="Log Message - No Generator Types" sap:VirtualizedContainerService.HintSize="281.3333333333333,25.333333333333332" sap2010:WorkflowViewState.IdRef="LogMessage_17" Level="Warn" Message="[&quot;There are no values in the generator types&quot;]">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -504,7 +504,7 @@
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" x:Key="EXPORT_AS_EXCEL" DisplayName="exportAsExcel.xaml" sap:VirtualizedContainerService.HintSize="334,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_49" UnSafe="False" WorkflowFileName="outputGeneratorSteps\exportAsExcel.xaml">
+                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" x:Key="EXPORT_AS_EXCEL" DisplayName="exportAsExcel.xaml" sap:VirtualizedContainerService.HintSize="379.3333333333333,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_49" UnSafe="False" WorkflowFileName="outputGeneratorSteps\exportAsExcel.xaml">
                           <ui:InvokeWorkflowFile.Arguments>
                             <InArgument x:TypeArguments="njl:JObject" x:Key="argJsonObject">[varJsonObject]</InArgument>
                             <OutArgument x:TypeArguments="x:Int32" x:Key="argResponseStatus">[varResponseStatus]</OutArgument>
@@ -670,24 +670,12 @@
                             </Assign>
                             <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="updateOutfileGenerationResponse.xaml" sap:VirtualizedContainerService.HintSize="434,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_43" UnSafe="False" WorkflowFileName="appianAPI\updateOutfileGenerationResponse.xaml">
                               <ui:InvokeWorkflowFile.Arguments>
-                                <OutArgument x:TypeArguments="x:String" x:Key="argResponseContent">
-                                  <VisualBasicReference x:TypeArguments="x:String" ExpressionText="varResponseContent" />
-                                </OutArgument>
-                                <InOutArgument x:TypeArguments="x:Int32" x:Key="argResponseStatus">
-                                  <VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="varResponseStatus" />
-                                </InOutArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="argResponseMessage">
-                                  <Literal x:TypeArguments="x:String">Successful</Literal>
-                                </InArgument>
-                                <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="argDictApppianInfo">
-                                  <VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:String)" ExpressionText="varDictApppianInfo" />
-                                </InArgument>
-                                <InArgument x:TypeArguments="njl:JObject" x:Key="argOutputGeneratorJsonObject">
-                                  <VisualBasicValue x:TypeArguments="njl:JObject" ExpressionText="varOutputGeneratorJsonObject" />
-                                </InArgument>
-                                <InArgument x:TypeArguments="njl:JToken" x:Key="argOutputGeneratorStep">
-                                  <VisualBasicValue x:TypeArguments="njl:JToken" ExpressionText="outputGeneratorStep" />
-                                </InArgument>
+                                <OutArgument x:TypeArguments="x:String" x:Key="argResponseContent">[varResponseContent]</OutArgument>
+                                <InOutArgument x:TypeArguments="x:Int32" x:Key="argResponseStatus">[varResponseStatus]</InOutArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="argResponseMessage">Successful</InArgument>
+                                <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="argDictApppianInfo">[varDictApppianInfo]</InArgument>
+                                <InArgument x:TypeArguments="njl:JObject" x:Key="argOutputGeneratorJsonObject">[varOutputGeneratorJsonObject]</InArgument>
+                                <InArgument x:TypeArguments="njl:JToken" x:Key="argOutputGeneratorStep">[outputGeneratorStep]</InArgument>
                               </ui:InvokeWorkflowFile.Arguments>
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -707,24 +695,12 @@
                             </sap:WorkflowViewStateService.ViewState>
                             <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="updateOutfileGenerationResponse.xaml" sap:VirtualizedContainerService.HintSize="374.6666666666667,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_44" UnSafe="False" WorkflowFileName="appianAPI\updateOutfileGenerationResponse.xaml">
                               <ui:InvokeWorkflowFile.Arguments>
-                                <OutArgument x:TypeArguments="x:String" x:Key="argResponseContent">
-                                  <VisualBasicReference x:TypeArguments="x:String" ExpressionText="varResponseContent" />
-                                </OutArgument>
-                                <InOutArgument x:TypeArguments="x:Int32" x:Key="argResponseStatus">
-                                  <VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="varResponseStatus" />
-                                </InOutArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="argResponseMessage">
-                                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="varErrorMessage" />
-                                </InArgument>
-                                <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="argDictApppianInfo">
-                                  <VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:String)" ExpressionText="varDictApppianInfo" />
-                                </InArgument>
-                                <InArgument x:TypeArguments="njl:JObject" x:Key="argOutputGeneratorJsonObject">
-                                  <VisualBasicValue x:TypeArguments="njl:JObject" ExpressionText="varOutputGeneratorJsonObject" />
-                                </InArgument>
-                                <InArgument x:TypeArguments="njl:JToken" x:Key="argOutputGeneratorStep">
-                                  <VisualBasicValue x:TypeArguments="njl:JToken" ExpressionText="outputGeneratorStep" />
-                                </InArgument>
+                                <OutArgument x:TypeArguments="x:String" x:Key="argResponseContent">[varResponseContent]</OutArgument>
+                                <InOutArgument x:TypeArguments="x:Int32" x:Key="argResponseStatus">[varResponseStatus]</InOutArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="argResponseMessage">[varErrorMessage]</InArgument>
+                                <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="argDictApppianInfo">[varDictApppianInfo]</InArgument>
+                                <InArgument x:TypeArguments="njl:JObject" x:Key="argOutputGeneratorJsonObject">[varOutputGeneratorJsonObject]</InArgument>
+                                <InArgument x:TypeArguments="njl:JToken" x:Key="argOutputGeneratorStep">[outputGeneratorStep]</InArgument>
                               </ui:InvokeWorkflowFile.Arguments>
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
