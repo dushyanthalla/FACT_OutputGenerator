@@ -128,7 +128,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:DeserializeJsonArray>
-    <ui:ForEach x:TypeArguments="njl:JToken" CurrentIndex="{x:Null}" DisplayName="For Each Sort Mappings" sap:VirtualizedContainerService.HintSize="532.6666666666666,883.3333333333334" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[varMappingsArray]">
+    <ui:ForEach x:TypeArguments="njl:JToken" CurrentIndex="{x:Null}" DisplayName="For Each Sort Mappings" sap:VirtualizedContainerService.HintSize="532.6666666666666,883.3333333333334" sap2010:WorkflowViewState.IdRef="ForEach`1_1" MaxIterations="{x:Null}" Values="[varMappingsArray]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="njl:JToken">
           <ActivityAction.Argument>
@@ -148,7 +148,7 @@
                 <OutArgument x:TypeArguments="x:String">[varExcelColName]</OutArgument>
               </Assign.To>
               <Assign.Value>
-                <InArgument x:TypeArguments="x:String">[sortMappings(varParmEntitysortColName).ToString]</InArgument>
+                <InArgument x:TypeArguments="x:String">[sortMappings(constEntitysortColName).ToString]</InArgument>
               </Assign.Value>
             </Assign>
             <If Condition="[argData.Columns.Contains(varExcelColName)]" DisplayName="If - Column Check?" sap:VirtualizedContainerService.HintSize="434,518" sap2010:WorkflowViewState.IdRef="If_3">
@@ -167,7 +167,7 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <If.Then>
-                    <ui:SortDataTable ColumnIndex="{x:Null}" DataColumn="{x:Null}" ColumnName="[varExcelColName]" DataTable="[argData]" DisplayName="Asc Sort Data Table" sap:VirtualizedContainerService.HintSize="200,25.333333333333332" sap2010:WorkflowViewState.IdRef="SortDataTable_1" Order="Ascending" OutputDataTable="[argData]" SortOrder="Ascending">
+                    <ui:SortDataTable ColumnIndex="{x:Null}" ColumnName="[varExcelColName]" DataColumn="{x:Null}" DataTable="[argData]" DisplayName="Asc Sort Data Table" sap:VirtualizedContainerService.HintSize="200,25.333333333333332" sap2010:WorkflowViewState.IdRef="SortDataTable_1" Order="Ascending" OutputDataTable="[argData]" SortOrder="Ascending">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -177,7 +177,7 @@
                     </ui:SortDataTable>
                   </If.Then>
                   <If.Else>
-                    <ui:SortDataTable ColumnIndex="{x:Null}" DataColumn="{x:Null}" ColumnName="[varExcelColName]" DataTable="[argData]" DisplayName="Desc SortDataTable" sap:VirtualizedContainerService.HintSize="200,25.333333333333332" sap2010:WorkflowViewState.IdRef="SortDataTable_2" Order="Decending" OutputDataTable="[argData]" SortOrder="Descending">
+                    <ui:SortDataTable ColumnIndex="{x:Null}" ColumnName="[varExcelColName]" DataColumn="{x:Null}" DataTable="[argData]" DisplayName="Desc SortDataTable" sap:VirtualizedContainerService.HintSize="200,25.333333333333332" sap2010:WorkflowViewState.IdRef="SortDataTable_2" Order="Decending" OutputDataTable="[argData]" SortOrder="Descending">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>

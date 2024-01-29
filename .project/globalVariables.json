@@ -17,58 +17,10 @@
   },
   {
     "Constant": false,
-    "Name": "varParmEntityFilterColValue",
-    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
-    "UnresolvedTypeFullyQualifiedName": null,
-    "Expression": "\"entityFilterColValue\"",
-    "IsLiteral": false
-  },
-  {
-    "Constant": false,
-    "Name": "varParmEntityFilterColIndex",
-    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
-    "UnresolvedTypeFullyQualifiedName": null,
-    "Expression": "\"entityFilterColIndex\"",
-    "IsLiteral": false
-  },
-  {
-    "Constant": false,
-    "Name": "varParmEntitySortColIndex",
-    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
-    "UnresolvedTypeFullyQualifiedName": null,
-    "Expression": "\"entitySortColIndex\"",
-    "IsLiteral": false
-  },
-  {
-    "Constant": false,
-    "Name": "varParmEntitysortColName",
-    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
-    "UnresolvedTypeFullyQualifiedName": null,
-    "Expression": "\"entitySortColName\"",
-    "IsLiteral": false
-  },
-  {
-    "Constant": false,
-    "Name": "varParmEntityFilterColName",
-    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
-    "UnresolvedTypeFullyQualifiedName": null,
-    "Expression": "\"entityFilterColName\"",
-    "IsLiteral": false
-  },
-  {
-    "Constant": false,
     "Name": "varMappingsArray",
     "TypeFullyQualifiedName": "Newtonsoft.Json.Linq.JArray, Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed",
     "UnresolvedTypeFullyQualifiedName": null,
     "Expression": null,
-    "IsLiteral": false
-  },
-  {
-    "Constant": false,
-    "Name": "varParmExcelColIndex",
-    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
-    "UnresolvedTypeFullyQualifiedName": null,
-    "Expression": "\"excelColIndex\"",
     "IsLiteral": false
   },
   {
@@ -629,6 +581,46 @@
     "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
     "UnresolvedTypeFullyQualifiedName": null,
     "Expression": "\"useSheetName\"",
+    "IsLiteral": false
+  },
+  {
+    "Constant": true,
+    "Name": "constEntityFilterColIndex",
+    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+    "UnresolvedTypeFullyQualifiedName": null,
+    "Expression": "\"entityFilterColIndex\"",
+    "IsLiteral": false
+  },
+  {
+    "Constant": true,
+    "Name": "constEntitySortColIndex",
+    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+    "UnresolvedTypeFullyQualifiedName": null,
+    "Expression": "\"entitySortColIndex\"",
+    "IsLiteral": false
+  },
+  {
+    "Constant": true,
+    "Name": "constEntitySortColName",
+    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+    "UnresolvedTypeFullyQualifiedName": null,
+    "Expression": "\"entitySortColName\"",
+    "IsLiteral": false
+  },
+  {
+    "Constant": true,
+    "Name": "constEntityFilterColName",
+    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+    "UnresolvedTypeFullyQualifiedName": null,
+    "Expression": "\"entityFilterColName\"",
+    "IsLiteral": false
+  },
+  {
+    "Constant": true,
+    "Name": "constExcelColIndex",
+    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+    "UnresolvedTypeFullyQualifiedName": null,
+    "Expression": "\"excelColIndex\"",
     "IsLiteral": false
   }
 ]

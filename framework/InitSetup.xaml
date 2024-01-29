@@ -1,13 +1,13 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="InitSetup" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="argOutputGeneratorStepArray" Type="OutArgument(njl:JArray)" />
-    <x:Property Name="argOutputGeneratorJsonObject" Type="OutArgument(njl:JObject)" />
-    <x:Property Name="argOutputGeneratorJSON" Type="InArgument(x:String)" />
+    <x:Property Name="argWrapperJson" Type="InArgument(x:String)" />
+    <x:Property Name="argWrapperOutputGeneratorJsonObject" Type="OutArgument(njl:JObject)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>554,1138.6666666666667</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>561.3333333333334,1173.3333333333333</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>InitSetup_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -99,7 +99,7 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="InitSetup" sap:VirtualizedContainerService.HintSize="496,1074" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="InitSetup" sap:VirtualizedContainerService.HintSize="496,1108.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:List(x:String)" Name="varMandatoryParameters" />
     </Sequence.Variables>
@@ -129,15 +129,15 @@ constRemediationVersion,
 constGeneratorTypes}]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:DeserializeJson x:TypeArguments="njl:JObject" DisplayName="Deserialize Output Generator JSON" sap:VirtualizedContainerService.HintSize="434,25.333333333333332" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_1" JsonObject="[argOutputGeneratorJsonObject]" JsonString="[argOutputGeneratorJSON]">
+    <ui:DeserializeJson x:TypeArguments="njl:JObject" DisplayName="Deserialize Output Generator JSON" sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_1" JsonObject="[argWrapperOutputGeneratorJsonObject]" JsonString="[argWrapperJson]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:DeserializeJson>
-    <If Condition="[varMandatoryParameters.Except(argOutputGeneratorJsonObject.Properties.Select(Function (x) x.Name).ToList).Count&gt;0]" DisplayName="Mandatory Parameters" sap:VirtualizedContainerService.HintSize="434,476" sap2010:WorkflowViewState.IdRef="If_1">
+    <If Condition="[varMandatoryParameters.Except(argWrapperOutputGeneratorJsonObject.Properties.Select(Function (x) x.Name).ToList).Count&gt;0]" DisplayName="Mandatory Parameters" sap:VirtualizedContainerService.HintSize="434,476" sap2010:WorkflowViewState.IdRef="If_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -151,7 +151,7 @@ constGeneratorTypes}]</InArgument>
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Throw DisplayName="Throw - Missing Mandatory Parameters in Output Generator JSON" Exception="[New BusinessRuleException(&quot;In order to initiate Output Generator, the following parameters must be provided. Missing parameter list: &quot;+String.Join(vbNewLine,varMandatoryParameters.Except(argOutputGeneratorJsonObject.Properties.Select(Function (x) x.Name).ToList)))]" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="Throw_1">
+          <Throw DisplayName="Throw - Missing Mandatory Parameters in Output Generator JSON" Exception="[New BusinessRuleException(&quot;In order to initiate Output Generator, the following parameters must be provided. Missing parameter list: &quot;+String.Join(vbNewLine,varMandatoryParameters.Except(argWrapperOutputGeneratorJsonObject.Properties.Select(Function (x) x.Name).ToList)))]" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="Throw_1">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -179,7 +179,7 @@ constGeneratorTypes}]</InArgument>
         </Sequence>
       </If.Else>
     </If>
-    <ui:DeserializeJsonArray DisplayName="Deserialize JSON Array - outputGeneratorSteps" sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="DeserializeJsonArray_1" JsonArray="[argOutputGeneratorStepArray]" JsonString="[argOutputGeneratorJsonObject(constGeneratorTypes).ToString]">
+    <ui:DeserializeJsonArray DisplayName="Deserialize JSON Array - outputGeneratorSteps" sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="DeserializeJsonArray_1" JsonArray="[argOutputGeneratorStepArray]" JsonString="[argWrapperOutputGeneratorJsonObject(constGeneratorTypes).ToString]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>

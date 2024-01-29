@@ -4,11 +4,11 @@
     <x:Property Name="argResponseContent" Type="OutArgument(x:String)" />
     <x:Property Name="argDictApppianInfo" Type="InArgument(scg:Dictionary(x:String, x:String))" />
     <x:Property Name="argDictParameters" Type="OutArgument(scg:Dictionary(x:String, x:String))" />
-    <x:Property Name="argOutputGeneraterJsonObject" Type="InArgument(njl:JObject)" />
+    <x:Property Name="argWrapperOutputGeneratorJsonObject" Type="InArgument(njl:JObject)" />
   </x:Members>
-  <this:getRequestParm.argOutputGeneraterJsonObject>
+  <this:getRequestParm.argWrapperOutputGeneratorJsonObject>
     <InArgument x:TypeArguments="njl:JObject" />
-  </this:getRequestParm.argOutputGeneraterJsonObject>
+  </this:getRequestParm.argWrapperOutputGeneratorJsonObject>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
@@ -130,9 +130,9 @@
       </Assign.To>
       <Assign.Value>
         <InArgument x:TypeArguments="x:String" xml:space="preserve">[argDictApppianInfo(constEndpointGetreqparm)+
-constRequestId+"="+argOutputGeneraterJsonObject(constRequestId).ToString+
-"&amp;"+constRemediationUuid+"="+argOutputGeneraterJsonObject(constRemediationUuid).ToString+
-"&amp;"+constRemediationVersion+"="+argOutputGeneraterJsonObject(constRemediationVersion).ToString]</InArgument>
+constRequestId+"="+argWrapperOutputGeneratorJsonObject(constRequestId).ToString+
+"&amp;"+constRemediationUuid+"="+argWrapperOutputGeneratorJsonObject(constRemediationUuid).ToString+
+"&amp;"+constRemediationVersion+"="+argWrapperOutputGeneratorJsonObject(constRemediationVersion).ToString]</InArgument>
       </Assign.Value>
     </Assign>
     <ui:LogMessage DisplayName="Log Message - Endpoint" sap:VirtualizedContainerService.HintSize="510,25.333333333333332" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Endpoint URL&quot;+vbNewLine+varEndpoint]">

@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="exportWorkingFile" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="exportWorkingFile" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="argOutputGeneratorStep" Type="InArgument(njl:JToken)" />
     <x:Property Name="argJsonObject" Type="InArgument(njl:JObject)" />
@@ -119,7 +119,6 @@
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:List(x:String)" Name="varReqActionArguments" />
       <Variable x:TypeArguments="scg:List(x:String)" Name="varJsonObjectKeys" />
-      <Variable x:TypeArguments="sd:DataTable" Name="varData" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -188,27 +187,13 @@
     </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="downloadDoc.xaml" sap:VirtualizedContainerService.HintSize="431.3333333333333,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="appianAPI\downloadDoc.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <OutArgument x:TypeArguments="x:Int32" x:Key="argResponseStatus">
-          <VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="argResponseStatus" />
-        </OutArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="argResponseContent">
-          <VisualBasicReference x:TypeArguments="x:String" ExpressionText="argResponseContent" />
-        </OutArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="argFileName">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="argActionArguments(constGeneratedFileName)" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="argDocId">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="argActionArguments(constWorkingFileDocId)" />
-        </InArgument>
-        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="argDictApppianInfo">
-          <VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:String)" ExpressionText="argDictApppianInfo" />
-        </InArgument>
-        <InArgument x:TypeArguments="njl:JObject" x:Key="argOutputGeneratorJsonObject">
-          <VisualBasicValue x:TypeArguments="njl:JObject" ExpressionText="argOutputGeneratorJsonObject" />
-        </InArgument>
-        <InArgument x:TypeArguments="njl:JToken" x:Key="argOutputGeneratorStep">
-          <VisualBasicValue x:TypeArguments="njl:JToken" ExpressionText="argOutputGeneratorStep" />
-        </InArgument>
+        <OutArgument x:TypeArguments="x:Int32" x:Key="argResponseStatus">[argResponseStatus]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="argResponseContent">[argResponseContent]</OutArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="argFileName">[argActionArguments(constGeneratedFileName)]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="argDocId">[argActionArguments(constWorkingFileDocId)]</InArgument>
+        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="argDictApppianInfo">[argDictApppianInfo]</InArgument>
+        <InArgument x:TypeArguments="njl:JObject" x:Key="argOutputGeneratorJsonObject">[argOutputGeneratorJsonObject]</InArgument>
+        <InArgument x:TypeArguments="njl:JToken" x:Key="argOutputGeneratorStep">[argOutputGeneratorStep]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">

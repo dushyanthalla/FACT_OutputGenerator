@@ -15,7 +15,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>554,602.6666666666666</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>794,2264.6666666666665</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>customFilters_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -99,9 +99,10 @@
       <AssemblyReference>System.Collections</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="customFilters" sap:VirtualizedContainerService.HintSize="493.3333333333333,538" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="customFilters" sap:VirtualizedContainerService.HintSize="804,2200" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="varFilterData" />
     </Sequence.Variables>
@@ -110,8 +111,8 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:GetCurrentJobInfo DisplayName="Get Current Job Info - Sheet Filter" sap:VirtualizedContainerService.HintSize="431.3333333333333,25.333333333333332" sap2010:WorkflowViewState.IdRef="GetCurrentJobInfo_1" Result="[GlobalVariablesNamespace.GlobalVariables.JobData]" />
-    <ui:LogMessage DisplayName="Log Message - STARTED" sap:VirtualizedContainerService.HintSize="431.3333333333333,25.333333333333332" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[JobData.WorkflowName+&quot; STARTED&quot;]">
+    <ui:GetCurrentJobInfo DisplayName="Get Current Job Info - Sheet Filter" sap:VirtualizedContainerService.HintSize="742,25.333333333333332" sap2010:WorkflowViewState.IdRef="GetCurrentJobInfo_1" Result="[GlobalVariablesNamespace.GlobalVariables.JobData]" />
+    <ui:LogMessage DisplayName="Log Message - STARTED" sap:VirtualizedContainerService.HintSize="742,25.333333333333332" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[JobData.WorkflowName+&quot; STARTED&quot;]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -119,7 +120,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:LogMessage>
-    <ui:MultipleAssign DisplayName="Multiple Assign - Clone Datatable" sap:VirtualizedContainerService.HintSize="431.3333333333333,25.333333333333332" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+    <ui:MultipleAssign DisplayName="Multiple Assign - Clone Datatable" sap:VirtualizedContainerService.HintSize="742,25.333333333333332" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -139,24 +140,24 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:MultipleAssign>
-    <If Condition="[argData.Columns.Contains(argColName)]" DisplayName="If - Column Check?" sap:VirtualizedContainerService.HintSize="431.3333333333333,25.333333333333332" sap2010:WorkflowViewState.IdRef="If_20">
+    <If Condition="[argData.Columns.Contains(argColName)]" DisplayName="If - Column Check?" sap:VirtualizedContainerService.HintSize="742,1687.3333333333333" sap2010:WorkflowViewState.IdRef="If_20">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <If.Then>
-        <Sequence DisplayName="" sap:VirtualizedContainerService.HintSize="300,112.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_40">
+        <Sequence DisplayName="" sap:VirtualizedContainerService.HintSize="708,1453.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_40">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Switch x:TypeArguments="x:String" DisplayName="Switch - Excel Filter Category" Expression="[argFilterCategory.ToUpper.Trim]" sap:VirtualizedContainerService.HintSize="258,25.333333333333332" sap2010:WorkflowViewState.IdRef="Switch`1_4">
+          <Switch x:TypeArguments="x:String" DisplayName="Switch - Excel Filter Category" Expression="[argFilterCategory.ToUpper.Trim]" sap:VirtualizedContainerService.HintSize="666,1366" sap2010:WorkflowViewState.IdRef="Switch`1_4">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
@@ -168,7 +169,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <If.Then>
-                <Sequence sap:VirtualizedContainerService.HintSize="538.6666666666666,602" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                <Sequence sap:VirtualizedContainerService.HintSize="538.6666666666666,636" sap2010:WorkflowViewState.IdRef="Sequence_16">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -182,9 +183,9 @@
                       <InArgument x:TypeArguments="sd:DataTable">[argData.AsEnumerable.Where(Function(row) DateTime.TryParse(row(argColName).ToString, Nothing)).CopyToDataTable]</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <Switch x:TypeArguments="x:String" DisplayName="Switch - DATE - Excel Filter Operator" Expression="[argFilterOperator.ToUpper.Trim]" sap:VirtualizedContainerService.HintSize="496.6666666666667,389.3333333333333" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+                  <Switch x:TypeArguments="x:String" DisplayName="Switch - DATE - Excel Filter Operator" Expression="[argFilterOperator.ToUpper.Trim]" sap:VirtualizedContainerService.HintSize="496.6666666666667,423.3333333333333" sap2010:WorkflowViewState.IdRef="Switch`1_1">
                     <Switch.Default>
-                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,96" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Warn" Message="[argFilterOperator.ToUpper.Trim+&quot; is out of scope under &quot;+argFilterCategory.ToUpper.Trim+&quot; category&quot;]">
+                      <ui:LogMessage DisplayName="Log Message - Out of scope Date Filter Operator" sap:VirtualizedContainerService.HintSize="334,96" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Warn" Message="[argFilterOperator.ToUpper.Trim+&quot; is out of scope under &quot;+argFilterCategory.ToUpper.Trim+&quot; category&quot;]">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -242,7 +243,7 @@ Any(Function(value) CDate(row(argColName)) = CDate(value))).CopyToDataTable]</In
                         </Sequence>
                       </If.Else>
                     </If>
-                    <If x:Key="BEFORE" Condition="[varFilterData.AsEnumerable.Where(Function(row) CDate(row(argColName)) &lt; CDate(argFilterList(0))).Count &gt; 0]" DisplayName="If - BEFORE" sap:VirtualizedContainerService.HintSize="200,25.333333333333332" sap2010:WorkflowViewState.IdRef="If_4">
+                    <If x:Key="BEFORE" Condition="[varFilterData.AsEnumerable.Where(Function(row) CDate(row(argColName)) &lt; CDate(argFilterList(0))).Count &gt; 0]" DisplayName="If - BEFORE" sap:VirtualizedContainerService.HintSize="334,184" sap2010:WorkflowViewState.IdRef="If_4">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -284,7 +285,7 @@ Any(Function(value) CDate(row(argColName)) = CDate(value))).CopyToDataTable]</In
                         </Sequence>
                       </If.Else>
                     </If>
-                    <If x:Key="AFTER" Condition="[varFilterData.AsEnumerable.Where(Function(row) CDate(row(argColName)) &gt; CDate(argFilterList(0))).Count &gt; 0]" DisplayName="If - AFTER" sap:VirtualizedContainerService.HintSize="200,25.333333333333332" sap2010:WorkflowViewState.IdRef="If_5">
+                    <If x:Key="AFTER" Condition="[varFilterData.AsEnumerable.Where(Function(row) CDate(row(argColName)) &gt; CDate(argFilterList(0))).Count &gt; 0]" DisplayName="If - AFTER" sap:VirtualizedContainerService.HintSize="334,184" sap2010:WorkflowViewState.IdRef="If_5">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -326,7 +327,7 @@ Any(Function(value) CDate(row(argColName)) = CDate(value))).CopyToDataTable]</In
                         </Sequence>
                       </If.Else>
                     </If>
-                    <If x:Key="BETWEEN" Condition="[varFilterData.AsEnumerable.Where(Function(row) CDate(row(argColName)) &gt; CDate(argFilterList(0)) AndAlso CDate(row(argColName)) &lt; CDate(argFilterList(1))).Count &gt; 0]" DisplayName="If - BETWEEN" sap:VirtualizedContainerService.HintSize="200,25.333333333333332" sap2010:WorkflowViewState.IdRef="If_6">
+                    <If x:Key="BETWEEN" Condition="[varFilterData.AsEnumerable.Where(Function(row) CDate(row(argColName)) &gt; CDate(argFilterList(0)) AndAlso CDate(row(argColName)) &lt; CDate(argFilterList(1))).Count &gt; 0]" DisplayName="If - BETWEEN" sap:VirtualizedContainerService.HintSize="334,184" sap2010:WorkflowViewState.IdRef="If_6">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -510,9 +511,9 @@ Any(Function(value) CDate(row(argColName)) = CDate(value))).CopyToDataTable]</In
                 </Sequence>
               </If.Else>
             </If>
-            <Switch x:TypeArguments="x:String" x:Key="TEXT_FILTER" DisplayName="Switch - TEXT - Excel Filter Operator" Expression="[argFilterOperator.ToUpper.Trim]" sap:VirtualizedContainerService.HintSize="496.6666666666667,290.6666666666667" sap2010:WorkflowViewState.IdRef="Switch`1_2">
+            <Switch x:TypeArguments="x:String" x:Key="TEXT_FILTER" DisplayName="Switch - TEXT - Excel Filter Operator" Expression="[argFilterOperator.ToUpper.Trim]" sap:VirtualizedContainerService.HintSize="496.6666666666667,1826.6666666666667" sap2010:WorkflowViewState.IdRef="Switch`1_2">
               <Switch.Default>
-                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,96" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Warn" Message="[argFilterOperator.ToUpper.Trim+&quot; is out of scope under &quot;+argFilterCategory.ToUpper.Trim+&quot; category&quot;]">
+                <ui:LogMessage DisplayName="Log Message - Out of scope Text Filter Operator" sap:VirtualizedContainerService.HintSize="334,96" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Warn" Message="[argFilterOperator.ToUpper.Trim+&quot; is out of scope under &quot;+argFilterCategory.ToUpper.Trim+&quot; category&quot;]">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -828,7 +829,7 @@ Any(Function(value) row(argColName).ToString.Equals(value, StringComparison.Ordi
                   </Sequence>
                 </If.Else>
               </If>
-              <If x:Key="DOES_NOT_CONTAINS" Condition="[argData.AsEnumerable.Where(Function(row) Not argFilterList.&#xA;Any(Function(value) row(argColName).ToString.Contains(value, StringComparison.OrdinalIgnoreCase))).Count &gt;= 0]" DisplayName="If - DOESNOT CONTAINS" sap:VirtualizedContainerService.HintSize="510,357.3333333333333" sap2010:WorkflowViewState.IdRef="If_26">
+              <If x:Key="DOES_NOT_CONTAINS" Condition="[argData.AsEnumerable.Where(Function(row) Not argFilterList.&#xA;Any(Function(value) row(argColName).ToString.Contains(value, StringComparison.OrdinalIgnoreCase))).Count &gt;= 0]" DisplayName="If - DOESNOT CONTAINS" sap:VirtualizedContainerService.HintSize="334,184" sap2010:WorkflowViewState.IdRef="If_26">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -872,7 +873,7 @@ Any(Function(value) row(argColName).ToString.Contains(value, StringComparison.Or
                 </If.Else>
               </If>
             </Switch>
-            <If x:Key="NUMBER_FILTER" Condition="[argData.AsEnumerable.Where(Function(row) IsNumeric(row(argColName).ToString)).Count &gt; 0]" DisplayName="If - Numaric Check" sap:VirtualizedContainerService.HintSize="334,184" sap2010:WorkflowViewState.IdRef="If_2">
+            <If x:Key="NUMBER_FILTER" Condition="[argData.AsEnumerable.Where(Function(row) IsNumeric(row(argColName).ToString)).Count &gt; 0]" DisplayName="If - Numaric Check" sap:VirtualizedContainerService.HintSize="626,1130" sap2010:WorkflowViewState.IdRef="If_2">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -880,13 +881,13 @@ Any(Function(value) row(argColName).ToString.Contains(value, StringComparison.Or
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <If.Then>
-                <Sequence sap:VirtualizedContainerService.HintSize="668,1329.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_38">
+                <Sequence sap:VirtualizedContainerService.HintSize="592,946" sap2010:WorkflowViewState.IdRef="Sequence_38">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Assign DisplayName="Assign - NUMBER Filtered" sap:VirtualizedContainerService.HintSize="626,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_24">
+                  <Assign DisplayName="Assign - NUMBER Filtered" sap:VirtualizedContainerService.HintSize="550,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_24">
                     <Assign.To>
                       <OutArgument x:TypeArguments="sd:DataTable">[varFilterData]</OutArgument>
                     </Assign.To>
@@ -894,9 +895,9 @@ Any(Function(value) row(argColName).ToString.Contains(value, StringComparison.Or
                       <InArgument x:TypeArguments="sd:DataTable">[argData.AsEnumerable.Where(Function(row) IsNumeric(row(argColName).ToString)).CopyToDataTable]</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <Switch x:TypeArguments="x:String" DisplayName="Switch - NUMBER - Excel Filter Operator" Expression="[argFilterOperator.ToUpper.Trim]" sap:VirtualizedContainerService.HintSize="626,1116.6666666666667" sap2010:WorkflowViewState.IdRef="Switch`1_3">
+                  <Switch x:TypeArguments="x:String" DisplayName="Switch - NUMBER - Excel Filter Operator" Expression="[argFilterOperator.ToUpper.Trim]" sap:VirtualizedContainerService.HintSize="550,733.3333333333334" sap2010:WorkflowViewState.IdRef="Switch`1_3">
                     <Switch.Default>
-                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,96" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Warn" Message="[argFilterOperator.ToUpper.Trim+&quot; is out of scope under &quot;+argFilterCategory.ToUpper.Trim+&quot; category&quot;]">
+                      <ui:LogMessage DisplayName="Log Message - Out of scope Number Filter Operator" sap:VirtualizedContainerService.HintSize="334,96" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Warn" Message="[argFilterOperator.ToUpper.Trim+&quot; is out of scope under &quot;+argFilterCategory.ToUpper.Trim+&quot; category&quot;]">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -911,7 +912,7 @@ Any(Function(value) row(argColName).ToString.Contains(value, StringComparison.Or
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <If x:Key="EQUALS" Condition="[varFilterData.AsEnumerable.Where(Function(row) argFilterList.&#xA;Any(Function(value) row(argColName).ToString.Equals(value, StringComparison.OrdinalIgnoreCase))).Count &gt; 0]" DisplayName="If - EQUALS" sap:VirtualizedContainerService.HintSize="334,184" sap2010:WorkflowViewState.IdRef="If_14">
+                    <If x:Key="EQUALS" Condition="[varFilterData.AsEnumerable.Where(Function(row) argFilterList.&#xD;&#xA;Any(Function(value) CDbl(row(argColName)) = CDbl(value))).Count &gt; 0]" DisplayName="If - EQUALS" sap:VirtualizedContainerService.HintSize="510,357.3333333333333" sap2010:WorkflowViewState.IdRef="If_14">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -931,7 +932,7 @@ Any(Function(value) row(argColName).ToString.Contains(value, StringComparison.Or
                             </Assign.To>
                             <Assign.Value>
                               <InArgument x:TypeArguments="sd:DataTable" xml:space="preserve">[varFilterData.AsEnumerable.Where(Function(row) argFilterList.
-Any(Function(value) row(argColName).ToString.Equals(value, StringComparison.OrdinalIgnoreCase))).CopyToDataTable]</InArgument>
+Any(Function(value) CDbl(row(argColName)) = CDbl(value))).CopyToDataTable]</InArgument>
                             </Assign.Value>
                           </Assign>
                         </Sequence>
@@ -954,7 +955,7 @@ Any(Function(value) row(argColName).ToString.Equals(value, StringComparison.Ordi
                         </Sequence>
                       </If.Else>
                     </If>
-                    <If x:Key="NOT_EQUALS" Condition="[varFilterData.AsEnumerable.Where(Function(row) Not(argFilterList).&#xA;Any(Function(value) row(argColName).ToString.Equals(value, StringComparison.OrdinalIgnoreCase))).Count &gt; 0]" DisplayName="If - NOT EQUALS" sap:VirtualizedContainerService.HintSize="334,184" sap2010:WorkflowViewState.IdRef="If_15">
+                    <If x:Key="NOT_EQUALS" Condition="[varFilterData.AsEnumerable.Where(Function(row) Not(argFilterList).&#xD;&#xA;Any(Function(value) CDbl(row(argColName)) = CDbl(value))).Count &gt; 0]" DisplayName="If - NOT EQUALS" sap:VirtualizedContainerService.HintSize="200,25.333333333333332" sap2010:WorkflowViewState.IdRef="If_15">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -974,7 +975,7 @@ Any(Function(value) row(argColName).ToString.Equals(value, StringComparison.Ordi
                             </Assign.To>
                             <Assign.Value>
                               <InArgument x:TypeArguments="sd:DataTable" xml:space="preserve">[varFilterData.AsEnumerable.Where(Function(row) Not(argFilterList).
-Any(Function(value) row(argColName).ToString.Equals(value, StringComparison.OrdinalIgnoreCase))).CopyToDataTable]</InArgument>
+Any(Function(value) CDbl(row(argColName)) = CDbl(value))).CopyToDataTable]</InArgument>
                             </Assign.Value>
                           </Assign>
                         </Sequence>
@@ -997,10 +998,10 @@ Any(Function(value) row(argColName).ToString.Equals(value, StringComparison.Ordi
                         </Sequence>
                       </If.Else>
                     </If>
-                    <If x:Key="GREATER_THAN" Condition="[varFilterData.AsEnumerable.Where(Function(row) CDbl(row(argColName)) &gt; CDbl(argFilterList(0))).Count &gt; 0]" DisplayName="If - GREATER_THAN" sap:VirtualizedContainerService.HintSize="334,184" sap2010:WorkflowViewState.IdRef="If_16">
+                    <If x:Key="GREATER_THAN" Condition="[varFilterData.AsEnumerable.Where(Function(row) CDbl(row(argColName)) &gt; CDbl(argFilterList(0))).Count &gt; 0]" DisplayName="If - GREATER_THAN" sap:VirtualizedContainerService.HintSize="510,356.6666666666667" sap2010:WorkflowViewState.IdRef="If_16">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
@@ -1165,18 +1166,18 @@ Any(Function(value) row(argColName).ToString.Equals(value, StringComparison.Ordi
                         </Sequence>
                       </If.Else>
                     </If>
-                    <If x:Key="BETWEEN" Condition="[CInt(argFilterList(0))&gt;CInt(argFilterList(1))]" DisplayName="If - Number 1 &gt; Number 2" sap:VirtualizedContainerService.HintSize="586,740.6666666666666" sap2010:WorkflowViewState.IdRef="If_28">
+                    <If x:Key="BETWEEN" Condition="[CInt(argFilterList(0))&gt;CInt(argFilterList(1))]" DisplayName="If - Number 1 &gt; Number 2" sap:VirtualizedContainerService.HintSize="586,628" sap2010:WorkflowViewState.IdRef="If_28">
                       <If.Then>
-                        <Sequence sap:VirtualizedContainerService.HintSize="300,112.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_55">
+                        <Sequence sap:VirtualizedContainerService.HintSize="552,444" sap2010:WorkflowViewState.IdRef="Sequence_55">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <If Condition="[varFilterData.AsEnumerable.Where(Function(row) (CDbl(row(argColName)) &lt; CDbl(argFilterList(0))) AndAlso (CDbl(row(argColName)) &gt; CDbl(argFilterList(1)))).Count &gt; 0]" DisplayName="If - BETWEEN" sap:VirtualizedContainerService.HintSize="258,25.333333333333332" sap2010:WorkflowViewState.IdRef="If_27">
+                          <If Condition="[varFilterData.AsEnumerable.Where(Function(row) (CDbl(row(argColName)) &lt; CDbl(argFilterList(0))) AndAlso (CDbl(row(argColName)) &gt; CDbl(argFilterList(1)))).Count &gt; 0]" DisplayName="If - BETWEEN" sap:VirtualizedContainerService.HintSize="510,356.6666666666667" sap2010:WorkflowViewState.IdRef="If_27">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
@@ -1269,10 +1270,10 @@ Any(Function(value) row(argColName).ToString.Equals(value, StringComparison.Ordi
                         </Sequence>
                       </If.Else>
                     </If>
-                    <If x:Key="IN" Condition="[varFilterData.AsEnumerable.Where(Function(row) argFilterList.&#xA;Any(Function(value) row(argColName).ToString.Equals(value, StringComparison.OrdinalIgnoreCase))).Count &gt; 0]" DisplayName="If - IN" sap:VirtualizedContainerService.HintSize="200,25.333333333333332" sap2010:WorkflowViewState.IdRef="If_21">
+                    <If x:Key="IN" Condition="[varFilterData.AsEnumerable.Where(Function(row) argFilterList.&#xD;&#xA;Any(Function(value) CDbl(row(argColName)) = CDbl(value))).Count &gt; 0]" DisplayName="If - IN" sap:VirtualizedContainerService.HintSize="510,357.3333333333333" sap2010:WorkflowViewState.IdRef="If_21">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
@@ -1289,7 +1290,7 @@ Any(Function(value) row(argColName).ToString.Equals(value, StringComparison.Ordi
                             </Assign.To>
                             <Assign.Value>
                               <InArgument x:TypeArguments="sd:DataTable" xml:space="preserve">[varFilterData.AsEnumerable.Where(Function(row) argFilterList.
-Any(Function(value) row(argColName).ToString.Equals(value, StringComparison.OrdinalIgnoreCase))).CopyToDataTable]</InArgument>
+Any(Function(value) CDbl(row(argColName)) = CDbl(value))).CopyToDataTable]</InArgument>
                             </Assign.Value>
                           </Assign>
                         </Sequence>
@@ -1312,7 +1313,7 @@ Any(Function(value) row(argColName).ToString.Equals(value, StringComparison.Ordi
                         </Sequence>
                       </If.Else>
                     </If>
-                    <If x:Key="NOT_IN" Condition="[varFilterData.AsEnumerable.Where(Function(row) Not(argFilterList).&#xA;Any(Function(value) row(argColName).ToString.Equals(value, StringComparison.OrdinalIgnoreCase))).Count &gt; 0]" DisplayName="If - NOT IN" sap:VirtualizedContainerService.HintSize="334,184" sap2010:WorkflowViewState.IdRef="If_22">
+                    <If x:Key="NOT_IN" Condition="[varFilterData.AsEnumerable.Where(Function(row) Not(argFilterList).&#xD;&#xA;Any(Function(value) CDbl(row(argColName))=CDbl(value))).Count &gt; 0]" DisplayName="If - NOT IN" sap:VirtualizedContainerService.HintSize="510,357.3333333333333" sap2010:WorkflowViewState.IdRef="If_22">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1332,7 +1333,7 @@ Any(Function(value) row(argColName).ToString.Equals(value, StringComparison.Ordi
                             </Assign.To>
                             <Assign.Value>
                               <InArgument x:TypeArguments="sd:DataTable" xml:space="preserve">[varFilterData.AsEnumerable.Where(Function(row) Not(argFilterList).
-Any(Function(value) row(argColName).ToString.Equals(value, StringComparison.OrdinalIgnoreCase))).CopyToDataTable]</InArgument>
+Any(Function(value) CDbl(row(argColName))=CDbl(value))).CopyToDataTable]</InArgument>
                             </Assign.Value>
                           </Assign>
                         </Sequence>
@@ -1382,7 +1383,7 @@ Any(Function(value) row(argColName).ToString.Equals(value, StringComparison.Ordi
         </Throw>
       </If.Else>
     </If>
-    <ui:MultipleAssign DisplayName="Multiple Assign - Copy Datatable" sap:VirtualizedContainerService.HintSize="431.3333333333333,100.66666666666667" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+    <ui:MultipleAssign DisplayName="Multiple Assign - Copy Datatable" sap:VirtualizedContainerService.HintSize="742,100.66666666666667" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
@@ -1402,7 +1403,7 @@ Any(Function(value) row(argColName).ToString.Equals(value, StringComparison.Ordi
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:MultipleAssign>
-    <ui:LogMessage DisplayName="Log Message - FINISHED" sap:VirtualizedContainerService.HintSize="431.3333333333333,25.333333333333332" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[JobData.WorkflowName+&quot; FINISHED&quot;]">
+    <ui:LogMessage DisplayName="Log Message - FINISHED" sap:VirtualizedContainerService.HintSize="742,25.333333333333332" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[JobData.WorkflowName+&quot; FINISHED&quot;]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
