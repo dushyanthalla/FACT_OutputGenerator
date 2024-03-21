@@ -1,5 +1,6 @@
 {
   "name": "FACT_OutputGenerator_Test",
+  "projectId": "a1b2fd8f-0ddd-4d59-bb5c-62c33e109e0d",
   "description": "Blank Process",
   "main": "FACT_OutputGenerator.xaml",
   "dependencies": {
@@ -12,7 +13,7 @@
   "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "23.4.0.0",
-  "projectVersion": "2.0.14",
+  "projectVersion": "2.0.15",
   "runtimeOptions": {
     "autoDispose": false,
     "netFrameworkLazyLoading": false,
@@ -44,7 +45,8 @@
       ]
     },
     "fileInfoCollection": [],
-    "modernBehavior": false
+    "modernBehavior": false,
+    "saveToCloud": false
   },
   "expressionLanguage": "VisualBasic",
   "entryPoints": [

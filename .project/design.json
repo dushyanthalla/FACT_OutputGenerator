@@ -4,5 +4,7 @@
       "Key": "ENV",
       "Value": "DEV"
     }
-  ]
+  ],
+  "SeparateRuntimeDependencies": true,
+  "IncludeSources": true
 }

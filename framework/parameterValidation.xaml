@@ -22,7 +22,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>674.6666666666666,2048</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>857.3333333333334,2048</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>parameterValidation_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -129,7 +129,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:LogMessage>
-    <If Condition="[argJsonObjectKeys.Union(argReqActionArguments).Count = argJsonObjectKeys.Count]" DisplayName="If - Missing Mandatory Parmeters?" sap:VirtualizedContainerService.HintSize="622.6666666666666,1090" sap2010:WorkflowViewState.IdRef="If_3">
+    <If Condition="[argReqActionArguments.Except(argJsonObjectKeys).Count = 0]" DisplayName="If - Missing Mandatory Parmeters?" sap:VirtualizedContainerService.HintSize="622.6666666666666,1090" sap2010:WorkflowViewState.IdRef="If_3">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
