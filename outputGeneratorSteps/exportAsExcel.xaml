@@ -18,7 +18,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>440,627.3333333333334</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>607.3333333333334,1506.6666666666667</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>exportAsExcel_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -56,6 +56,7 @@
       <x:String>System.Xml.Serialization</x:String>
       <x:String>UiPath.Platform.ResourceHandling</x:String>
       <x:String>UiPath.Web.Activities</x:String>
+      <x:String>UiPath.Database</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -115,9 +116,10 @@
       <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
       <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
       <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Database</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="exportAsExcel" sap:VirtualizedContainerService.HintSize="450,562.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="exportAsExcel" sap:VirtualizedContainerService.HintSize="617.3333333333334,1442" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:List(x:String)" Name="varJsonObjectKeys" />
       <Variable x:TypeArguments="scg:List(x:String)" Name="varReqActionArguments" />
@@ -129,8 +131,8 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:GetCurrentJobInfo DisplayName="Get Current Job Info - Export As Excel" sap:VirtualizedContainerService.HintSize="388,25.333333333333332" sap2010:WorkflowViewState.IdRef="GetCurrentJobInfo_1" Result="[GlobalVariablesNamespace.GlobalVariables.JobData]" />
-    <ui:LogMessage DisplayName="Log Message - STARTED" sap:VirtualizedContainerService.HintSize="388,25.333333333333332" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[GlobalVariablesNamespace.GlobalVariables.JobData.WorkflowName+&quot; STARTED&quot;]">
+    <ui:GetCurrentJobInfo DisplayName="Get Current Job Info - Export As Excel" sap:VirtualizedContainerService.HintSize="575.3333333333334,25.333333333333332" sap2010:WorkflowViewState.IdRef="GetCurrentJobInfo_1" Result="[GlobalVariablesNamespace.GlobalVariables.JobData]" />
+    <ui:LogMessage DisplayName="Log Message - STARTED" sap:VirtualizedContainerService.HintSize="575.3333333333334,25.333333333333332" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[GlobalVariablesNamespace.GlobalVariables.JobData.WorkflowName+&quot; STARTED&quot;]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -138,7 +140,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:LogMessage>
-    <ui:MultipleAssign DisplayName="Multiple Assign - Configration" sap:VirtualizedContainerService.HintSize="388,25.333333333333332" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+    <ui:MultipleAssign DisplayName="Multiple Assign - Configration" sap:VirtualizedContainerService.HintSize="575.3333333333334,25.333333333333332" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -178,7 +180,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:MultipleAssign>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="parameterValidation.xaml" sap:VirtualizedContainerService.HintSize="388,25.333333333333332" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="framework\parameterValidation.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="parameterValidation.xaml" sap:VirtualizedContainerService.HintSize="575.3333333333334,25.333333333333332" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="framework\parameterValidation.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="scg:List(x:String)" x:Key="argReqActionArguments">[varReqActionArguments]</InArgument>
         <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="argActionArguments">[argActionArguments]</InArgument>
@@ -192,7 +194,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:InvokeWorkflowFile>
-    <ui:DeserializeJsonArray DisplayName="Deserialize JSON Array - Entity Sheet Map" sap:VirtualizedContainerService.HintSize="388,60" sap2010:WorkflowViewState.IdRef="DeserializeJsonArray_1" JsonArray="[varEntitySheetMapArray]" JsonString="[argActionArguments(constEntitySheetMap).ToString]">
+    <ui:DeserializeJsonArray DisplayName="Deserialize JSON Array - Entity Sheet Map" sap:VirtualizedContainerService.HintSize="575.3333333333334,60" sap2010:WorkflowViewState.IdRef="DeserializeJsonArray_1" JsonArray="[varEntitySheetMapArray]" JsonString="[argActionArguments(constEntitySheetMap).ToString]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -200,13 +202,16 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:DeserializeJsonArray>
-    <ui:ForEach x:TypeArguments="njl:JToken" CurrentIndex="{x:Null}" DisplayName="For Each Entity Sheet Map" sap:VirtualizedContainerService.HintSize="388,25.333333333333332" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[varEntitySheetMapArray]">
+    <ui:ForEach x:TypeArguments="njl:JToken" CurrentIndex="{x:Null}" DisplayName="For Each Entity Sheet Map" sap:VirtualizedContainerService.HintSize="575.3333333333334,928" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[varEntitySheetMapArray]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="njl:JToken">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="njl:JToken" Name="eachEntitySheetMap" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body - Entity Sheet Map" sap:VirtualizedContainerService.HintSize="558.6666666666666,656.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_8">
+          <Sequence DisplayName="Body - Entity Sheet Map" sap:VirtualizedContainerService.HintSize="538.6666666666666,798.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_8">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="ui:DatabaseConnection" Name="varDataBaseConnection" />
+            </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -282,9 +287,18 @@
             </ui:MultipleAssign>
             <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="extractFromDatabase.xaml" sap:VirtualizedContainerService.HintSize="496.6666666666667,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="workflows\extractFromDatabase.xaml">
               <ui:InvokeWorkflowFile.Arguments>
-                <OutArgument x:TypeArguments="sd:DataTable" x:Key="argData">[varData]</OutArgument>
-                <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="argActionArguments">[argActionArguments]</InArgument>
-                <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="argDictApppianInfo">[argDictApppianInfo]</InArgument>
+                <OutArgument x:TypeArguments="sd:DataTable" x:Key="argData">
+                  <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="varData" />
+                </OutArgument>
+                <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="argActionArguments">
+                  <VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:String)" ExpressionText="argActionArguments" />
+                </InArgument>
+                <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="argDictApppianInfo">
+                  <VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:String)" ExpressionText="argDictApppianInfo" />
+                </InArgument>
+                <OutArgument x:TypeArguments="ui:DatabaseConnection" x:Key="argDataBaseConnection">
+                  <VisualBasicReference x:TypeArguments="ui:DatabaseConnection" ExpressionText="varDataBaseConnection" />
+                </OutArgument>
               </ui:InvokeWorkflowFile.Arguments>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -294,12 +308,21 @@
               </sap:WorkflowViewStateService.ViewState>
             </ui:InvokeWorkflowFile>
             <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="496.6666666666667,96" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Warn" Message="[&quot;Processing &quot;+argActionArguments(constGeneratedOption).ToUpper.Trim]" />
-            <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[argActionArguments(constGeneratedOption).ToUpper.Trim]" sap:VirtualizedContainerService.HintSize="496.6666666666667,189.33333333333334" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+            <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[argActionArguments(constGeneratedOption).ToUpper.Trim]" sap:VirtualizedContainerService.HintSize="496.6666666666667,354.6666666666667" sap2010:WorkflowViewState.IdRef="Switch`1_1">
               <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" x:Key="WRITE_RANGE" DisplayName="writeRange.xaml" sap:VirtualizedContainerService.HintSize="376,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="outputGeneratorSteps\writeRange.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
-                  <InOutArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="argActionArguments">[argActionArguments]</InOutArgument>
-                  <InArgument x:TypeArguments="njl:JToken" x:Key="argEachEntitySheetMap">[eachEntitySheetMap]</InArgument>
-                  <InArgument x:TypeArguments="sd:DataTable" x:Key="argData">[varData]</InArgument>
+                  <InOutArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="argActionArguments">
+                    <VisualBasicReference x:TypeArguments="scg:Dictionary(x:String, x:String)" ExpressionText="argActionArguments" />
+                  </InOutArgument>
+                  <InArgument x:TypeArguments="njl:JToken" x:Key="argEachEntitySheetMap">
+                    <VisualBasicValue x:TypeArguments="njl:JToken" ExpressionText="eachEntitySheetMap" />
+                  </InArgument>
+                  <InArgument x:TypeArguments="sd:DataTable" x:Key="argData">
+                    <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="varData" />
+                  </InArgument>
+                  <InArgument x:TypeArguments="ui:DatabaseConnection" x:Key="argDataBaseConnection">
+                    <VisualBasicValue x:TypeArguments="ui:DatabaseConnection" ExpressionText="varDataBaseConnection" />
+                  </InArgument>
                 </ui:InvokeWorkflowFile.Arguments>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -317,9 +340,18 @@
               </ui:InvokeWorkflowFile>
               <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" x:Key="WRITE_RANGE_AND_REPEATABLE_CELLS" DisplayName="writeRangeRepeatableCells.xaml" sap:VirtualizedContainerService.HintSize="379.3333333333333,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_12" UnSafe="False" WorkflowFileName="outputGeneratorSteps\writeRangeRepeatableCells.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
-                  <InOutArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="argActionArguments">[argActionArguments]</InOutArgument>
-                  <InArgument x:TypeArguments="njl:JToken" x:Key="argEachEntitySheetMap">[eachEntitySheetMap]</InArgument>
-                  <InArgument x:TypeArguments="sd:DataTable" x:Key="argData">[varData]</InArgument>
+                  <InOutArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="argActionArguments">
+                    <VisualBasicReference x:TypeArguments="scg:Dictionary(x:String, x:String)" ExpressionText="argActionArguments" />
+                  </InOutArgument>
+                  <InArgument x:TypeArguments="njl:JToken" x:Key="argEachEntitySheetMap">
+                    <VisualBasicValue x:TypeArguments="njl:JToken" ExpressionText="eachEntitySheetMap" />
+                  </InArgument>
+                  <InArgument x:TypeArguments="sd:DataTable" x:Key="argData">
+                    <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="varData" />
+                  </InArgument>
+                  <InArgument x:TypeArguments="ui:DatabaseConnection" x:Key="argDataBaseConnection">
+                    <VisualBasicValue x:TypeArguments="ui:DatabaseConnection" ExpressionText="varDataBaseConnection" />
+                  </InArgument>
                 </ui:InvokeWorkflowFile.Arguments>
               </ui:InvokeWorkflowFile>
             </Switch>
@@ -328,12 +360,12 @@
       </ui:ForEach.Body>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ForEach>
-    <ui:LogMessage DisplayName="Log Message - FINISHED" sap:VirtualizedContainerService.HintSize="388,25.333333333333332" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[JobData.WorkflowName+&quot; FINISHED&quot;]">
+    <ui:LogMessage DisplayName="Log Message - FINISHED" sap:VirtualizedContainerService.HintSize="575.3333333333334,25.333333333333332" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[JobData.WorkflowName+&quot; FINISHED&quot;]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>

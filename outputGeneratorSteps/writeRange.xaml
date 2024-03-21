@@ -3,14 +3,18 @@
     <x:Property Name="argActionArguments" Type="InOutArgument(scg:Dictionary(x:String, x:String))" />
     <x:Property Name="argEachEntitySheetMap" Type="InArgument(njl:JToken)" />
     <x:Property Name="argData" Type="InArgument(sd:DataTable)" />
+    <x:Property Name="argDataBaseConnection" Type="InArgument(ui:DatabaseConnection)" />
   </x:Members>
   <this:writeRange.argData>
     <InArgument x:TypeArguments="sd:DataTable" />
   </this:writeRange.argData>
+  <this:writeRange.argDataBaseConnection>
+    <InArgument x:TypeArguments="ui:DatabaseConnection" />
+  </this:writeRange.argDataBaseConnection>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>462,1134</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>561.3333333333334,1294</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>writeRange_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -44,6 +48,7 @@
       <x:String>Newtonsoft.Json</x:String>
       <x:String>System.ComponentModel</x:String>
       <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Database</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -91,9 +96,10 @@
       <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
       <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>UiPath.Database</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="writeRange" sap:VirtualizedContainerService.HintSize="472,1069.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="writeRange" sap:VirtualizedContainerService.HintSize="452,1229.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -160,6 +166,7 @@
         <InOutArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="argActionArguments">
           <VisualBasicReference x:TypeArguments="scg:Dictionary(x:String, x:String)" ExpressionText="argActionArguments" />
         </InOutArgument>
+        <InArgument x:TypeArguments="ui:DatabaseConnection" x:Key="argDataBaseConnection" />
       </ui:InvokeWorkflowFile.Arguments>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -168,7 +175,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:InvokeWorkflowFile>
-    <If Condition="[argData.RowCount&gt;0]" DisplayName="If - Datarows are present?" sap:VirtualizedContainerService.HintSize="410,542" sap2010:WorkflowViewState.IdRef="If_1">
+    <If Condition="[argData.RowCount&gt;0]" DisplayName="If - Datarows are present?" sap:VirtualizedContainerService.HintSize="410,725.3333333333334" sap2010:WorkflowViewState.IdRef="If_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -184,12 +191,8 @@
           </sap:WorkflowViewStateService.ViewState>
           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="dataSort.xaml" sap:VirtualizedContainerService.HintSize="334,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="workflows\dataSort.xaml">
             <ui:InvokeWorkflowFile.Arguments>
-              <InOutArgument x:TypeArguments="sd:DataTable" x:Key="argData">
-                <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="argData" />
-              </InOutArgument>
-              <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="argActionArguments">
-                <VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:String)" ExpressionText="argActionArguments" />
-              </InArgument>
+              <InOutArgument x:TypeArguments="sd:DataTable" x:Key="argData">[argData]</InOutArgument>
+              <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="argActionArguments">[argActionArguments]</InArgument>
             </ui:InvokeWorkflowFile.Arguments>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -200,12 +203,8 @@
           </ui:InvokeWorkflowFile>
           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="writeToExcel.xaml" sap:VirtualizedContainerService.HintSize="334,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="workflows\writeToExcel.xaml">
             <ui:InvokeWorkflowFile.Arguments>
-              <InArgument x:TypeArguments="sd:DataTable" x:Key="argData">
-                <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="argData" />
-              </InArgument>
-              <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="argActionArguments">
-                <VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:String)" ExpressionText="argActionArguments" />
-              </InArgument>
+              <InArgument x:TypeArguments="sd:DataTable" x:Key="argData">[argData]</InArgument>
+              <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="argActionArguments">[argActionArguments]</InArgument>
             </ui:InvokeWorkflowFile.Arguments>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
