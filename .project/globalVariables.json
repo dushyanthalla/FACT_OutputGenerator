@@ -638,5 +638,13 @@
     "UnresolvedTypeFullyQualifiedName": null,
     "Expression": "\"Microsoft.Data.SqlClient\"",
     "IsLiteral": false
+  },
+  {
+    "Constant": true,
+    "Name": "constFilterBusinessEntity",
+    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+    "UnresolvedTypeFullyQualifiedName": null,
+    "Expression": "\"filterBusinessEntity\"",
+    "IsLiteral": false
   }
 ]

@@ -3,14 +3,11 @@
     <x:Property Name="argActionArguments" Type="InOutArgument(scg:Dictionary(x:String, x:String))" />
     <x:Property Name="argEachEntitySheetMap" Type="InArgument(njl:JToken)" />
     <x:Property Name="argData" Type="InArgument(sd:DataTable)" />
-    <x:Property Name="argDataBaseConnection" Type="InArgument(ui:DatabaseConnection)" />
+    <x:Property Name="argDictApppianInfo" Type="InArgument(scg:Dictionary(x:String, x:String))" />
   </x:Members>
   <this:writeRange.argData>
     <InArgument x:TypeArguments="sd:DataTable" />
   </this:writeRange.argData>
-  <this:writeRange.argDataBaseConnection>
-    <InArgument x:TypeArguments="ui:DatabaseConnection" />
-  </this:writeRange.argDataBaseConnection>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
@@ -166,7 +163,9 @@
         <InOutArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="argActionArguments">
           <VisualBasicReference x:TypeArguments="scg:Dictionary(x:String, x:String)" ExpressionText="argActionArguments" />
         </InOutArgument>
-        <InArgument x:TypeArguments="ui:DatabaseConnection" x:Key="argDataBaseConnection" />
+        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="argDictApppianInfo">
+          <VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:String)" ExpressionText="argDictApppianInfo" />
+        </InArgument>
       </ui:InvokeWorkflowFile.Arguments>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">

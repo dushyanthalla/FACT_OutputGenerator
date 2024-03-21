@@ -1,16 +1,13 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="dataFilter" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="dataFilter" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="argData" Type="InOutArgument(sd:DataTable)" />
     <x:Property Name="argActionArguments" Type="InOutArgument(scg:Dictionary(x:String, x:String))" />
-    <x:Property Name="argDataBaseConnection" Type="InArgument(ui:DatabaseConnection)" />
+    <x:Property Name="argDictApppianInfo" Type="InArgument(scg:Dictionary(x:String, x:String))" />
   </x:Members>
-  <this:dataFilter.argDataBaseConnection>
-    <InArgument x:TypeArguments="ui:DatabaseConnection" />
-  </this:dataFilter.argDataBaseConnection>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>688.6666666666666,1802.6666666666667</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>688.6666666666666,2064.6666666666665</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>dataFilter_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -52,6 +49,7 @@
       <x:String>System.Security</x:String>
       <x:String>UiPath.Database</x:String>
       <x:String>UiPath.Database.Activities</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -118,7 +116,7 @@
       <x:Boolean x:Key="ShouldCollapseAll">False</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="dataFilter" sap:VirtualizedContainerService.HintSize="698.6666666666666,1738" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="dataFilter" sap:VirtualizedContainerService.HintSize="698.6666666666666,2321.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -141,13 +139,13 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:DeserializeJsonArray>
-    <ui:ForEach x:TypeArguments="njl:JToken" CurrentIndex="{x:Null}" DisplayName="For Each Filters Mappings" sap:VirtualizedContainerService.HintSize="656.6666666666666,1354.6666666666667" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[varMappingsArray]">
+    <ui:ForEach x:TypeArguments="njl:JToken" CurrentIndex="{x:Null}" DisplayName="For Each Filters Mappings" sap:VirtualizedContainerService.HintSize="656.6666666666666,1938" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[varMappingsArray]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="njl:JToken">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="njl:JToken" Name="filterMappings" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="filter mappings" sap:VirtualizedContainerService.HintSize="620,1225.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="filter mappings" sap:VirtualizedContainerService.HintSize="620,1808.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="varExcelColName" />
               <Variable x:TypeArguments="scg:List(x:String)" Name="varFilterList" />
@@ -185,7 +183,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:MultipleAssign>
-            <Switch x:TypeArguments="x:String" DisplayName="Switch - Filter Generation" Expression="[filterMappings(constFilterGeneration).ToString.Trim.ToUpper]" sap:VirtualizedContainerService.HintSize="578,716.6666666666666" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+            <Switch x:TypeArguments="x:String" DisplayName="Switch - Filter Generation" Expression="[filterMappings(constFilterGeneration).ToString.Trim.ToUpper]" sap:VirtualizedContainerService.HintSize="578,1300" sap2010:WorkflowViewState.IdRef="Switch`1_1">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -201,35 +199,89 @@
                   <InArgument x:TypeArguments="scg:List(x:String)">[varFilterList.Select(Function(x) If(x.Equals("BLANK"), String.Empty, If(x.Equals("COMMA"), ",", x))).ToList]</InArgument>
                 </Assign.Value>
               </Assign>
-              <Sequence x:Key="BUSINESS ENTITY" sap:VirtualizedContainerService.HintSize="538,477.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_3">
+              <Sequence x:Key="BUSINESS_ENTITY" sap:VirtualizedContainerService.HintSize="538,1060.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_3">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <Sequence DisplayName="BUSINESS ENTITY" sap:VirtualizedContainerService.HintSize="496,390" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                <Sequence DisplayName="BUSINESS ENTITY" sap:VirtualizedContainerService.HintSize="496,973.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_4">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="sd:DataTable" Name="varBusinessEntityData" />
+                    <Variable x:TypeArguments="x:String" Name="varQuery" />
+                    <Variable x:TypeArguments="ui:DatabaseConnection" Name="varDataBaseConnection" />
                   </Sequence.Variables>
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[varBusinessEntityData]" DisplayName="Run query" ExistingDbConnection="[argDataBaseConnection]" sap:VirtualizedContainerService.HintSize="434,88.66666666666667" sap2010:WorkflowViewState.IdRef="ExecuteQuery_1" Sql="[&quot;SELECT TARGET_COLUMN from TARGET_ENTITY where TARGET_COLUMN in (select REF_COLUMN from REF_ENTITY where &quot;+constRequestId+&quot; =  '&quot;+argActionArguments(constRequestId)+&quot;')&quot;]">
+                  <Assign sap:VirtualizedContainerService.HintSize="434,88.66666666666667" sap2010:WorkflowViewState.IdRef="Assign_4">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[varQuery]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String" xml:space="preserve">["SELECT "+filterMappings(constEntityFilterColName).ToString+" from "+argActionArguments(constEntityName)+" where "+
+filterMappings(constEntityFilterColName).ToString+" "+filterMappings(constFilterOperator).ToString+
+" (select "+filterMappings(constEntityFilterColValue)(0)(constValue).ToString+" from "+filterMappings(constFilterBusinessEntity).ToString+" where "+constRequestId+" =  '"+argActionArguments(constRequestId)+"')"]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,96" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Trace" Message="[varQuery]" />
+                  <TryCatch DisplayName="Try Catch - Database connection" sap:VirtualizedContainerService.HintSize="434,278.6666666666667" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <TryCatch.Try>
+                      <ui:DatabaseConnect DisplayName="Connect to database - Hostname" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="DatabaseConnect_3" ProviderName="[constProviderName]" ConnectionString="[argDictApppianInfo(constConnectionString).Replace(&quot;{hostname}&quot;,Environment.MachineName)]" DatabaseConnection="[varDataBaseConnection]">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </ui:DatabaseConnect>
+                    </TryCatch.Try>
+                    <TryCatch.Catches>
+                      <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,105.33333333333333" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ActivityAction x:TypeArguments="s:Exception">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                          </ActivityAction.Argument>
+                          <ui:DatabaseConnect DisplayName="Connect to database - Hostname+Database Name" sap:VirtualizedContainerService.HintSize="200,25.333333333333332" sap2010:WorkflowViewState.IdRef="DatabaseConnect_4" ProviderName="[constProviderName]" ConnectionString="[argDictApppianInfo(constConnectionString).Replace(&quot;{hostname}&quot;,Environment.MachineName+&quot;\FACT&quot;)]" DatabaseConnection="[varDataBaseConnection]">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:DatabaseConnect>
+                        </ActivityAction>
+                      </Catch>
+                    </TryCatch.Catches>
+                  </TryCatch>
+                  <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[varBusinessEntityData]" DisplayName="Run query" ExistingDbConnection="[varDataBaseConnection]" sap:VirtualizedContainerService.HintSize="434,88.66666666666667" sap2010:WorkflowViewState.IdRef="ExecuteQuery_1" Sql="[varQuery]">
                     <ui:ExecuteQuery.Parameters>
                       <scg:Dictionary x:TypeArguments="x:String, Argument" />
                     </ui:ExecuteQuery.Parameters>
                   </ui:ExecuteQuery>
+                  <ui:DatabaseDisconnect DatabaseConnection="[varDataBaseConnection]" DisplayName="Disconnect from database" sap:VirtualizedContainerService.HintSize="434,25.333333333333332" sap2010:WorkflowViewState.IdRef="DatabaseDisconnect_1" />
                   <Assign sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_3">
                     <Assign.To>
                       <OutArgument x:TypeArguments="scg:List(x:String)">[varFilterList]</OutArgument>
                     </Assign.To>
                     <Assign.Value>
-                      <InArgument x:TypeArguments="scg:List(x:String)">[varBusinessEntityData.AsEnumerable.Select(Function(r) r("").ToString).ToList]</InArgument>
+                      <InArgument x:TypeArguments="scg:List(x:String)">[varBusinessEntityData.AsEnumerable.Select(Function(r) r(filterMappings(constEntityFilterColName).ToString).ToString).Distinct.ToList]</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <ui:DatabaseDisconnect DatabaseConnection="[argDataBaseConnection]" DisplayName="Disconnect from database" sap:VirtualizedContainerService.HintSize="434,25.333333333333332" sap2010:WorkflowViewState.IdRef="DatabaseDisconnect_1" />
                 </Sequence>
               </Sequence>
             </Switch>

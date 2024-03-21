@@ -209,9 +209,6 @@
             <DelegateInArgument x:TypeArguments="njl:JToken" Name="eachEntitySheetMap" />
           </ActivityAction.Argument>
           <Sequence DisplayName="Body - Entity Sheet Map" sap:VirtualizedContainerService.HintSize="538.6666666666666,798.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_8">
-            <Sequence.Variables>
-              <Variable x:TypeArguments="ui:DatabaseConnection" Name="varDataBaseConnection" />
-            </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -296,9 +293,6 @@
                 <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="argDictApppianInfo">
                   <VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:String)" ExpressionText="argDictApppianInfo" />
                 </InArgument>
-                <OutArgument x:TypeArguments="ui:DatabaseConnection" x:Key="argDataBaseConnection">
-                  <VisualBasicReference x:TypeArguments="ui:DatabaseConnection" ExpressionText="varDataBaseConnection" />
-                </OutArgument>
               </ui:InvokeWorkflowFile.Arguments>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -320,8 +314,8 @@
                   <InArgument x:TypeArguments="sd:DataTable" x:Key="argData">
                     <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="varData" />
                   </InArgument>
-                  <InArgument x:TypeArguments="ui:DatabaseConnection" x:Key="argDataBaseConnection">
-                    <VisualBasicValue x:TypeArguments="ui:DatabaseConnection" ExpressionText="varDataBaseConnection" />
+                  <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="argDictApppianInfo">
+                    <VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:String)" ExpressionText="argDictApppianInfo" />
                   </InArgument>
                 </ui:InvokeWorkflowFile.Arguments>
                 <sap:WorkflowViewStateService.ViewState>
@@ -349,8 +343,8 @@
                   <InArgument x:TypeArguments="sd:DataTable" x:Key="argData">
                     <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="varData" />
                   </InArgument>
-                  <InArgument x:TypeArguments="ui:DatabaseConnection" x:Key="argDataBaseConnection">
-                    <VisualBasicValue x:TypeArguments="ui:DatabaseConnection" ExpressionText="varDataBaseConnection" />
+                  <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="argDictApppianInfo">
+                    <VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:String)" ExpressionText="argDictApppianInfo" />
                   </InArgument>
                 </ui:InvokeWorkflowFile.Arguments>
               </ui:InvokeWorkflowFile>

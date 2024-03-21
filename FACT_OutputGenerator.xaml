@@ -276,7 +276,7 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <TryCatch.Try>
-                    <Sequence DisplayName="Output Generator Step" sap:VirtualizedContainerService.HintSize="538.6666666666666,1388.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                    <Sequence DisplayName="Output Generator Step" sap:VirtualizedContainerService.HintSize="538.6666666666666,1550" sap2010:WorkflowViewState.IdRef="Sequence_3">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="njl:JObject" Name="varJsonObject" />
                         <Variable x:TypeArguments="scg:List(x:String)" Name="varJsonObjectKeys" />
@@ -489,7 +489,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:InvokeWorkflowFile>
-                      <Switch x:TypeArguments="x:String" DisplayName="Switch - GeneratorType" Expression="[outputGeneratorStep(constGeneratorType).ToString.ToUpper]" sap:VirtualizedContainerService.HintSize="496.6666666666667,193.33333333333334" sap2010:WorkflowViewState.IdRef="Switch`1_3">
+                      <Switch x:TypeArguments="x:String" DisplayName="Switch - GeneratorType" Expression="[outputGeneratorStep(constGeneratorType).ToString.ToUpper]" sap:VirtualizedContainerService.HintSize="496.6666666666667,354.6666666666667" sap2010:WorkflowViewState.IdRef="Switch`1_3">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
